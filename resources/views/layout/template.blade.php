@@ -89,7 +89,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12 ">
      <!-- Main Footer -->
   <footer  style="background-color: #926d27; color: white;height: 100px;" align='center'>
-    <strong >Copyright &copy; 2019-2020 <a href="http://adminlte.io">BUMIGEB</a>.</strong>
+    <strong >Copyright &copy; 2019-2020 <a href="http://adminlte.io">DGFOMR</a>.</strong>
     All rights reserved.
   
   </footer>

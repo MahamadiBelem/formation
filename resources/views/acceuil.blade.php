@@ -4,7 +4,7 @@
 <div style="margin-top: 10%;margin-left:-40%; ">
 	<div class="row">
     <div class="col-md-3 col-sm-6 col-12">
-      <a href="#">
+      <a href="{{url('/formation')}}">
       <div class="info-box">
         <span class="info-box-icon bg-info">
          <img src="{{asset('img/icon_formation.png')}}" alt="">

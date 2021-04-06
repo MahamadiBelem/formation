@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('acceuil');
 });
+Route::get('/formation',function(){
+return view('acceuilformation');
+});
 
+Route::get('/regions',function(){
+    return view('formations.regions');
+});
