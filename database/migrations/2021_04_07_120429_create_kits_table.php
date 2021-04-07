@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVillagesTable extends Migration
+class CreateKitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('villages', function (Blueprint $table) {
+        Schema::create('kits', function (Blueprint $table) {
            
            $table->bigIncrements('id');
-           $table->string('libelleVillages', 255)->default('text');
-           $table->bigInteger('commune_id')->unsigned();
-           $table->foreign('commune_id')->references('id')->on('communes')->onDelete('cascade');
+           $table->string('libelleKits', 255)->nullable()->default('text');
+           $table->integer('quantites')->unsigned()->nullable()->default(12);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('villages');
+        Schema::dropIfExists('kits');
     }
 }

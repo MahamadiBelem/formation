@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegionsTable extends Migration
+class CreateDomainesInstallationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateRegionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('region', function (Blueprint $table) {
+        Schema::create('domaines_installations', function (Blueprint $table) {
+            
             $table->bigIncrements('id');
-            $table->string("libelleRegion");
+            $table->string('libelleDomaine', 255)->nullable()->default('text');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateRegionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('region');
+        Schema::dropIfExists('domaines_installations');
     }
 }

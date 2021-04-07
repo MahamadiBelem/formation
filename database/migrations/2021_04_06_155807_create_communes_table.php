@@ -14,7 +14,10 @@ class CreateCommunesTable extends Migration
     public function up()
     {
         Schema::create('communes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('province_id')->unsigned();
+            $table->string('libelleCommune');
+            $table->foreign('province_id')->references('id')->on('province')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Villages extends Model
 {
     use HasFactory;
+
+    /**
+     * Get the Commune that owns the Villages
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Commune(): BelongsTo
+    {
+        return $this->belongsTo(Communes::class);
+    }
 }
