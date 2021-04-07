@@ -13,11 +13,11 @@ class CreateProvincesTable extends Migration
      */
     public function up()
     {
-        Schema::create('province', function (Blueprint $table) {
+        Schema::create('provinces', function (Blueprint $table) {
            $table->bigIncrements('id');
            $table->bigInteger('region_id')->unsigned();
            $table->string('libelleProvince', 255)->default('text');
-           $table->foreign('region_id')->references('id')->on('region')->onDelete('cascade');
+           $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
            $table->timestamps();
         });
     }

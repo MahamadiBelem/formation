@@ -18,7 +18,7 @@ class RegionsController extends Controller
 
       $regions=Regions::all();
 
-        return view('formations.region',compact('regions'));
+        return view('formations.regions',compact('regions'));
 
 
     }

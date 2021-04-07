@@ -20,6 +20,9 @@ class CreateFormationsTable extends Migration
             $table->bigInteger('type_formation_id')->default(12);
             
             
+            $table->bigInteger('source_financement_id')->nullable()->default(12);
+            
+            
             $table->foreign('source_financement_id')->references('id')->on('source_financements')->onDelete('cascade');
             
            

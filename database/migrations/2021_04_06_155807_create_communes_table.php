@@ -17,7 +17,7 @@ class CreateCommunesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('province_id')->unsigned();
             $table->string('libelleCommune');
-            $table->foreign('province_id')->references('id')->on('province')->onDelete('cascade');
+            $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
             $table->timestamps();
         });
     }
