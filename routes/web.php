@@ -20,6 +20,4 @@ Route::get('/formation',function(){
 return view('acceuilformation');
 });
 
-Route::get('/regions',function(){
-    return view('formations.regions');
-});
+Route::get('/regions','RegionsController@index');
