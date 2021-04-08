@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Provinces extends Model
 {
     use HasFactory;
+    protected $table='provinces';
 
-    public function Region()
+    public function region()
     {
-        $this->belongsTo(Region::Class);
+       return $this->belongsTo(Regions::class);
     }
 
-    public function Communes()
+    public function communes()
     {
-        return $this->hasMany(Communes::Class);
+        return $this->hasMany(Communes::class);
     }
 }

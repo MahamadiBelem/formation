@@ -22,24 +22,28 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Regions </th>
+                  <th>Provinces </th>
+                  <th>Communes </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach ($regions as $region)
+                  @foreach ($communes as $commune)
                   <tr>
-                    <td>{{$region->libelleRegion}}</td>
-                      <td>
-                          <button  data-toggle="modal" data-target="{{'#modifier'.$region->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
-                          <button data-toggle="modal" data-target="{{'#suprimer'.$region->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
+                    <td>{{$commune->province->region->libelleRegion}}</td>
+                    <td>{{$commune->province->libelleProvince}}</td>
+                    <td>{{$commune->libelleCommune}}</td> 
+                    <td>
+                          <button  data-toggle="modal" data-target="{{'#modifier'.$commune->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
+                          <button data-toggle="modal" data-target="{{'#suprimer'.$commune->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
                       
-                        <div class="modal fade" id="{{'modifier'.$region->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="{{'modifier'.$commune->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
-                            <form action="{{url('/update-region')}}" method="POST">
+                            <form action="{{url('/update-communes/'.$commune->id)}}" method="POST">
                               @csrf
                             <div class="modal-content">
                               <div class="modal-header modal-header-designed">
-                                <h5 class="modal-title" id="exampleModalLabel">Ajouter une region</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Modifier une province</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
@@ -47,15 +51,28 @@
                               <div class="modal-body">
                                 <div class="row">
                                   <div class="col-6">
-                                    <input hidden name="id" value="{{$region->id}}" type="text">
+                                    <input hidden name="id"  value="{{$commune->id}}" type="text">
                                   </div>
                                 </div>
                                   <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">Region</label>
-                                        <input type="text" value="{{$region->libelleRegion}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <label for="">Province</label>
+                                        <input type="text"  value="{{$commune->libelleCommune}}" name="libelleCommune" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <label for="regions">Province</label>
+                                        <select id="regions" class="form-control" name="libelleProvince">
+                                          @foreach ($provinces as $province)
+                                          <option @if ($commune->province->id==$province->id)
+                                              selected
+                                          @endif value="{{$province->id}}">{{$province->libelleProvince}}</option>
+                                          @endforeach
+                                        </select>
                                       </div>
                                     </div>
                                   </div>
@@ -71,11 +88,11 @@
                         </div>
                       
 
-    <div class="modal fade" id="{{'suprimer'.$region->id}}">
+    <div class="modal fade" id="{{'suprimer'.$commune->id}}">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header modal-delete-header">
-              <h4 class="modal-title">Supprimer une region</h4>
+              <h4 class="modal-title">Supprimer une commune</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -92,7 +109,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-sm-12  col-md-12">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                          <a href="{{url('/delete-region/'.$region->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                          <a href="{{url('/delete-communes/'.$commune->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                         </div>
                       </div>
                    </div>
@@ -110,10 +127,9 @@
                         </td>
                     </tr>
                   @endforeach
-                 
+              
                
               </table>
-              {{ $regions->onEachSide(5)->links() }}
         </div>
     </div>
   
@@ -123,11 +139,11 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <form action="{{url('/save-province')}}" method="POST">
+    <form action="{{url('/save-communes')}}" method="POST">
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter une region</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter une province</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -135,10 +151,20 @@
       <div class="modal-body">
         
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-6">
               <div class="form-group">
-                <label for="">Region</label>
-                <input type="text" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                <label for="regions">Province</label>
+                <select id="regions" class="form-control" name="libelleRegion">
+                  @foreach ($provinces as $province)
+                  <option value="{{$province->id}}">{{$province->libelleProvince}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Commune</label>
+                <input type="text" name="libelleCommune" id="" class="form-control" placeholder="la province" aria-describedby="helpId">
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
               </div>
             </div>

@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Regions extends Model
 {
     use HasFactory;
+    protected $table='regions';
 
     public function provinces() 
     {
-        return $this->hasMany(Province::Class);
+        
+        return $this->hasMany(Provinces::class);
     }
 }

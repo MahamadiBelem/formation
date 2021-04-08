@@ -16,7 +16,7 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::all();
+      $regions=Regions::paginate(5);
 
         return view('formations.regions',compact('regions'));
 
@@ -42,6 +42,14 @@ class RegionsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $region=new Regions();
+
+        $region->libelleRegion=$request->input('libelleRegion');
+
+        $region->save();
+
+        return redirect('/regions');
     }
 
     /**
@@ -64,6 +72,8 @@ class RegionsController extends Controller
     public function edit(Regions $regions)
     {
         //
+
+
     }
 
     /**
@@ -73,8 +83,17 @@ class RegionsController extends Controller
      * @param  \App\Models\Regions  $regions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Regions $regions)
+    public function update(Request $request)
     {
+
+        $id=$request->input('id');
+        $region=Regions::findOrFail($id);
+        $region->libelleRegion=$request->input('libelleRegion');
+
+        $region->save();
+
+        return redirect('/regions');
+
         //
     }
 
@@ -84,8 +103,14 @@ class RegionsController extends Controller
      * @param  \App\Models\Regions  $regions
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Regions $regions)
+    public function destroy( $id)
     {
         //
+
+        $region=Regions::findOrFail($id);
+
+        $region->delete();
+        return redirect('/regions');
+
     }
 }

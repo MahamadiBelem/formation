@@ -9,10 +9,11 @@ class Communes extends Model
 {
     use HasFactory;
 
+    protected $table='communes';
     
-    public function Province()
+    public function province()
     {
-        return $this->belongsTo(Province::Class);
+        return $this->belongsTo(Provinces::Class);
     }
     public function Villages()
     {

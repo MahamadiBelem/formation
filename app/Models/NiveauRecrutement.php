@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class NiveauRecrutement extends Model
 {
+    
     use HasFactory;
 }

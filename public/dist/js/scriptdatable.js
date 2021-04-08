@@ -8,7 +8,7 @@ $(document).ready(function() {
     $('#typeenvoyeurTable').DataTable(
       
       {
-        "paging": true,
+        "paging": false,
         "pageLength": 5,
         "lengthChange": true,
         "searching": true,

@@ -15,3 +15,8 @@
     background-color: #926d27;
     color: white;
 }
+.modal-delete-header
+{
+    background-color: red;
+    color: white;
+}

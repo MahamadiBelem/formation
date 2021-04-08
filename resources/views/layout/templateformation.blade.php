@@ -111,8 +111,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
-            <a class="dropdown-item" href="#">Provinces</a>
-            <a class="dropdown-item" href="#">Communes</a>
+            <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
+            <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
             <a class="dropdown-item" href="#">Villages</a>
           </div>
         </li>
