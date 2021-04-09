@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regions;
 use Illuminate\Http\Request;
+use App\Models\PublicCible;
 
-class RegionsController extends Controller
+class PublicCibleController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -16,12 +16,9 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::paginate(5);
-      
-
-        return view('formations.regions',compact('regions'));
-
-
+        $publics=PublicCible::paginate(5);
+    
+        return view('formations.publiccible',compact('publics'));
     }
 
     /**
@@ -44,22 +41,22 @@ class RegionsController extends Controller
     {
         //
 
-        $region=new Regions();
+        $public=new PublicCible();
 
-        $region->libelleRegion=$request->input('libelleRegion');
+        $public->libellePublicCible=$request->input('libellePublicCible');
 
-        $region->save();
+        $public->save();
 
-        return redirect('/regions');
+        return redirect('/public-cible');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Regions $regions)
+    public function show($id)
     {
         //
     }
@@ -67,51 +64,48 @@ class RegionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regions $regions)
+    public function edit($id)
     {
         //
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-
-        $id=$request->input('id');
-        $region=Regions::findOrFail($id);
-        $region->libelleRegion=$request->input('libelleRegion');
-
-        $region->save();
-
-        return redirect('/regions');
-
         //
+
+        $public=PublicCible::find($request->input('id'));
+
+        $public->libellePublicCible=$request->input('libellePublicCible');
+        $public->save();
+
+        return redirect('/public-cible');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
 
-        $region=Regions::findOrFail($id);
+        $public=PublicCible::find($id);
 
-        $region->delete();
-        return redirect('/regions');
+        $public->delete();
+
+        return redirect('/public-cible');
 
     }
 }

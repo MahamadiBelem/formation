@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regions;
 use Illuminate\Http\Request;
-
-class RegionsController extends Controller
+use App\Models\Villages;
+use App\Models\Communes;
+class VillageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,10 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::paginate(5);
-      
+        $villages=Villages::paginate(5);
+        $communes=Communes::all();
 
-        return view('formations.regions',compact('regions'));
-
-
+        return view('formations.villages',compact(['villages','communes']));
     }
 
     /**
@@ -44,22 +42,25 @@ class RegionsController extends Controller
     {
         //
 
-        $region=new Regions();
+        $villages=new Villages();
+        $commune=Communes::find($request->input('libelleCommune'));
+        $villages->libelleVillages=$request->input('libelleVillage');
 
-        $region->libelleRegion=$request->input('libelleRegion');
+        $villages->commune()->associate($commune);
 
-        $region->save();
+        $villages->save();
 
-        return redirect('/regions');
+        return redirect('/villages');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Regions $regions)
+    public function show($id)
     {
         //
     }
@@ -67,51 +68,49 @@ class RegionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regions $regions)
+    public function edit($id)
     {
         //
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
-        $id=$request->input('id');
-        $region=Regions::findOrFail($id);
-        $region->libelleRegion=$request->input('libelleRegion');
-
-        $region->save();
-
-        return redirect('/regions');
-
         //
+
+        $commune=$request->input('libelleCommune');
+        $village=Villages::find($id);
+        $village->libelleVillages=$request->input('libelleVillage');
+
+        $village->commune()->associate($commune);
+        $village->save();
+        return redirect('/villages');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
 
-        $region=Regions::findOrFail($id);
+        $village=Villages::find($id);
 
-        $region->delete();
-        return redirect('/regions');
+        $village->delete();
+
+        return redirect('/villages');
 
     }
 }

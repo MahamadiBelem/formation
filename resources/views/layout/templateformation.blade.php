@@ -90,19 +90,19 @@
            <i class="fa fa-home fa-2x icon_color"></i> Centres de formation
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Spécialités</a>
-            <a class="dropdown-item" href="#">Contributions</a>
-            <a class="dropdown-item" href="#">Publique cible</a>
-            <a class="dropdown-item" href="#">Niveau de recrutement</a>
-            <a class="dropdown-item" href="#">Conditions d'accès</a>
-            <a class="dropdown-item" href="#">Approches pedagogiques</a>
-            <a class="dropdown-item" href="#">Domaines de formations</a>
-            <a class="dropdown-item" href="#">Type de formations</a>
-            <a class="dropdown-item" href="#">Regimes</a>
-            <a class="dropdown-item" href="#">Niveau d'instructions</a>
-            <a class="dropdown-item" href="#">Promoteurs</a>
-            <a class="dropdown-item" href="#">Gestionnaires</a>
-            <a class="dropdown-item" href="#">Centre de formations</a>
+            <a class="dropdown-item" href="{{url('/specialites')}}">Spécialités</a>
+            <a class="dropdown-item" href="{{url('/contributions')}}">Contributions</a>
+            <a class="dropdown-item" href="{{url('/public-cible')}}">Publique cible</a>
+            <a class="dropdown-item" href="{{url('niveau-recrutement')}}">Niveau de recrutement</a>
+            <a class="dropdown-item" href="{{url('/condition-access')}}">Conditions d'accès</a>
+            <a class="dropdown-item" href="{{url('/approche-pedagogique')}}">Approches pedagogiques</a>
+            <a class="dropdown-item" href="{{url('/domaine-formation')}}">Domaines de formations</a>
+            <a class="dropdown-item" href="{{'/type-formation'}}">Type de formations</a>
+            <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
+            <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
+            <a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
+            <a class="dropdown-item" href="{{url('/gestionnaire')}}">Gestionnaires</a>
+            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -113,7 +113,7 @@
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
-            <a class="dropdown-item" href="#">Villages</a>
+            <a class="dropdown-item" href="{{url('/villages')}}">Villages</a>
           </div>
         </li>
       </ul>
@@ -195,7 +195,7 @@
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('dist/js/saveComposition.js')}}"></script>
-
+<script src="{{asset('dist/js/selectscript.js')}}"></script>
 </body>
 </html>
 

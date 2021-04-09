@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regions;
 use Illuminate\Http\Request;
-
-class RegionsController extends Controller
+use App\Models\Specialites;
+class SpecialiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +15,9 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::paginate(5);
-      
+        $specialites=Specialites::paginate(5);
 
-        return view('formations.regions',compact('regions'));
-
+        return view('formations.specialite',compact('specialites'));
 
     }
 
@@ -44,22 +41,21 @@ class RegionsController extends Controller
     {
         //
 
-        $region=new Regions();
+        $specialite= new Specialites();
+        $specialite->libelleSpecialite=$request->input('libelleSpecialite');
+        $specialite->save();
+        return redirect('/specialites');
 
-        $region->libelleRegion=$request->input('libelleRegion');
 
-        $region->save();
-
-        return redirect('/regions');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Regions $regions)
+    public function show($id)
     {
         //
     }
@@ -67,51 +63,49 @@ class RegionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regions $regions)
+    public function edit($id)
     {
         //
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-
-        $id=$request->input('id');
-        $region=Regions::findOrFail($id);
-        $region->libelleRegion=$request->input('libelleRegion');
-
-        $region->save();
-
-        return redirect('/regions');
-
         //
+
+        $specialite=Specialites::find($request->input('id'));
+        $specialite->libelleSpecialite=$request->input('libelleSpecialite');
+
+        $specialite->save();
+
+        return redirect('/specialites');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
 
-        $region=Regions::findOrFail($id);
+        $specialite=Specialites::find($id);
 
-        $region->delete();
-        return redirect('/regions');
+        $specialite->delete();
+
+        return redirect('/specialites');
 
     }
 }

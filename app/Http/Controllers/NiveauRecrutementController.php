@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regions;
 use Illuminate\Http\Request;
-
-class RegionsController extends Controller
+use App\Models\NiveauRecrutement;
+class NiveauRecrutementController extends Controller
 {
-    /**
+    
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -16,12 +16,9 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::paginate(5);
-      
-
-        return view('formations.regions',compact('regions'));
-
-
+        $niveaus=NiveauRecrutement::paginate(5);
+    
+        return view('formations.niveaurecrutement',compact('niveaus'));
     }
 
     /**
@@ -44,22 +41,22 @@ class RegionsController extends Controller
     {
         //
 
-        $region=new Regions();
+        $niveau=new NiveauRecrutement();
 
-        $region->libelleRegion=$request->input('libelleRegion');
+        $niveau->libelleNiveauRecrutement=$request->input('libelleNiveauRecrutement');
 
-        $region->save();
+        $niveau->save();
 
-        return redirect('/regions');
+        return redirect('/niveau-recrutement');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Regions $regions)
+    public function show($id)
     {
         //
     }
@@ -67,51 +64,48 @@ class RegionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regions $regions)
+    public function edit($id)
     {
         //
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-
-        $id=$request->input('id');
-        $region=Regions::findOrFail($id);
-        $region->libelleRegion=$request->input('libelleRegion');
-
-        $region->save();
-
-        return redirect('/regions');
-
         //
+
+        $niveau=NiveauRecrutement::find($request->input('id'));
+
+        $niveau->libelleNiveauRecrutement=$request->input('libelleNiveauRecrutement');
+        $niveau->save();
+
+        return redirect('/niveau-recrutement');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Regions  $regions
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
 
-        $region=Regions::findOrFail($id);
+        $niveau=NiveauRecrutement::find($id);
 
-        $region->delete();
-        return redirect('/regions');
+        $niveau->delete();
+
+        return redirect('/niveau-recrutement');
 
     }
 }
