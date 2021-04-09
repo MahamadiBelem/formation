@@ -71,3 +71,6 @@ Route::post('/save-niveau-recrutement','NiveauRecrutementController@store');
 Route::post('/update-niveau-recrutement','NiveauRecrutementController@update');
 
 Route::get('/delete-niveau-recrutement/{id}','NiveauRecrutementController@destroy');
+
+Route::get('/approche-pedagogique','ApprochePedagogiqueController@index');
+Route::post('/save-approche-pedagogique','ApprochePedagogiqueController@store');

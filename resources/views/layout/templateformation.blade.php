@@ -37,7 +37,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
@@ -82,7 +82,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Formateurs</a>
             <a class="dropdown-item" href="#">Apprenant(es)</a>
-            <a class="dropdown-item" href="#">Formations</a>
+            <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -117,7 +117,7 @@
           </div>
         </li>
       </ul>
-      
+
     </div>
 
   </nav>
@@ -125,7 +125,7 @@
 
   <!-- Main Sidebar Container -->
 
-  
+
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4">
 
@@ -149,7 +149,7 @@
   <footer  style="background-color: #926d27; color: white;height: 100px;" align='center'>
     <strong >Copyright &copy; 2019-2020 <a href="http://adminlte.io">DGFOMR</a>.</strong>
     All rights reserved.
-  
+
   </footer>
 </div>
 <!-- ./wrapper -->
