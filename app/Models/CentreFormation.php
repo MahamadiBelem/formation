@@ -59,4 +59,9 @@ class CentreFormation extends Model
     {
        return $this->belongsTo(Regime::class);
     }
+
+    public function affecterapprenants()
+    {
+        return $this->hasMany(AffecterApprenants::class);
+    }
 }

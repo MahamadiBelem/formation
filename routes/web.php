@@ -135,4 +135,5 @@ Route::post('/update-apprenant/{id}','ApprenantController@update');
 Route::get('/delete-apprenant/{id}','ApprenantController@destroy');
 Route::get('/apprenant-view-detail/{id}','ApprenantController@show');
 
-
+Route::get('/inscription','AffecterApprenantController@index');
+Route::get('/display-inscription-form','AffecterApprenantController@create');

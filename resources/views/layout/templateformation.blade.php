@@ -57,7 +57,7 @@
              <i class="fa fa-link fa-2x icon_color"></i> Affectations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Affecter un apprenant</a>
+            <a class="dropdown-item" href="{{url('/inscription')}}">Affecter un apprenant</a>
             <a class="dropdown-item" href="#">Affecter un formateur</a>
             <a class="dropdown-item" href="#">Affecter une formation</a>
           </div>

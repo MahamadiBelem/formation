@@ -20,4 +20,11 @@ class Apprenants extends Model
     {
        return $this->belongsTo(Communes::class,'commune_id');
     }
+
+    
+    public function affecterapprenants()
+    {
+        return $this->hasMany(AffecterApprenants::class);
+    }
+    
 }
