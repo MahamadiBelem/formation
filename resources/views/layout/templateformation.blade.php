@@ -195,7 +195,7 @@
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('dist/js/saveComposition.js')}}"></script>
-
+<script src="{{asset('dist/js/select2digned.js')}}"></script>
 </body>
 </html>
 
