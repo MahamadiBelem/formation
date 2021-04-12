@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\Formateurs;
+class FormateurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
+        $formateurs=Formateurs::paginate(10);
 
-        return view('formations.approchepedagogique',compact('aproches'));
-
+        return view('formations.formateurs',compact('formateurs'));
 
     }
 
@@ -42,15 +41,15 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $formateur=new Formateurs();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $formateur->nomComplet=$request->input('nomComplet');
+        $formateur->emploi=$request->input('emploi');
+        $formateur->contact=$request->input('contact');
 
+        $formateur->save();
 
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
-
+        return redirect('/formateurs');
     }
 
     /**
@@ -82,16 +81,18 @@ class ApprochePedagogiqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
+        $formateur= Formateurs::find($id);
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $formateur->nomComplet=$request->input('nomComplet');
+        $formateur->emploi=$request->input('emploi');
+        $formateur->contact=$request->input('contact');
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $formateur->save();
 
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        return redirect('/formateurs');
     }
 
     /**
@@ -104,9 +105,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
+        $formateur= Formateurs::find($id);
+        $formateur->delete();
+        return redirect('/formateurs');
 
     }
 }

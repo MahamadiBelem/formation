@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Contributions extends Model
 {
     use HasFactory;
+
+    protected $table='contributions';
+
+    public function centreformation()
+    {
+        return $this->belongsToMany(Centreformation::class);
+    }
 }

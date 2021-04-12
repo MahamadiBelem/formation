@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\DomaineFormation;
+class DomaineFormationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
+        $domaines=DomaineFormation::paginate(5);
 
-        return view('formations.approchepedagogique',compact('aproches'));
-
-
+        return view('formations.domaineformation',compact('domaines'));
     }
 
     /**
@@ -42,15 +40,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $domaine=new DomaineFormation() ;
+        $domaine->libelleDomaineFormation=$request->input('libelleDomaineFormation');
+        $domaine->save();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
-
+        return redirect('/domaine-formation');
     }
 
     /**
@@ -86,12 +80,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $domaine=DomaineFormation::find($request->input('id'));
+        $domaine->libelleDomaineFormation=$request->input('libelleDomaineFormation');
+        $domaine->save();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        return redirect('/domaine-formation');
     }
 
     /**
@@ -104,9 +97,10 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
+        $domaine=DomaineFormation::find($id);
+
+        $domaine->delete();
+        return redirect('/domaine-formation');
 
     }
 }

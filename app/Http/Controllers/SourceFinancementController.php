@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\SourceFinancements;
+class SourceFinancementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
+        $sources=SourceFinancements::paginate(5);
 
-        return view('formations.approchepedagogique',compact('aproches'));
-
-
+        return view('formations.sourcefinancement',compact('sources'));
     }
 
     /**
@@ -42,14 +40,13 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $source=new SourceFinancements();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $source->libelleSourceFinancement=$request->input('libelleSourceFinancement');
 
+        $source->save();
 
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
+        return redirect('/source-financement');
 
     }
 
@@ -82,16 +79,17 @@ class ApprochePedagogiqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $source= SourceFinancements::find($id);
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $source->libelleSourceFinancement=$request->input('libelleSourceFinancement');
 
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        $source->save();
+
+        return redirect('/source-financement');
     }
 
     /**
@@ -104,9 +102,8 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
-
+        $source= SourceFinancements::find($id);
+        $source->delete();
+        return redirect('/source-financement');
     }
 }

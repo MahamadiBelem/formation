@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\Gestionnaire;
+class GestionnaireController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
+        $gestionnaires=Gestionnaire::paginate(5);
 
-        return view('formations.approchepedagogique',compact('aproches'));
-
+        return view('formations.gestionnaires',compact('gestionnaires'));
 
     }
 
@@ -42,15 +41,15 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $gestionnaire=new Gestionnaire();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $gestionnaire->nomComplet=$request->input('nomComplet');
+        $gestionnaire->contact=$request->input('contact');
+        $gestionnaire->emploi=$request->input('emploi');
 
+        $gestionnaire->save();
 
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
-
+        return redirect('/gestionnaires');
     }
 
     /**
@@ -82,16 +81,19 @@ class ApprochePedagogiqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $gestionnaires= Gestionnaire::find($id);
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
+        $gestionnaires->nomComplet=$request->input('nomComplet');
+        $gestionnaires->contact=$request->input('contact');
+        $gestionnaires->emploi=$request->input('emploi');
 
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        $gestionnaires->save();
+
+        return redirect('/gestionnaires');
     }
 
     /**
@@ -104,9 +106,10 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
+        $gestionnaires= Gestionnaire::find($id);
 
+        $gestionnaires->delete();
+
+        return redirect('/gestionnaires');
     }
 }

@@ -67,9 +67,8 @@
            <i class="fa fa-users fa-2x icon_color"></i> Installations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Domaine d'installation</a>
+            <a class="dropdown-item" href="#">type d'installation</a>
             <a class="dropdown-item" href="#">Kits</a>
-            <a class="dropdown-item" href="#">Source financement</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Fin de formation</a>
             <a class="dropdown-item" href="#">Installation</a>
@@ -80,14 +79,15 @@
            <i class="fa fa-graduation-cap fa-2x icon_color"></i> Formations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Formateurs</a>
-            <a class="dropdown-item" href="#">Apprenant(es)</a>
+            <a class="dropdown-item" href="{{url('/formateurs')}}">Formateurs</a>
+            <a class="dropdown-item" href="{{url('/apprenants')}}">Apprenant(es)</a>
             <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
+            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-home fa-2x icon_color"></i> Centres de formation
+           <i class="fa fa-cog fa-2x icon_color"></i> Parametrages
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/specialites')}}">Spécialités</a>
@@ -96,13 +96,14 @@
             <a class="dropdown-item" href="{{url('niveau-recrutement')}}">Niveau de recrutement</a>
             <a class="dropdown-item" href="{{url('/condition-access')}}">Conditions d'accès</a>
             <a class="dropdown-item" href="{{url('/approche-pedagogique')}}">Approches pedagogiques</a>
-            <a class="dropdown-item" href="{{url('/domaine-formation')}}">Domaines de formations</a>
+            <a class="dropdown-item" href="{{url('/domaine-formation')}}">domaine de formations</a>
             <a class="dropdown-item" href="{{'/type-formation'}}">Type de formations</a>
             <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
             <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
             <a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
-            <a class="dropdown-item" href="{{url('/gestionnaire')}}">Gestionnaires</a>
-            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
+            <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a>
+            <a class="dropdown-item" href="{{url('/source-financement')}}">Source financement</a>
+           
           </div>
         </li>
         <li class="nav-item dropdown">

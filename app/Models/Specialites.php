@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Specialites extends Model
 {
     use HasFactory;
+
+    protected  $table='specialites';
+
+    public function centreformation()
+    {
+        return $this->belongsToMany(Centreformation::class);
+    }
 }

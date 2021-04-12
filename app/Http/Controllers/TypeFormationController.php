@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\TypeFormation;
+class TypeFormationController extends Controller
 {
-    /**
+    
+       /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,11 +16,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
+        $types=TypeFormation::paginate(5);
 
-        return view('formations.approchepedagogique',compact('aproches'));
-
-
+        return view('formations.typeformation',compact('types'));
     }
 
     /**
@@ -42,15 +41,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $type=new TypeFormation() ;
+        $type->libelleTypeFormation=$request->input('libelleTypeFormation');
+        $type->save();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
-
+        return redirect('/type-formation');
     }
 
     /**
@@ -86,12 +81,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $type=TypeFormation::find($request->input('id'));
+        $type->libelleTypeFormation=$request->input('libelleTypeFormation');
+        $type->save();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        return redirect('/type-formation');
     }
 
     /**
@@ -104,9 +98,10 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
+        $type=TypeFormation::find($id);
+
+        $type->delete();
+        return redirect('/type-formation');
 
     }
 }

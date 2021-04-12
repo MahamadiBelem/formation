@@ -13,7 +13,7 @@ class CreateNiveauRecrutementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('niveau_recrutements', function (Blueprint $table) {
+        Schema::create('niveau_recrutement', function (Blueprint $table) {
             
             $table->bigIncrements('id');
             $table->string('libelleNiveauRecrutement', 255)->default('text');
@@ -28,6 +28,6 @@ class CreateNiveauRecrutementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('niveau_recrutements');
+        Schema::dropIfExists('niveau_recrutement');
     }
 }

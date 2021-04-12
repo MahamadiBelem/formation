@@ -9,4 +9,11 @@ class NiveauRecrutement extends Model
 {
     
     use HasFactory;
+
+    protected $table='niveau_recrutement';
+
+    public function centreformation()
+    {
+        return $this->belongsToMany(Centreformation::class);
+    }
 }

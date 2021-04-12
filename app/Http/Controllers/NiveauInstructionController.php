@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ApprochePedagogique;
-class ApprochePedagogiqueController extends Controller
+use App\Models\NiveauInstructions;
+class NiveauInstructionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,9 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproches=ApprochePedagogique::paginate(5);
-
-        return view('formations.approchepedagogique',compact('aproches'));
-
-
+        $niveaus=NiveauInstructions::paginate(5);
+        return view('formations.niveauinstructions',compact('niveaus'));
+        
     }
 
     /**
@@ -42,15 +40,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=new ApprochePedagogique();
+        $niveaus=new  NiveauInstructions();
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-
-        $aproche->save();
-
-        return redirect('/approche-pedagogique');
-
+        $niveaus->libelleNiveauInstruction=$request->input('libelleNiveauInstruction');
+        $niveaus->save();
+        return redirect('/niveau-instructions');
     }
 
     /**
@@ -86,12 +80,11 @@ class ApprochePedagogiqueController extends Controller
     {
         //
 
-        $aproche=ApprochePedagogique::find($request->input('id'));
+        $niveaus=  NiveauInstructions::find($request->input('id'));
 
-        $aproche->approchePedagogique=$request->input('approchePedagogique');
-
-        $aproche->save();
-        return redirect('/approche-pedagogique');
+        $niveaus->libelleNiveauInstruction=$request->input('libelleNiveauInstruction');
+        $niveaus->save();
+        return redirect('/niveau-instructions');
     }
 
     /**
@@ -103,10 +96,12 @@ class ApprochePedagogiqueController extends Controller
     public function destroy($id)
     {
         //
+        $niveaus=  NiveauInstructions::find($id);
+       
+        $niveaus->delete();
+        return redirect('/niveau-instructions');
 
-        $aproche=ApprochePedagogique::find($id);
-        $aproche->delete();
-        return redirect('/approche-pedagogique');
+
 
     }
 }

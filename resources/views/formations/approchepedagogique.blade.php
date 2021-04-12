@@ -35,7 +35,7 @@
 
                         <div class="modal fade" id="{{'modifier'.$aproche->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
-                            <form action="{{url('/update-regime')}}" method="POST">
+                            <form action="{{url('/update-approche-pedagogique')}}" method="POST">
                               @csrf
                             <div class="modal-content">
                               <div class="modal-header modal-header-designed">
@@ -92,7 +92,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-sm-12  col-md-12">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                          <a href="{{url('/delete-regime/'.$aproche->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                          <a href="{{url('/delete-approche-pedagogique/'.$aproche->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                         </div>
                       </div>
                    </div>
