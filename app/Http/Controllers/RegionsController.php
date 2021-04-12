@@ -17,6 +17,7 @@ class RegionsController extends Controller
         //
 
       $regions=Regions::paginate(5);
+      
 
         return view('formations.regions',compact('regions'));
 
@@ -103,7 +104,7 @@ class RegionsController extends Controller
      * @param  \App\Models\Regions  $regions
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
         //
 

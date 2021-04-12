@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Gestionnaire extends Model
 {
     use HasFactory;
+
+    protected $table='gestionnaires';
+
+    public function centreformation()
+    {
+        return $this->hasMany(CentreFormation::Class);
+    }
 }

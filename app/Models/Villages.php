@@ -14,7 +14,7 @@ class Villages extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Commune(): BelongsTo
+    public function commune()
     {
         return $this->belongsTo(Communes::class);
     }

@@ -13,7 +13,7 @@ class CreateCentreFormationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('centre_formations', function (Blueprint $table) {
+        Schema::create('centre_formation', function (Blueprint $table) {
             $table->bigIncrements('id');
             
             $table->bigInteger('commune_id')->default(12);
@@ -44,6 +44,6 @@ class CreateCentreFormationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('centre_formations');
+        Schema::dropIfExists('centre_formation');
     }
 }

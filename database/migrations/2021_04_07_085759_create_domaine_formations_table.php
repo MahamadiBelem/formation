@@ -13,10 +13,10 @@ class CreateDomaineFormationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('domaine_formations', function (Blueprint $table) {
+        Schema::create('domaine_formation', function (Blueprint $table) {
            
            $table->bigIncrements('id');
-           $table->string('DomainesFormations', 255)->default('text');
+           $table->string('libelleDomaineFormation', 255)->default('text');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDomaineFormationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('domaine_formations');
+        Schema::dropIfExists('domaine_formation');
     }
 }

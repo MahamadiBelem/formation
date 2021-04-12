@@ -15,9 +15,20 @@ class Communes extends Model
     {
         return $this->belongsTo(Provinces::Class);
     }
-    public function Villages()
+    public function villages()
     {
         return $this->hasMany(Villages::Class);
+    }
+
+    public function centreformation()
+    {
+        return $this->hasMany(CentreFormation::Class);
+    }
+
+    public function apprenant() 
+    {
+        
+        return $this->hasMany(Apprenants::class);
     }
     
   

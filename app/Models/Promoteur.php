@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Promoteur extends Model
 {
     use HasFactory;
+
+    protected $table='promoteurs';
+
+    public function centreformation()
+    {
+        return $this->hasMany(CentreFormation::Class);
+    }
 }

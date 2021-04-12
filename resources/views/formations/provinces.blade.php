@@ -128,6 +128,8 @@
               
                
               </table>
+
+              {{ $provinces->onEachSide(5)->links() }}
         </div>
     </div>
   
@@ -152,7 +154,7 @@
             <div class="col-6">
               <div class="form-group">
                 <label for="regions">Region</label>
-                <select id="regions" class="form-control" name="libelleRegion">
+                <select id="regionsadd" class="form-control" name="libelleRegion">
                   @foreach ($regions as $region)
                   <option value="{{$region->id}}">{{$region->libelleRegion}}</option>
                   @endforeach

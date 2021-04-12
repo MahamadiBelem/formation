@@ -37,7 +37,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
@@ -67,9 +67,8 @@
            <i class="fa fa-users fa-2x icon_color"></i> Installations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Domaine d'installation</a>
+            <a class="dropdown-item" href="#">type d'installation</a>
             <a class="dropdown-item" href="#">Kits</a>
-            <a class="dropdown-item" href="#">Source financement</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Fin de formation</a>
             <a class="dropdown-item" href="#">Installation</a>
@@ -80,29 +79,31 @@
            <i class="fa fa-graduation-cap fa-2x icon_color"></i> Formations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Formateurs</a>
-            <a class="dropdown-item" href="#">Apprenant(es)</a>
-            <a class="dropdown-item" href="#">Formations</a>
+            <a class="dropdown-item" href="{{url('/formateurs')}}">Formateurs</a>
+            <a class="dropdown-item" href="{{url('/apprenants')}}">Apprenant(es)</a>
+            <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
+            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-home fa-2x icon_color"></i> Centres de formation
+           <i class="fa fa-cog fa-2x icon_color"></i> Parametrages
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Spécialités</a>
-            <a class="dropdown-item" href="#">Contributions</a>
-            <a class="dropdown-item" href="#">Publique cible</a>
-            <a class="dropdown-item" href="#">Niveau de recrutement</a>
-            <a class="dropdown-item" href="#">Conditions d'accès</a>
-            <a class="dropdown-item" href="#">Approches pedagogiques</a>
-            <a class="dropdown-item" href="#">Domaines de formations</a>
-            <a class="dropdown-item" href="#">Type de formations</a>
-            <a class="dropdown-item" href="#">Regimes</a>
-            <a class="dropdown-item" href="#">Niveau d'instructions</a>
-            <a class="dropdown-item" href="#">Promoteurs</a>
-            <a class="dropdown-item" href="#">Gestionnaires</a>
-            <a class="dropdown-item" href="#">Centre de formations</a>
+            <a class="dropdown-item" href="{{url('/specialites')}}">Spécialités</a>
+            <a class="dropdown-item" href="{{url('/contributions')}}">Contributions</a>
+            <a class="dropdown-item" href="{{url('/public-cible')}}">Publique cible</a>
+            <a class="dropdown-item" href="{{url('niveau-recrutement')}}">Niveau de recrutement</a>
+            <a class="dropdown-item" href="{{url('/condition-access')}}">Conditions d'accès</a>
+            <a class="dropdown-item" href="{{url('/approche-pedagogique')}}">Approches pedagogiques</a>
+            <a class="dropdown-item" href="{{url('/domaine-formation')}}">domaine de formations</a>
+            <a class="dropdown-item" href="{{'/type-formation'}}">Type de formations</a>
+            <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
+            <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
+            <a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
+            <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a>
+            <a class="dropdown-item" href="{{url('/source-financement')}}">Source financement</a>
+           
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -113,11 +114,11 @@
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
-            <a class="dropdown-item" href="#">Villages</a>
+            <a class="dropdown-item" href="{{url('/villages')}}">Villages</a>
           </div>
         </li>
       </ul>
-      
+
     </div>
 
   </nav>
@@ -125,7 +126,7 @@
 
   <!-- Main Sidebar Container -->
 
-  
+
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4">
 
@@ -149,7 +150,7 @@
   <footer  style="background-color: #926d27; color: white;height: 100px;" align='center'>
     <strong >Copyright &copy; 2019-2020 <a href="http://adminlte.io">DGFOMR</a>.</strong>
     All rights reserved.
-  
+
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -195,7 +196,11 @@
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('dist/js/saveComposition.js')}}"></script>
+<<<<<<< HEAD
 <script src="{{asset('dist/js/select2digned.js')}}"></script>
+=======
+<script src="{{asset('dist/js/selectscript.js')}}"></script>
+>>>>>>> a9de8e60372488424fe4f5d94eae90d1c6a669be
 </body>
 </html>
 
