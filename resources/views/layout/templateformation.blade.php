@@ -58,8 +58,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/inscription')}}">Affecter un apprenant</a>
-            <a class="dropdown-item" href="#">Affecter un formateur</a>
-            <a class="dropdown-item" href="#">Affecter une formation</a>
+            <a class="dropdown-item" href="{{url('/affectation-formateur')}}">Affecter un formateur</a>
+            <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter une formation</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -67,8 +67,8 @@
            <i class="fa fa-users fa-2x icon_color"></i> Installations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">type d'installation</a>
-            <a class="dropdown-item" href="#">Kits</a>
+            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Domaine d'installation</a>
+            <a class="dropdown-item" href="{{url('/kits')}}">Kits</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Fin de formation</a>
             <a class="dropdown-item" href="#">Installation</a>

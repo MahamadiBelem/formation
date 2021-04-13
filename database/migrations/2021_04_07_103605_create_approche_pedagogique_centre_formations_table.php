@@ -22,7 +22,7 @@ class CreateApprochePedagogiqueCentreFormationsTable extends Migration
             $table->bigInteger('centre_formation_id')->default(12);
         
             $table->foreign('approche_pedagogique_id')->references('id')->on('approche_pedagogiques')->onDelete('cascade');
-            $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->timestamps();
         });
     }

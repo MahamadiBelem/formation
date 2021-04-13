@@ -46,6 +46,28 @@ $(document).ready(function () {
         theme: 'bootstrap4'
       });
       
+
+      $("#formations").select2({
+        theme: 'bootstrap4'
+      });
+
+      $("#apprenant").select2({
+        theme: 'bootstrap4'
+      });
+
+      $("#centre_formation").select2({
+        theme: 'bootstrap4'
+      });
+
+
+      
+
+      $("#kits").select2({
+        theme: 'bootstrap4'
+      });
+
+      
+      
   
 
       

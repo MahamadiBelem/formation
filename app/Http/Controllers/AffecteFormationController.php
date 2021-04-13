@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AffecterApprenants;
-use App\Models\Formations;
+use App\Models\AffecterFormation;
 use App\Models\CentreFormation;
-use App\Models\Apprenants;
-class AffecterApprenantController extends Controller
+use App\Models\Formations;
+class AffecteFormationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +17,16 @@ class AffecterApprenantController extends Controller
     {
         //
 
-        $affectes=AffecterApprenants::paginate(10);
-        
-        return view('formations.affectes',compact('affectes'));
+        $affectes=AffecterFormation::paginate(10);
 
+        $centres=CentreFormation::all();
+
+        $formations=Formations::all();
+
+        return view('formations.affecteformation',compact(['affectes','centres','formations']));
+
+       
+        
     }
 
     /**
@@ -32,15 +37,6 @@ class AffecterApprenantController extends Controller
     public function create()
     {
         //
-
-        $apprenants=Apprenants::all();
-        $centres=CentreFormation::all();
-        $apprenants=Apprenants::all();
-        $formations=Formations::all();
-
-        return view('formations.newaffectes',compact(['apprenants','centres','apprenants','formations']));
-
-
     }
 
     /**
@@ -53,18 +49,16 @@ class AffecterApprenantController extends Controller
     {
         //
 
-        $affecte=new AffecterApprenants();
+        $affecte=new AffecterFormation();
 
-        $affecte->annees=$request->input('annees');
-        $affecte->dateInscription=$request->input('dateInscription');
-        $affecte->apprenant()->associate($request->input('apprenant_id'));
-        $affecte->formation()->associate($request->input('formation_id'));
+        $affecte->dateDebut=$request->input('dateDebut');
+        $affecte->dateCloture=$request->input('dateCloture');
         $affecte->centreformation()->associate($request->input('centre_id'));
-       
+        $affecte->formation()->associate($request->input('formation_id'));
+
         $affecte->save();
 
-        return redirect('/inscription');
-
+        return redirect('/affectation-formation');
     }
 
     /**
@@ -87,13 +81,6 @@ class AffecterApprenantController extends Controller
     public function edit($id)
     {
         //
-        $affecte=AffecterApprenants::find($id);
-        $apprenants=Apprenants::all();
-        $centres=CentreFormation::all();
-        $apprenants=Apprenants::all();
-        $formations=Formations::all();
-
-        return view('formations.updateaffectes',compact(['affecte','apprenants','centres','apprenants','formations']));
     }
 
     /**
@@ -107,17 +94,16 @@ class AffecterApprenantController extends Controller
     {
         //
 
-        $affecte= AffecterApprenants::find($id);
+        $affecte= AffecterFormation::find($id);
 
-        $affecte->annees=$request->input('annees');
-        $affecte->dateInscription=$request->input('dateInscription');
-        $affecte->apprenant()->associate($request->input('apprenant_id'));
+        $affecte->dateDebut=$request->input('dateDebut');
+        $affecte->dateCloture=$request->input('dateCloture');
+        $affecte->centreformation()->associate($request->input('formation_id'));
         $affecte->formation()->associate($request->input('formation_id'));
-        $affecte->centreformation()->associate($request->input('centre_id'));
-       
+
         $affecte->save();
 
-        return redirect('/inscription');
+        return redirect('/affectation-formation');
     }
 
     /**
@@ -129,11 +115,12 @@ class AffecterApprenantController extends Controller
     public function destroy($id)
     {
         //
-        $affecte= AffecterApprenants::find($id);
+
+        $affecte= AffecterFormation::find($id);
 
         $affecte->delete();
-        return redirect('/inscription');
 
+        return redirect('/affectation-formation');
 
     }
 }

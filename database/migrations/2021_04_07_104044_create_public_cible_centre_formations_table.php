@@ -21,7 +21,7 @@ class CreatePublicCibleCentreFormationsTable extends Migration
             $table->bigInteger('centre_formation_id')->default(12);
             
             $table->foreign('public_cible_id')->references('id')->on('public_cibles')->onDelete('cascade');
-            $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->timestamps();
         });
     }

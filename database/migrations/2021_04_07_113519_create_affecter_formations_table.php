@@ -21,7 +21,7 @@ class CreateAffecterFormationsTable extends Migration
             $table->date('dateDebut')->nullable();
             $table->date('dateCloture')->nullable();
             $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
-           $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+           $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->timestamps();
         });
     }

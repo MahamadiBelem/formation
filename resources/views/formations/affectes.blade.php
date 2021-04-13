@@ -35,15 +35,11 @@
                     <td>{{$affecte->annees}}</td>
                     <td>{{$affecte->dateInscription}}</td>
                     <td>{{$affecte->formation->libelleFormations}}</td> 
-                    <td>{{$affecte->apprenant->nom}} {{$affecte->apprenant->prenom}}</td>
+                    <td>Matricule:{{$affecte->apprenant->matricule}} Nom:{{$affecte->apprenant->nom}} Prenom:{{$affecte->apprenant->prenom}}</td>
                     <td>{{$affecte->centreformation->denomination}}</td>  
                     <td>
-                          <a  href="{{url('/update-apprenant-view-form/'.$affectes->id)}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></a>
-                          <button data-toggle="modal" data-target="{{'#suprimer'.$affectes->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
-                      
-                          <a href="{{url('/apprenant-view-detail/'.$affecte->id)}}" class="btn btn-outline-warning"><i class="fa fa-eye"></i></a>
-
-                             
+                          <a  href="{{url('/update-inscription-view-form/'.$affecte->id)}}"><i style="color: #007bff"  class="fa fa-edit"></i></a>
+                          <button data-toggle="modal" data-target="{{'#suprimer'.$affecte->id}}"><i style="color: red" class="fa fa-trash"></i></button>
 
     <div class="modal fade" id="{{'suprimer'.$affecte->id}}">
         <div class="modal-dialog modal-lg">
@@ -66,7 +62,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-sm-12  col-md-12">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                          <a href="{{url('/delete-affectation/'.$affecte->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                          <a href="{{url('/delete-inscription/'.$affecte->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                         </div>
                       </div>
                    </div>

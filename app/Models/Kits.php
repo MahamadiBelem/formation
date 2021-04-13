@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Kits extends Model
 {
     use HasFactory;
+
+    protected $table='kits';
+
+    public function domainesinstallation()
+    {
+        return $this->belongsToMany(DomainesInstallation::class,'domaines_installation_kits','domaines_installation_id','kit_id');
+    }
+
 }

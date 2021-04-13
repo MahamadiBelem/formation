@@ -27,7 +27,7 @@ class CreateInsfrascturesTable extends Migration
 
             $table->foreign('type_infrastructure_id')->references('id')->on('type_infrastructures')->onDelete('cascade');
 
-            $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
 
             $table->timestamps();
         });

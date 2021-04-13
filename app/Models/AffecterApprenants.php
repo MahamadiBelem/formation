@@ -16,9 +16,9 @@ class AffecterApprenants extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function centreformation(): BelongsTo
+    public function centreformation()
     {
-        return $this->belongsTo(CentreFormation::class);
+        return $this->belongsTo(CentreFormation::class,'centre_formation_id');
 
     }
 
@@ -27,13 +27,13 @@ class AffecterApprenants extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function apprenant(): BelongsTo
+    public function apprenant()
     {
         return $this->belongsTo(Apprenants::class);
     }
-    public function formation(): BelongsTo
+    public function formation()
     {
-        return $this->belongsTo(Formation::class);
+        return $this->belongsTo(Formations::class);
     }
 
 }

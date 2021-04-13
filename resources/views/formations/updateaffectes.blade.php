@@ -4,11 +4,11 @@
 
 <div class="row" style="margin-top: 5%;margin-left: -50%">
   <div class="card-body">
-    <form action="{{url('/save-inscription')}}" method="POST">
+    <form action="{{url('/update-inscription/'.$affecte->id)}}" method="POST">
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter une inscription</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier une inscription</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -19,7 +19,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Annees</label>
-              <input  type="text"   name="annees" id="" class="form-control" placeholder="années d'inscription" aria-describedby="helpId">
+              <input  type="text" value="{{$affecte->annees}}"   name="annees" id="" class="form-control" placeholder="années d'inscription" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">l annees inscription ne doit pas être vide</span></small>
             </div>
           </div>
@@ -27,7 +27,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Date d incription </label>
-              <input type="date"   name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
+              <input type="date" value="{{$affecte->dateInscription}}"  name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
             </div>
           </div>
@@ -39,7 +39,10 @@
               <label for="formations">Formation</label>
               <select id="formations" class="form-control" name="formation_id">
                @foreach ($formations as $formation)
-               <option value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
+
+               <option @if ($affecte->formation->id==$formation->id)
+                  selected 
+               @endif value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
                @endforeach
               </select>
             </div>
@@ -49,7 +52,9 @@
               <label for="apprenant">Apprenants</label>
               <select id="apprenant" class="form-control" name="apprenant_id">
                @foreach ($apprenants as $apprenant)
-               <option value="{{$apprenant->id}}">matricule :{{$apprenant->matricule}} Nom:{{$apprenant->nom}} Prenom:{{$apprenant->prenom}}</option>
+               <option @if ($affecte->apprenant->id==$apprenant->id)
+                   selected
+               @endif value="{{$apprenant->id}}">matricule :{{$apprenant->matricule}} Nom:{{$apprenant->nom}} Prenom:{{$apprenant->prenom}}</option>
                @endforeach
               </select>
             </div>
@@ -62,7 +67,9 @@
               <label for="centre_formation">Centre de formation</label>
               <select id="centre_formation" class="form-control" name="centre_id">
                @foreach ($centres as $centre)
-               <option value="{{$centre->id}}">{{$centre->denomination}}</option>
+               <option @if ($affecte->centreformation->id==$centre->id)
+                    selected  
+               @endif value="{{$centre->id}}">{{$centre->denomination}}</option>
                @endforeach
               </select>
             </div>

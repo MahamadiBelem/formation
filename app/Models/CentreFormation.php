@@ -64,4 +64,12 @@ class CentreFormation extends Model
     {
         return $this->hasMany(AffecterApprenants::class);
     }
+    public function affecterformateur()
+    {
+        return $this->hasMany(AffecterFormateur::class);
+    }
+    public function affecterformation()
+    {
+        return $this->hasMany(AffecterFormation::class);
+    }
 }

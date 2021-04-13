@@ -25,7 +25,7 @@ class CreateDomaineFormationCentreFormationsTable extends Migration
             $table->foreign('domaine_formation_id')->references('id')->on('domaine_formation')->onDelete('cascade');
             
             
-            $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             
 
             $table->timestamps();

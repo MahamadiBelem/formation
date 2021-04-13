@@ -21,4 +21,9 @@ class Formations extends Model
     {
         return $this->belongsTo(TypeFormation::class,'type_formation_id');
     }
+
+    public function affecterformation()
+    {
+        return $this->hasMany(AffecterFormation::class);
+    }
 }

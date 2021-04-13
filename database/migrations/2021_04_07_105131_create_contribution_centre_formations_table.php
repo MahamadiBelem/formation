@@ -24,7 +24,7 @@ class CreateContributionCentreFormationsTable extends Migration
            
            $table->foreign('contribution_id')->references('id')->on('contributions')->onDelete('cascade');
            
-           $table->foreign('centre_formation_id')->references('id')->on('centre_formations')->onDelete('cascade');
+           $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
            
             $table->timestamps();
         });
