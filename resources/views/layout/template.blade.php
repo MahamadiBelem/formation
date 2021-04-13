@@ -55,9 +55,10 @@
             <div class="dropdown-divider"></div>
            
             <a  class="nav-link" href="{{ url('users') }}"><i style="color:#007bff;" class="fa fa-users"></i> Utilisateurs</a>
-         
             <div class="dropdown-divider"></div>
-            
+            <a  class="nav-link" href="{{ url('roles') }}"><i style="color:#007bff;" class="fa fa-unlock"></i> Changer mot de passe</a>
+            <div class="dropdown-divider"></div>
+            <a  class="nav-link" href="{{ url('roles') }}"><i style="color:#007bff;" class="fa fa-lock"></i> Deconnection</a>
           </div>
         </li>
       </ul>
