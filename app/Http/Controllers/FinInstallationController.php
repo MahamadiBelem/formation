@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kits;
-use App\Models\DomainesInstallation;
-
-class DomaineInstallationController extends Controller
+use App\Models\AffecterApprenants;
+use App\Models\FinFormations;
+class FinInstallationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +16,9 @@ class DomaineInstallationController extends Controller
     {
         //
 
-        $domaines=DomainesInstallation::paginate(10);
+        $fins=FinFormations::paginate(10);
 
-        $kits=Kits::all();
-
-        return view('formations.domaineinstallation',compact(['domaines','kits']));
+        return view('formations.finformation',compact('fins'));
     }
 
     /**
@@ -33,10 +30,9 @@ class DomaineInstallationController extends Controller
     {
         //
 
-        $kits=Kits::all();
+        $affectes=AffecterApprenants::all();
 
-        return view('formations.newdomaineinstallation',compact(['kits']));
-        
+        return view('formations.newfininstallation',compact('affectes'));
     }
 
     /**
@@ -49,15 +45,24 @@ class DomaineInstallationController extends Controller
     {
         //
 
-        $domaine=new DomainesInstallation();
+        $fin=new FinFormations();
+        $fin->dateFinFormation=$request->input('dateFinFormation');
+        $fin->anneesFinFormation=$request->input('anneesFinFormation');
+        $fin->motif=$request->input('motif');
+        if($request->input('confirmedSortie')==null)
+        {
+            $fin->confirmedSortie=0;
+        }else
+        {
+            $fin->confirmedSortie=1;
+        }
+        
 
-        $domaine->libelleDomaine=$request->input('libelleDomaine');
+        $fin->affecterapprenants()->associate($request->input('inscription'));
 
-        $domaine->save();
-        $domaine->kits()->attach($request->input('kits'));
-
-        return redirect('/domaine-installation');
-
+        $fin->save();
+        return redirect('/fin-formation');
+        
     }
 
     /**
@@ -80,11 +85,6 @@ class DomaineInstallationController extends Controller
     public function edit($id)
     {
         //
-
-        $domaine= DomainesInstallation::find($id);
-        $kits=Kits::all();
-
-        return view('formations.updatedomaineinstallation',compact(['domaine','kits']));
     }
 
     /**
@@ -97,14 +97,6 @@ class DomaineInstallationController extends Controller
     public function update(Request $request, $id)
     {
         //
-
-        $domaine= DomainesInstallation::find($id);
-
-        $domaine->libelleDomaine=$request->input('libelleDomaine');
-
-        $domaine->save();
-        $domaine->kits()->sync($request->input('kits'));
-        return redirect('/domaine-installation');
     }
 
     /**
@@ -117,8 +109,10 @@ class DomaineInstallationController extends Controller
     {
         //
 
-        $domaine= DomainesInstallation::find($id);
-        $domaine->delete();
-        return redirect('/domaine-installation');
+        $fin=FinFormations::find($id);
+
+        $fin->delete();
+
+        return redirect('/fin-formation');
     }
 }

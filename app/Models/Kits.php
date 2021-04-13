@@ -13,7 +13,7 @@ class Kits extends Model
 
     public function domainesinstallation()
     {
-        return $this->belongsToMany(DomainesInstallation::class,'domaines_installation_kits','domaines_installation_id','kit_id');
+        return $this->belongsToMany(DomainesInstallation::class);
     }
 
 }

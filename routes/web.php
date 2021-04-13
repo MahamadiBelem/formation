@@ -159,6 +159,14 @@ Route::get('/delete-kits/{id}','KitsController@destroy');
 
 
 Route::get('/domaine-installation','DomaineInstallationController@index');
+Route::get('/display-domaine-installation-form','DomaineInstallationController@create');
 Route::post('/save-domaine-installation','DomaineInstallationController@store');
+Route::get('/display-domaine-installation-update-form/{id}','DomaineInstallationController@edit');
 Route::post('/update-domaine-installation/{id}','DomaineInstallationController@update');
 Route::get('/delete-domaine-installation/{id}','DomaineInstallationController@destroy');
+
+
+Route::get('/fin-formation','FinInstallationController@index');
+Route::get('/display-fin-formation-form','FinInstallationController@create');
+Route::post('/save-fin-formation','FinInstallationController@store');
+Route::get('/delete-fin-formation/{id}','FinInstallationController@destroy');

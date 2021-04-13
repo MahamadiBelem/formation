@@ -36,4 +36,9 @@ class AffecterApprenants extends Model
         return $this->belongsTo(Formations::class);
     }
 
+    public function finformation()
+    {
+        return $this->hasMany(FinFormations::class);
+    }
+
 }

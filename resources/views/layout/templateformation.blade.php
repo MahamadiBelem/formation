@@ -70,7 +70,7 @@
             <a class="dropdown-item" href="{{url('/domaine-installation')}}">Domaine d'installation</a>
             <a class="dropdown-item" href="{{url('/kits')}}">Kits</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Fin de formation</a>
+            <a class="dropdown-item" href="{{url('/fin-formation')}}">Fin de formation</a>
             <a class="dropdown-item" href="#">Installation</a>
           </div>
         </li>

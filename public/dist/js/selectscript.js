@@ -66,6 +66,9 @@ $(document).ready(function () {
         theme: 'bootstrap4'
       });
 
+      $("#updatekits").select2({
+        theme: 'bootstrap4'
+      });
       
       
   
