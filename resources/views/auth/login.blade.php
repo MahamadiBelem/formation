@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="{{asset('styles/accueil_style.css')}}">
 
 </head>
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" style="background-image:url({{url('img/background-image.jpg')}}); background-repeat: no-repeat; background-position: fixed; -webkit-background-size: cover;-webkit-filter: cover;">
 <div class="wrapper">
 <div class="row">
     <div class="col-12">
@@ -41,6 +41,14 @@
 
 <form method="POST" action="{{ route('login') }}">
   @csrf
+  <div class="col-12">
+    @if ($errors->has('email'))
+        <span class="help-block" style="color: red;">
+            <strong>{{ $errors->first('email') }}</strong>
+        </span>
+    @endif
+</div>
+<br><br>
 <div class="input-group mb-3">
   <input type="email" name="email" class="form-control" placeholder="nom d'utilisateur">
   <div class="input-group-append">
