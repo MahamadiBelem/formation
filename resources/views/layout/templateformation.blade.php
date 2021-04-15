@@ -94,7 +94,6 @@
             <a class="dropdown-item" href="{{url('/contributions')}}">Contributions</a>
             <a class="dropdown-item" href="{{url('/public-cible')}}">Publique cible</a>
             <a class="dropdown-item" href="{{url('niveau-recrutement')}}">Niveau de recrutement</a>
-            <a class="dropdown-item" href="{{url('/condition-access')}}">Conditions d'accès</a>
             <a class="dropdown-item" href="{{url('/approche-pedagogique')}}">Approches pedagogiques</a>
             <a class="dropdown-item" href="{{url('/domaine-formation')}}">domaine de formations</a>
             <a class="dropdown-item" href="{{'/type-formation'}}">Type de formations</a>

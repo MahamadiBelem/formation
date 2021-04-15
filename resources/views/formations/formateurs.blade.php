@@ -136,6 +136,8 @@
               
                
               </table>
+
+              {{ $formateurs->onEachSide(5)->links() }}
         </div>
     </div>
   

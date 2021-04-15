@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Hash;
-class UsermanagerController extends Controller
+use Spatie\Permission\Models\Permission;
+use App\Models\User;
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,27 @@ class UsermanagerController extends Controller
     public function index()
     {
         //
-
-        $users=User::all();
-        return view('/usermanager.users',compact('users'));
     }
 
-   
+    public function updateroles($id)
+    {
+       $roles=Role::all();
+       $user=User::findOrFail($id);
+
+       return view('/usermanager.rolesupdate',compact(['roles','user']));
+    }
+
+    public function processroleupdate(Request $request,$id )
+    {
+        $user=User::findOrFail($id);
+
+        foreach ($user->getrolenames() as $role) {
+            $user->removeRole($role);
+        }
+        $user->assignRole($request->roles);
+        $user->save();
+        return redirect('/users');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -31,11 +46,6 @@ class UsermanagerController extends Controller
     public function create()
     {
         //
-
-        $roles =Role::all();
-
-        return view('auth.register',compact('roles'));
-
     }
 
     /**
@@ -47,42 +57,6 @@ class UsermanagerController extends Controller
     public function store(Request $request)
     {
         //
-        $user= User::create([
-            'name' =>$request->name ,
-            'email' =>$request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        $user->assignRole($request->roles);
-        return redirect('/users');
-    }
-
-    public function displaypasswordupdate($id)
-    {
-        $isegale=false;    
-        $user=User::findOrFail($id);
-        return view('usermanager.updatepassword',compact(['isegale','user']));
-    }
-
-
-    public function updateprocesspassword(Request $request,$id)
-    {
-        $isegale=false;
-        $user=User::findOrFail($id);
-        if($request->newpassword !=$request->newconfirmpassword)
-        {
-            $isegale=true;
-            return view('usermanager.updatepassword',compact(['user','isegale']));
-
-        }else
-        {
-            
-            $user->password=Hash::make($request->newpassword);
-            $user->save();
-            return redirect('/users');
-        }
-
-        
-
     }
 
     /**

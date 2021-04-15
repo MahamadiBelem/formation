@@ -40,6 +40,7 @@
         <p align='center' class="login-box-msg"><img src="{{asset('img/logo.jpg')}}"></p>
 
 <form method="POST" action="{{ route('login') }}">
+  @csrf
 <div class="input-group mb-3">
   <input type="email" name="email" class="form-control" placeholder="nom d'utilisateur">
   <div class="input-group-append">

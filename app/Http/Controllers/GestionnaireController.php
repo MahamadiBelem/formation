@@ -15,7 +15,7 @@ class GestionnaireController extends Controller
     {
         //
 
-        $gestionnaires=Gestionnaire::paginate(5);
+        $gestionnaires=Gestionnaire::paginate(10);
 
         return view('formations.gestionnaires',compact('gestionnaires'));
 

@@ -15,7 +15,7 @@ class PromoteurController extends Controller
     {
         //
 
-        $promoteurs=Promoteur::paginate(5);
+        $promoteurs=Promoteur::paginate(10);
 
         return view('formations.promoteurs',compact('promoteurs'));
     }

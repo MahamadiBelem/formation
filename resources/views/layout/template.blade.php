@@ -58,7 +58,15 @@
             <div class="dropdown-divider"></div>
             <a  class="nav-link" href="{{ url('roles') }}"><i style="color:#007bff;" class="fa fa-unlock"></i> Changer mot de passe</a>
             <div class="dropdown-divider"></div>
-            <a  class="nav-link" href="{{ url('roles') }}"><i style="color:#007bff;" class="fa fa-lock"></i> Deconnection</a>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+           <i style="color:#007bff;" class="fa fa-lock"></i> Deconnexion
+         </a>
+
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+             @csrf
+         </form>
           </div>
         </li>
       </ul>

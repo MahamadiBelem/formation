@@ -132,6 +132,8 @@
               
                
               </table>
+
+              {{ $villages->onEachSide(5)->links() }}
         </div>
     </div>
   
