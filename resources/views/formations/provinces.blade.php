@@ -56,7 +56,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Province</label>
-                                        <input type="text"  value="{{$province->libelleProvince}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$province->libelleProvince}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -64,7 +64,7 @@
                                     <div class="col-6">
                                       <div class="form-group">
                                         <label for="regions">Region</label>
-                                        <select id="regions" class="form-control" name="libelleRegion">
+                                        <select id="regions" class="form-control" name="libelleRegion" required>
                                           @foreach ($regions as $region)
                                           <option @if ($province->id==$region->id)
                                               selected
@@ -154,7 +154,7 @@
             <div class="col-6">
               <div class="form-group">
                 <label for="regions">Region</label>
-                <select id="regionsadd" class="form-control" name="libelleRegion">
+                <select id="regionsadd" class="form-control" name="libelleRegion" required>
                   @foreach ($regions as $region)
                   <option value="{{$region->id}}">{{$region->libelleRegion}}</option>
                   @endforeach
@@ -164,7 +164,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Province</label>
-                <input type="text" name="libelleProvince" id="" class="form-control" placeholder="la province" aria-describedby="helpId">
+                <input type="text" name="libelleProvince" id="" class="form-control" placeholder="la province" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
               </div>
             </div>

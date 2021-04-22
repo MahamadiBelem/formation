@@ -54,7 +54,7 @@
                                     <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">Domaine de formation</label>
-                                        <input type="text" value="{{$domaine->libelleDomaineFormation}}" name="libelleDomaineFormation" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text" value="{{$domaine->libelleDomaineFormation}}" name="libelleDomaineFormation" id="" class="form-control" placeholder="Saisiez le domaine de formation" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom du domaine de formation  est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="">Domaine</label>
-                <input type="text" name="libelleDomaineFormation" id="" class="form-control" placeholder="domaine formation" aria-describedby="helpId">
+                <input type="text" name="libelleDomaineFormation" id="" class="form-control" placeholder="Saisiez le domaine formation" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom du domaine de formation est obligatoire</span></small>
               </div>
             </div>

@@ -61,7 +61,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">la ref. d'ouverture</label>
-              <input type="text" value="{{$centre->referenceOuverture}}"   name="referenceOuverture" id="" class="form-control" placeholder="la ref. d'ouverture" aria-describedby="helpId">
+              <input type="text" value="{{$centre->referenceOuverture}}"   name="referenceouverture" id="" class="form-control" placeholder="la ref. d'ouverture" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">la ref. d'ouverture ne doit pas être vide</span></small>
             </div>
           </div>

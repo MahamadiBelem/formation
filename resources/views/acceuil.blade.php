@@ -3,6 +3,7 @@
 @section('content')
 <div style="margin-top: 10%;margin-left:-40%; ">
 	<div class="row">
+    @hasanyrole('role-user-formation|role-user-manage-formation|role-admin-formation|role-admin-principal')
     <div class="col-md-3 col-sm-6 col-12">
       <a href="{{url('/formation')}}">
       <div class="info-box">
@@ -21,7 +22,9 @@
     </a>
       <!-- /.info-box -->
     </div>
+    @endhasanyrole
     <!-- /.col -->
+    @hasanyrole('role-user-foncier|role-user-manage-foncier|role-admin-foncier|role-admin-principal')
     <div class="col-md-3 col-sm-6 col-12">
       <a href="#">
       <div class="info-box">
@@ -40,7 +43,9 @@
     </a>
       <!-- /.info-box -->
     </div>
+    @endhasanyrole
     <!-- /.col -->
+    @hasanyrole('role-user-op|role-user-manage-op|role-admin-op|role-admin-principal')
     <div class="col-md-3 col-sm-6 col-12">
       <div class="info-box">
         <span class="info-box-icon bg-warning">
@@ -57,6 +62,8 @@
       </div>
       <!-- /.info-box -->
     </div>
+
+    @endhasanyrole
    
   </div>
  

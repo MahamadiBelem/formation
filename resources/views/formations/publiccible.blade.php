@@ -54,8 +54,8 @@
                                     <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">Publique cible</label>
-                                        <input type="text" value="{{$public->libellePublicCible}}" name="libellePublicCible" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
-                                        <small id="helpId" class="text-muted" ><span style="color: red">le libelle de spécialités  est obligatoire</span></small>
+                                        <input type="text" value="{{$public->libellePublicCible}}" name="libellePublicCible" id="" class="form-control" placeholder="Saisiez le publique cible " aria-describedby="helpId" required>
+                                        <small id="helpId" class="text-muted" ><span style="color: red">le libelle du publique cible  est obligatoire</span></small>
                                       </div>
                                     </div>
                                   </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="">Publique cible</label>
-                <input type="text" name="libellePublicCible" id="" class="form-control" placeholder="le regime" aria-describedby="helpId">
+                <input type="text" name="libellePublicCible" id="" class="form-control" placeholder="Saisiez le publique cible" aria-describedby="helpId"required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le libelle Publique cible est obligatoire</span></small>
               </div>
             </div>

@@ -15,4 +15,10 @@ class DomainesInstallation extends Model
     {
         return $this->belongsToMany(Kits::class,'domaines_installation_kits','domaines_installation_id','kit_id');
     }
+
+    public function installations()
+    {
+        return $this->hasMany(Installations::class);
+    }
+
 }

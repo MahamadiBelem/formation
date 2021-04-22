@@ -14,4 +14,10 @@ class SourceFinancements extends Model
         return $this->hasMany(Formations::class);
     }
 
+    public function installations()
+    {
+        return $this->hasMany(Installations::class);
+    }
+
+
 }

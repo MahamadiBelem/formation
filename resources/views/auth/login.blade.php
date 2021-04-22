@@ -50,7 +50,7 @@
 </div>
 <br><br>
 <div class="input-group mb-3">
-  <input type="email" name="email" class="form-control" placeholder="nom d'utilisateur">
+  <input type="email" name="email" class="form-control" placeholder="nom d'utilisateur" required autocomplete="transaction-currency">
   <div class="input-group-append">
     <div class="input-group-text">
       <span class="fas fa-user fa-1x" style="color: #976F28"></span>

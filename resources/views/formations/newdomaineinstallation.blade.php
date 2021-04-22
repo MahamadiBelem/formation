@@ -27,7 +27,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Kits associés</label>
-              <select multiple='multiple' class="form-control" name="kits[]" id="kits">
+              <select multiple='multiple' class="form-control" name="kits[]" id="kits" required>
                 
                 @foreach ($kits as $kit)
                 <option value="{{$kit->id}}">Kit:{{$kit->libelleKits}} Qte:{{$kit->quantites}}  </option>

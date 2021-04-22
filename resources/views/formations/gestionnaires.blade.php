@@ -57,8 +57,8 @@
                                   <div class="row">
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">Promoteur</label>
-                                        <input type="text"  value="{{$gestionnaire->nomComplet}}" name="nomComplet" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <label for="">Gestionnaire</label>
+                                        <input type="text"  value="{{$gestionnaire->nomComplet}}" name="nomComplet" id="" class="form-control" placeholder="le nom complet du gestionnaire" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom du gestionnaire ne doit pas être vide</span></small>
                                       </div>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="col-6">
                                       <div class="form-group">
                                         <label for="">Contact</label>
-                                        <input type="text"  value="{{$gestionnaire->contact}}" name="contact" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$gestionnaire->contact}}" name="contact" id="" class="form-control" placeholder="Saisiez le contact du gestionnaire" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted" ><span style="color: red">le contact du gestionnaire ne doit pas être vide</span></small>
                                       </div>
                                     </div>
@@ -77,7 +77,7 @@
                                     <div class="col-6">
                                       <div class="form-group">
                                         <label for="">Emploi</label>
-                                        <input type="text"  value="{{$gestionnaire->emploi}}" name="emploi" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$gestionnaire->emploi}}" name="emploi" id="" class="form-control" placeholder="Saisiez l'emploi du gestionnaire" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted" ><span style="color: red">l'emploi du gestionnaire ne doit pas être vide</span></small>
                                       </div>
                                     </div>
@@ -159,8 +159,8 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="">Promoteur</label>
-              <input type="text"   name="nomComplet" id="" class="form-control" placeholder="le nom complet" aria-describedby="helpId">
+              <label for="">Gestionnaire</label>
+              <input type="text"   name="nomComplet" id="" class="form-control" placeholder="Saisiez le nom complet du gestionnaire" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">le nom du gestionnaire ne doit pas être vide</span></small>
             </div>
           </div>
@@ -168,7 +168,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Contact</label>
-              <input type="text"   name="contact" id="" class="form-control" placeholder="le contact du gestionnaire" aria-describedby="helpId">
+              <input type="text"   name="contact" id="" class="form-control" placeholder="Saisiez le contact du gestionnaire" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">le contact du gestionnaire ne doit pas être vide</span></small>
             </div>
           </div>
@@ -178,7 +178,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Emploi</label>
-              <input type="text"   name="emploi" id="" class="form-control" placeholder="l'emploi du gestionnaire" aria-describedby="helpId">
+              <input type="text"   name="emploi" id="" class="form-control" placeholder="Saisiez l'emploi du gestionnaire" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">l'emploi du gestionnaire ne doit pas être vide</span></small>
             </div>
           </div>

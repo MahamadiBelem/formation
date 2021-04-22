@@ -54,7 +54,7 @@
                                     <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">Region</label>
-                                        <input type="text" value="{{$contribution->libelleContribution}}" name="libelleContribution" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text" value="{{$contribution->libelleContribution}}" name="libelleContribution" id="" class="form-control" placeholder="sasiez la contribution" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le libelle de spécialités  est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="">contribution</label>
-                <input type="text" name="libelleContribution" id="" class="form-control" placeholder="le regime" aria-describedby="helpId">
+                <input type="text" name="libelleContribution" id="" class="form-control" placeholder="Saisiez la contribution" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le libelle contribution est obligatoire</span></small>
               </div>
             </div>

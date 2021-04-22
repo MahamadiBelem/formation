@@ -59,7 +59,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Nom & prenom</label>
-                                        <input type="text"  value="{{$formateur->nomComplet}}" name="nomComplet" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$formateur->nomComplet}}" name="nomComplet" id="" class="form-control" placeholder="Saisiez le nom du formateur" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom du formateur est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -162,7 +162,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Nom & prenom</label>
-              <input type="text"   name="nomComplet" id="" class="form-control" placeholder="nom & prenom" aria-describedby="helpId">
+              <input type="text"   name="nomComplet" id="" class="form-control" placeholder="Saisiez le nom & prenom" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">le nom du formateur est obligatoire</span></small>
             </div>
           </div>

@@ -16,6 +16,16 @@
             </div>
         </div>
     </div>
+  @if($errors->first('libelleRegion')=='validation.required')
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        le libelle de la region ne doit pas être vide 
+      </div>
+    </div>
+  </div>
+  @endif
     <div class="row" style="margin-top: 5%">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <table id="typeenvoyeurTable" class="table table-bordered table-striped">
@@ -54,7 +64,7 @@
                                     <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">Region</label>
-                                        <input type="text" value="{{$region->libelleRegion}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text" value="{{$region->libelleRegion}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required/>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -138,7 +148,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="">Region</label>
-                <input type="text" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                <input type="text" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
               </div>
             </div>

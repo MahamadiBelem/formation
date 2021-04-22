@@ -7,7 +7,7 @@
     
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">details du centre de formation {{$centre->denomination}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">details du centre de formation: {{$centre->denomination}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

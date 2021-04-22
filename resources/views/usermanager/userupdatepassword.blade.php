@@ -4,10 +4,10 @@
 
 <div class="row" style="margin-top: 5%;margin-left: -50%">
   <div class="card-body">
-    <form action="{{url('/update-password/'.$user->id)}}" method="POST">
+    <form action="{{url('/user-password-update-process/'.$user->id)}}" method="POST">
         @csrf
         <div class="modal-header modal-header-designed">
-            <h5 class="modal-title" id="exampleModalLabel">Modifier le mot de l'utiisateur {{$user->name}}</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Modifier votre mot de passe</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -33,8 +33,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group">
-                  <label for="telephone">email</label>
-                  <input type="text"  value="{{$user->email}}" name="email" class="form-control @error('email') is-invalid @enderror" id="nom_complet" placeholder="Le telephone">
+                  <label for="email">email</label>
+                  <input type="text" readonly value="{{$user->email}}" name="email" class="form-control @error('email') is-invalid @enderror" id="nom_complet" placeholder="email">
                   
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="card card-default">
               <div class="card-body">
                 <button type="submit" class="btn btn-primary" href="#">Modifier <i class="fa fa-edit" style="color: white"></i></button>
-                <a href="{{url('/users')}}" class="btn btn-danger">Annuller <i class="fa fa-reply" style="color: white"></i></a>
+                <a href="{{url('/')}}" class="btn btn-danger">Annuller <i class="fa fa-reply" style="color: white"></i></a>
               </div>
             </div>    
           </div>

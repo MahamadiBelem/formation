@@ -56,7 +56,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Promoteur</label>
-                                        <input type="text"  value="{{$promoteur->promoteur}}" name="promoteur" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$promoteur->promoteur}}" name="promoteur" id="" class="form-control" placeholder="Saisiez le promoteur" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom du promoteur ne doit pas être vide</span></small>
                                       </div>
                                     </div>

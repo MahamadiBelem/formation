@@ -41,4 +41,11 @@ class AffecterApprenants extends Model
         return $this->hasMany(FinFormations::class);
     }
 
+    public function installations()
+    {
+        return $this->hasMany(Installations::class);
+    }
+
+  
+
 }

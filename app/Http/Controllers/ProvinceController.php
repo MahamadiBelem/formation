@@ -11,7 +11,7 @@ class ProvinceController extends Controller
 
      public function index()
     {
-       $provinces=Provinces::paginate(5);
+       $provinces=Provinces::paginate(10);
         $regions=Regions::all();
        return view('formations.provinces',compact(['provinces','regions']));
     }

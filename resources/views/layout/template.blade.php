@@ -48,15 +48,17 @@
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fa fa-user-circle fa-2x" style="color:white"></i>
+            <i class="fa fa-user-circle fa-2x" style="color:#28a745"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          
+            @hasanyrole('role-admin-op|role-user-admin-foncier|role-admin-formation|role-admin-principal')
             <div class="dropdown-divider"></div>
            
             <a  class="nav-link" href="{{ url('users') }}"><i style="color:#007bff;" class="fa fa-users"></i> Utilisateurs</a>
+            
             <div class="dropdown-divider"></div>
-            <a  class="nav-link" href="{{ url('roles') }}"><i style="color:#007bff;" class="fa fa-unlock"></i> Changer mot de passe</a>
+              @endhasanyrole
+            <a  class="nav-link" href="{{ url('/user-password-update-view') }}"><i style="color:#007bff;" class="fa fa-unlock"></i> Changer mot de passe</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();

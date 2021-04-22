@@ -63,7 +63,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Libelle de la formation</label>
-                                        <input type="text"  value="{{$formation->libelleFormations}}" name="libelleFormations" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text"  value="{{$formation->libelleFormations}}" name="libelleFormations" id="" class="form-control" placeholder="Saisiez le libelle de la formation" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le libelle de la formation est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -190,7 +190,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Libelle de la formation</label>
-              <input type="text"   name="libelleFormations" id="" class="form-control" placeholder="libelle de la formation" aria-describedby="helpId">
+              <input type="text"   name="libelleFormations" id="" class="form-control" placeholder="Saisiez le libelle de la formation" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">le libelle de la formation est obligatoire</span></small>
             </div>
           </div>

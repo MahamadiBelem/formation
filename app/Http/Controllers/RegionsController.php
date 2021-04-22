@@ -16,7 +16,7 @@ class RegionsController extends Controller
     {
         //
 
-      $regions=Regions::paginate(5);
+      $regions=Regions::paginate(10);
       
 
         return view('formations.regions',compact('regions'));
@@ -43,6 +43,10 @@ class RegionsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validationdata=$request->validate([
+            'libelleRegion'=>'required|unique:libelleRegion'
+        ]);
 
         $region=new Regions();
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 class UsermanagerController extends Controller
 {
     /**
@@ -75,7 +76,7 @@ class UsermanagerController extends Controller
 
         }else
         {
-            
+            $user->email=$request->email;
             $user->password=Hash::make($request->newpassword);
             $user->save();
             return redirect('/users');
@@ -84,6 +85,35 @@ class UsermanagerController extends Controller
         
 
     }
+
+    public function updateuserpassword()
+    {
+        $isegale=false;    
+        $user=User::find(Auth::id());
+        return view('usermanager.userupdatepassword',compact(['isegale','user']));
+    }
+
+    public function userupdateprocesspassword(Request $request,$id)
+    {
+        $isegale=false;
+        $user=User::findOrFail($id);
+        if($request->newpassword !=$request->newconfirmpassword)
+        {
+            $isegale=true;
+            return view('usermanager.updatepassword',compact(['user','isegale']));
+
+        }else
+        {
+            
+            $user->password=Hash::make($request->newpassword);
+            $user->save();
+            return redirect('/');
+        }
+
+        
+
+    }
+
 
     /**
      * Display the specified resource.

@@ -15,7 +15,7 @@ class SpecialiteController extends Controller
     {
         //
 
-        $specialites=Specialites::paginate(5);
+        $specialites=Specialites::paginate(10);
 
         return view('formations.specialite',compact('specialites'));
 

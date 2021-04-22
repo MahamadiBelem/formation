@@ -15,7 +15,7 @@ class NiveauInstructionController extends Controller
     {
         //
 
-        $niveaus=NiveauInstructions::paginate(5);
+        $niveaus=NiveauInstructions::paginate(10);
         return view('formations.niveauinstructions',compact('niveaus'));
         
     }

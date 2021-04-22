@@ -54,7 +54,7 @@
                                     <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">Region</label>
-                                        <input type="text" value="{{$regime->libelleRegime}}" name="libelleRegime" id="" class="form-control" placeholder="la region" aria-describedby="helpId">
+                                        <input type="text" value="{{$regime->libelleRegime}}" name="libelleRegime" id="" class="form-control" placeholder="Saisiez le regime du centre de formation" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom de la regime est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="">Regime</label>
-                <input type="text" name="libelleRegime" id="" class="form-control" placeholder="le regime" aria-describedby="helpId">
+                <input type="text" name="libelleRegime" id="" class="form-control" placeholder="Saisiez le regime du centre de formation" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
               </div>
             </div>

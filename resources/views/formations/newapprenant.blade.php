@@ -19,7 +19,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Matricule</label>
-              <input readonly value="{{$matricule}}" type="text"   name="matricule" id="" class="form-control" placeholder="Denomination" aria-describedby="helpId">
+              <input readonly value="{{$matricule}}" type="text"   name="matricule" id="" class="form-control" placeholder="Num. matricule" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">le numèro matricule ne doit pas être vide</span></small>
             </div>
           </div>
@@ -27,7 +27,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Nom</label>
-              <input type="text"   name="nom" id="" class="form-control" placeholder="Nom" aria-describedby="helpId">
+              <input type="text"   name="nom" id="" class="form-control" placeholder="Saisiez le Nom" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">le nom ne doit pas être vide</span></small>
             </div>
           </div>
@@ -37,14 +37,14 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Prenom</label>
-              <input type="text"   name="prenom" id="" class="form-control" placeholder="Prenom" aria-describedby="helpId">
+              <input type="text"   name="prenom" id="" class="form-control" placeholder="Saisiez le prenom" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">le prenom ne doit pas être vide</span></small>
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
               <label for="">Date naissance</label>
-              <input type="date"   name="dateNaissance" id="" class="form-control" placeholder="la capacité d'accueil" aria-describedby="helpId">
+              <input type="date"   name="dateNaissance" id="" class="form-control" placeholder="La date de naissance" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">la date de naissance ne doit pas être vide</span></small>
             </div>
           </div>
@@ -118,7 +118,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Localite</label>
-              <input type="text"   name="localites" id="" class="form-control" placeholder="la localite" aria-describedby="helpId">
+              <input type="text"   name="localites" id="" class="form-control" placeholder="Saisiez la localite" aria-describedby="helpId" required>
               <small id="helpId" class="text-muted" ><span style="color: red">la localite ne doit pas être vide</span></small>
             </div>
           </div>

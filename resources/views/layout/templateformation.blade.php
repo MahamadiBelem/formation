@@ -40,51 +40,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-home fa-2x icon_color" ></i> Infrastructures
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Type infrasctructures</a>
-            <a class="dropdown-item" href="#">Type aménagement</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Infrastructures</a>
-            <a class="dropdown-item" href="#">Aménagements</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fa fa-link fa-2x icon_color"></i> Affectations
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/inscription')}}">Affecter un apprenant</a>
-            <a class="dropdown-item" href="{{url('/affectation-formateur')}}">Affecter un formateur</a>
-            <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter une formation</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-users fa-2x icon_color"></i> Installations
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Domaine d'installation</a>
-            <a class="dropdown-item" href="{{url('/kits')}}">Kits</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{url('/fin-formation')}}">Fin de formation</a>
-            <a class="dropdown-item" href="#">Installation</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-graduation-cap fa-2x icon_color"></i> Formations
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/formateurs')}}">Formateurs</a>
-            <a class="dropdown-item" href="{{url('/apprenants')}}">Apprenant(es)</a>
-            <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
-            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
-          </div>
-        </li>
+        
+        @hasanyrole('role-admin-formation|role-admin-principal')
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <i class="fa fa-cog fa-2x icon_color"></i> Parametrages
@@ -102,20 +59,85 @@
             <a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
             <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a>
             <a class="dropdown-item" href="{{url('/source-financement')}}">Source financement</a>
-           
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-gavel fa-2x icon_color"></i> Decoupage administratif
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
             <a class="dropdown-item" href="{{url('/villages')}}">Villages</a>
+           
           </div>
         </li>
+      
+        @endhasanyrole
+
+        <li class="nav-item dropdown">
+          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-graduation-cap fa-2x icon_color"></i> Formations
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{url('/formateurs')}}">Formateurs</a>
+            <a class="dropdown-item" href="{{url('/apprenants')}}">Apprenant(es)</a>
+            <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
+            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
+            <a class="dropdown-item" href="{{url('/inscription')}}">Affecter un apprenant</a>
+            <a class="dropdown-item" href="{{url('/affectation-formateur')}}">Affecter un formateur</a>
+            <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter une formation</a>
+          </div>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-users fa-2x icon_color"></i> Installations
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Domaine d'installation</a>
+            <a class="dropdown-item" href="{{url('/kits')}}">Kits</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{url('/fin-formation')}}">Fin de formation</a>
+            <a class="dropdown-item" href="{{url('/installation')}}">Installation</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-users fa-2x icon_color"></i>Post-formation
+          </a>
+        </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-home fa-2x icon_color" ></i> Infrastructures
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Type infrasctructures</a>
+            <a class="dropdown-item" href="#">Type aménagement</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Infrastructures</a>
+            <a class="dropdown-item" href="#">Aménagements</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <i class="fa fa-book fa-2x icon_color"></i> Statisques
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{url('#')}}">Les ressources humaine de la SFPA</a>
+            <a class="dropdown-item" href="{{url('#')}}">Les infrastructures</a>
+            <a class="dropdown-item" href="{{url('#')}}">Situation des aménagements hydro-agricoles</a>
+            <a class="dropdown-item" href="{{url('#')}}">Situation des formations </a>
+            <a class="dropdown-item" href="{{url('#')}}">Renforcement des capacités des formateurs </a>
+            <a class="dropdown-item" href="{{url('#')}}">Accompagnement post-formation</a>
+          </div>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a style="color: white"   href="{{url('/formation')}}" >
+             <i class="fa fa-arrow-left fa-2x icon_color"></i> 
+          </a>
+        </li>
+
       </ul>
 
     </div>
@@ -195,11 +217,9 @@
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('dist/js/saveComposition.js')}}"></script>
-<<<<<<< HEAD
 <script src="{{asset('dist/js/select2digned.js')}}"></script>
-=======
 <script src="{{asset('dist/js/selectscript.js')}}"></script>
->>>>>>> a9de8e60372488424fe4f5d94eae90d1c6a669be
+<script src="{{asset('dist/js/statistique.js')}}"></script>
 </body>
 </html>
 

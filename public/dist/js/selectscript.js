@@ -70,7 +70,19 @@ $(document).ready(function () {
         theme: 'bootstrap4'
       });
       
+
+      $("#installation_affecte").select2({
+        theme: 'bootstrap4'
+      });
+
+      $("#domaine_installation").select2({
+        theme: 'bootstrap4'
+      });
+      $("#fin_formation").select2({
+        theme: 'bootstrap4'
+      });
       
+ 
   
 
       

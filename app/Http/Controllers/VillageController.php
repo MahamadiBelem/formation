@@ -16,7 +16,7 @@ class VillageController extends Controller
     {
         //
 
-        $villages=Villages::paginate(5);
+        $villages=Villages::paginate(10);
         $communes=Communes::all();
 
         return view('formations.villages',compact(['villages','communes']));

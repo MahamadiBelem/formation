@@ -17,7 +17,7 @@ class CommunesController extends Controller
         //
 
         $provinces=Provinces::all();
-        $communes=Communes::paginate(5);
+        $communes=Communes::paginate(10);
         return view('formations.communes',compact(['provinces','communes']));
     }
 

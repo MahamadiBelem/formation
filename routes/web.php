@@ -20,10 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('acceuil');
     });
-    Route::get('/formation',function(){
-    return view('acceuilformation');
-    });
-    
+    Route::get('/formation','FormationHomeController@index');
+
     Route::get('/regions','RegionsController@index');
     
     Route::post('/save-region','RegionsController@store');
@@ -170,6 +168,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete-domaine-installation/{id}','DomaineInstallationController@destroy');
     
     
+    Route::get('/installation','IntallationController@index');
+    Route::get('/display-installation-form','IntallationController@create');
+    Route::post('/save-installation','IntallationController@store');
+    Route::get('/delete-installation/{id}','IntallationController@destroy');
+
     Route::get('/fin-formation','FinInstallationController@index');
     Route::get('/display-fin-formation-form','FinInstallationController@create');
     Route::post('/save-fin-formation','FinInstallationController@store');
@@ -181,6 +184,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-password/{id}','UsermanagerController@updateprocesspassword');
     Route::get('/reset-role-byadmin/{id}','RolesController@updateroles');
     Route::post('/update-role-process/{id}','RolesController@processroleupdate');
-    
+    Route::get('/user-password-update-view','UsermanagerController@updateuserpassword');
+    Route::post('/user-password-update-process/{id}','UsermanagerController@userupdateprocesspassword');
+   
+
+   
+
 });
 
