@@ -48,9 +48,9 @@ class RegionsController extends Controller
             'libelleRegion'=>'required|unique:libelleRegion'
         ]);
 
-        $region=new Regions();
+        $region = new Regions();
 
-        $region->libelleRegion=$request->input('libelleRegion');
+        $region->libelleRegion = $request->input('libelleRegion');
 
         $region->save();
 

@@ -40,7 +40,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        
+
         @hasanyrole('role-admin-formation|role-admin-principal')
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,10 +63,10 @@
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
             <a class="dropdown-item" href="{{url('/villages')}}">Villages</a>
-           
+
           </div>
         </li>
-      
+
         @endhasanyrole
 
         <li class="nav-item dropdown">
@@ -83,7 +83,7 @@
             <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter une formation</a>
           </div>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <i class="fa fa-users fa-2x icon_color"></i> Installations
@@ -131,10 +131,10 @@
             <a class="dropdown-item" href="{{url('#')}}">Accompagnement post-formation</a>
           </div>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a style="color: white"   href="{{url('/formation')}}" >
-             <i class="fa fa-arrow-left fa-2x icon_color"></i> 
+             <i class="fa fa-arrow-left fa-2x icon_color"></i>
           </a>
         </li>
 

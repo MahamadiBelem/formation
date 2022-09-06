@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Regions;
+use App\Models\Communes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

@@ -18,7 +18,7 @@
             <div class="alert alert-danger alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               Le mot de passe de confirmation ne correspond pas !!!!
-            </div> 
+            </div>
             @endif
           </div>
         </div>
@@ -28,14 +28,14 @@
                 <div class="form-group">
                     <label for="nom_complet">Nom & prenom</label>
                     <input type="text" readonly value="{{$user->name}}" name="nom_complet" class="form-control @error('nom_complet') is-invalid @enderror" id="nom_complet" placeholder="Le nom & prenom">
-                   
+
                   </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group">
                   <label for="email">email</label>
                   <input type="text" readonly value="{{$user->email}}" name="email" class="form-control @error('email') is-invalid @enderror" id="nom_complet" placeholder="email">
-                  
+
                 </div>
             </div>
         </div>
@@ -58,14 +58,14 @@
             <div class="card card-default">
               <div class="card-body">
                 <button type="submit" class="btn btn-primary" href="#">Modifier <i class="fa fa-edit" style="color: white"></i></button>
-                <a href="{{url('/')}}" class="btn btn-danger">Annuller <i class="fa fa-reply" style="color: white"></i></a>
+                <a href="{{url('/')}}" class="btn btn-danger">Annuler <i class="fa fa-reply" style="color: white"></i></a>
               </div>
-            </div>    
+            </div>
           </div>
       </div>
     </form>
-  
-  
+
+
 </div>
 </div>
 

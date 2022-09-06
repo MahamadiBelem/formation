@@ -14,7 +14,7 @@ class CreateRegimesTable extends Migration
     public function up()
     {
         Schema::create('regime', function (Blueprint $table) {
-            
+
             $table->bigIncrements('id');
             $table->string('libelleRegime', 255)->default('text');
             $table->timestamps();

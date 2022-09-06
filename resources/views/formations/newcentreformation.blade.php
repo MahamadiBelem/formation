@@ -14,7 +14,7 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -116,11 +116,11 @@
             <div class="form-group">
               <label>Approche pedagogique</label>
               <select id="approche" name="approches[]" multiple="multiple" data-placeholder="selectionner les approches pedagogiques" style="width: 100%;">
-               
+
                 @foreach ($approches as $approche)
                 <option value="{{$approche->id}}">{{$approche->approchePedagogique}}</option>
                 @endforeach
-                
+
               </select>
             </div>
           </div>
@@ -142,11 +142,11 @@
             <div class="form-group">
               <label>Spécialités</label>
               <select id="specialite" name="specialites[]" multiple="multiple" data-placeholder="selectionner les specialités" style="width: 100%;">
-               
+
                 @foreach ($specialites as $specialite)
                 <option value="{{$specialite->id}}">{{$specialite->libelleSpecialite}}</option>
                 @endforeach
-                
+
               </select>
             </div>
           </div>
@@ -168,11 +168,11 @@
             <div class="form-group">
               <label>Contributions</label>
               <select id="contribution" name="contributions[]" multiple="multiple" data-placeholder="selectionner les contribution" style="width: 100%;">
-               
+
                 @foreach ($contributions as $contribution)
                 <option value="{{$contribution->id}}">{{$contribution->libelleContribution}}</option>
                 @endforeach
-                
+
               </select>
             </div>
           </div>
@@ -188,21 +188,21 @@
           </div>
         </div>
 
-        
+
         <div class="row">
           <div class="col-6">
             <div class="form-group">
               <label>Regime</label>
               <select id="regime" name="regime"  data-placeholder="selectionner un regime" style="width: 100%;">
-               
+
                 @foreach ($regimes as $regime)
                 <option value="{{$regime->id}}">{{$regime->libelleRegime}}</option>
                 @endforeach
-                
+
               </select>
             </div>
           </div>
-         
+
         </div>
 
 
@@ -213,8 +213,8 @@
       </div>
     </div>
   </form>
-  
-  
+
+
 </div>
 </div>
 

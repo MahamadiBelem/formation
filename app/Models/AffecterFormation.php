@@ -9,7 +9,7 @@ class AffecterFormation extends Model
 {
     use HasFactory;
 
-    protected $teble='affecter_formations';
+    protected $table='affecter_formations';
 
     public function centreformation()
     {
@@ -19,6 +19,6 @@ class AffecterFormation extends Model
 
     public function formation()
     {
-        return $this->belongsTo(Formations::class,'formation_id'); 
+        return $this->belongsTo(Formations::class,'formation_id');
     }
 }

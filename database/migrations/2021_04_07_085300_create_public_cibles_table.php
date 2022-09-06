@@ -14,7 +14,7 @@ class CreatePublicCiblesTable extends Migration
     public function up()
     {
         Schema::create('public_cibles', function (Blueprint $table) {
-           
+
            $table->bigIncrements('id');
            $table->string('libellePublicCible', 255)->default('text');
             $table->timestamps();

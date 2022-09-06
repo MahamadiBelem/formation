@@ -25,7 +25,7 @@ class CentreFormationController extends Controller
     {
         //
         $centres=CentreFormation::paginate(10);
-        
+
         return view('formations.centreformation',compact('centres'));
     }
 
@@ -97,7 +97,7 @@ class CentreFormationController extends Controller
         $centre= CentreFormation::find($id);
 
         return view('formations.detailcentreformation',compact('centre'));
-        
+
     }
 
     /**
@@ -171,7 +171,7 @@ class CentreFormationController extends Controller
         $centre=CentreFormation::find($id);
 
         $centre->delete();
-       
+
 
         return redirect('/centre-formation');
 

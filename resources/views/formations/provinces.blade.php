@@ -29,8 +29,8 @@
                 <tbody>
                   @foreach ($provinces as $province)
                   <tr>
+                    <td>{{$province->region->libelleRegion}}</td>
                     <td>{{$province->libelleProvince}}</td>
-                    <td>{{$province->region->libelleRegion}}</td> 
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$province->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$province->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -57,7 +57,7 @@
                                       <div class="form-group">
                                         <label for="">Province</label>
                                         <input type="text"  value="{{$province->libelleProvince}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
-                                        <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
+                                        <small id="helpId" class="text-muted" ><span style="color: red">le nom de la province est obligatoire</span></small>
                                       </div>
                                     </div>
 
@@ -165,7 +165,7 @@
               <div class="form-group">
                 <label for="">Province</label>
                 <input type="text" name="libelleProvince" id="" class="form-control" placeholder="la province" aria-describedby="helpId" required>
-                <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
+                <small id="helpId" class="text-muted" ><span style="color: red">le nom de la province est obligatoire</span></small>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ class CreateAffecterFormationsTable extends Migration
     public function up()
     {
         Schema::create('affecter_formations', function (Blueprint $table) {
-            
+
             $table->bigIncrements('id');
             $table->bigInteger('formation_id')->nullable()->default(12);
             $table->bigInteger('centre_formation_id')->nullable()->default(12);

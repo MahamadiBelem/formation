@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CentreFormation extends Model
 {
     use HasFactory;
-    
+
     protected $table='centre_formation';
-    
+
     public function commune()
     {
         return $this->belongsTo(Communes::class);

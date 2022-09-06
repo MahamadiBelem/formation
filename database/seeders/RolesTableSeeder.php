@@ -18,8 +18,8 @@ class RolesTableSeeder extends Seeder
             'role-user-manage-formation',
             'role-admin-formation',
          ];
- 
- 
+
+
          foreach ($roles as $role) {
               Role::create(['name' => $role]);
          }
