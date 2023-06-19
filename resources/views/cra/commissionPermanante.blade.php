@@ -16,8 +16,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/cpexport_csv">CVS</a>
-                            <a class="dropdown-item" href="/cpexport_excel">Excel</a>
+                            <a class="dropdown-item" href="cpexport_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="cpexport_csv" style="color: blue; font-weight:bold;">CSV <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -60,9 +60,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modifier Commission Permanante</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
@@ -73,16 +71,16 @@
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
-                                                                <label for="">NbreMembreComOrganisation</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComOrganisation}}" name="NbreMembreComOrganisation" id="" class="form-control" placeholder="NbreMembreComOrganisation" aria-describedby="helpId" required>
+                                                                <label for="">Nombre de membres Commission d'organisation</label>
+                                                                <input type="text" value="{{$cp->NbreMembreComOrganisation}}" name="NbreMembreComOrganisation" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-6">
                                                             <div class="form-group">
-                                                                <label for="">NbreComOrganisation</label>
-                                                                <input type="text" value="{{$cp->NbreComOrganisation}}" name="NbreComOrganisation" id="" class="form-control" placeholder="NbreComOrganisation" aria-describedby="helpId">
+                                                                <label for="">Nombre de commissions d'organisation</label>
+                                                                <input type="text" value="{{$cp->NbreComOrganisation}}" name="NbreComOrganisation" id="" class="form-control" placeholder="Nombre de commissions" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -92,7 +90,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComFinantH</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComFinantH}}" name="NbreMembreComFinantH" id="" class="form-control" placeholder="NbreMembreComFinantH" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComFinantH}}" name="NbreMembreComFinantH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -100,7 +98,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComFinantF</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComFinantF}}" name="NbreMembreComFinantF" id="" class="form-control" placeholder="NbreMembreComFinantF" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComFinantF}}" name="NbreMembreComFinantF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -111,14 +109,14 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComFoncierDecenH</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComFoncierDecenH}}" name="NbreMembreComFoncierDecenH" id="" class="form-control" placeholder="NbreMembreComFoncierDecenH" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComFoncierDecenH}}" name="NbreMembreComFoncierDecenH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComFoncierDecenF</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComFoncierDecenF}}" name="NbreMembreComFoncierDecenF" id="" class="form-control" placeholder="NbreMembreComFoncierDecenF" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComFoncierDecenF}}" name="NbreMembreComFoncierDecenF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -127,14 +125,14 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComPromoModerAgriH</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComPromoModerAgriH}}" name="NbreMembreComPromoModerAgriH" id="" class="form-control" placeholder="NbreMembreComPromoModerAgriH" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComPromoModerAgriH}}" name="NbreMembreComPromoModerAgriH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreComPromoModerAgriF</label>
-                                                                <input type="text" value="{{$cp->NbreMembreComPromoModerAgriF}}" name="NbreMembreComPromoModerAgriF" id="" class="form-control" placeholder="NbreMembreComPromoModerAgriF" aria-describedby="helpId">
+                                                                <input type="text" value="{{$cp->NbreMembreComPromoModerAgriF}}" name="NbreMembreComPromoModerAgriF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -168,9 +166,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer Commission permanante</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
@@ -219,25 +215,23 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter Commission Permanante</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div class="modal-body">
 
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="">NbreMembreComOrganisation</label>
-                                <input type="text" name="NbreMembreComOrganisation" id="" class="form-control" placeholder="NbreMembreComOrganisation" aria-describedby="helpId" required>
+                                <label for="">Nombre de membres commission d'organisation</label>
+                                <input type="text" name="NbreMembreComOrganisation" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span>*obligatoire</small>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="">NbreComOrganisation</label>
-                                <input type="text" name="NbreComOrganisation" id="" class="form-control" placeholder="NbreComOrganisation" aria-describedby="helpId">
+                                <label for="">Nombre de commissions d'organisation</label>
+                                <input type="text" name="NbreComOrganisation" id="" class="form-control" placeholder="Nombre de commissions" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -247,7 +241,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComFinantH</label>
-                                <input type="text" name="NbreMembreComFinantH" id="" class="form-control" placeholder="NbreMembreComFinantH" aria-describedby="helpId" required>
+                                <input type="text" name="NbreMembreComFinantH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
@@ -255,7 +249,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComFinantF</label>
-                                <input type="text" name="NbreMembreComFinantF" id="" class="form-control" placeholder="NbreMembreComFinantF" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreComFinantF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -264,14 +258,14 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComFoncierDecenH</label>
-                                <input type="text" name="NbreMembreComFoncierDecenH" id="" class="form-control" placeholder="NbreMembreComFoncierDecenH" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreComFoncierDecenH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComFoncierDecenF</label>
-                                <input type="text" name="NbreMembreComFoncierDecenF" id="" class="form-control" placeholder="NbreMembreComFoncierDecenF" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreComFoncierDecenF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
@@ -280,14 +274,14 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComPromoModerAgriH</label>
-                                <input type="text" name="NbreMembreComPromoModerAgriH" id="" class="form-control" placeholder="NbreMembreComPromoModerAgriH" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreComPromoModerAgriH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreComPromoModerAgriF</label>
-                                <input type="text" name="NbreMembreComPromoModerAgriF" id="" class="form-control" placeholder="NbreMembreComPromoModerAgriF" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreComPromoModerAgriF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>

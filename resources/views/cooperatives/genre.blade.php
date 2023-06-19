@@ -22,7 +22,7 @@
                 <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                     <thead style="background-color: #007bff;color:white;">
                         <tr>
-                            <th>Genres </th>
+                            <th>Secteurs d'activité </th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -40,7 +40,7 @@
                                             @csrf
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un Secteur d'activité</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un genre</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -55,7 +55,7 @@
                                                         <div class="col-lg-12">
                                                             <div class="form-group">
                                                                 <label for="">Genre</label>
-                                                                <input type="text" value="{{$genre->libellegenre}}" name="libellegenre" id="" class="form-control" placeholder="Saisissez le Secteur d'activité" aria-describedby="helpId" required>
+                                                                <input type="text" value="{{$genre->libellegenre}}" name="libellegenre" id="" class="form-control" placeholder="Saisissez le genre" aria-describedby="helpId" required>
                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
@@ -76,7 +76,7 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
-                                                <h4 class="modal-title">Supprimer un Secteur d'activité</h4>
+                                                <h4 class="modal-title">Supprimer un genre</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -128,7 +128,7 @@
             @csrf
             <div class="modal-content">
                 <div class="modal-header coopvert">
-                    <h5 class="modal-title" id="exampleModalLabel">Modifier un Secteur d'activité</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modifier un genre</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -138,8 +138,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="">Secteur d'activité</label>
-                                <input type="text" name="libellegenre" id="" class="form-control" placeholder="Saisisez le Secteur d'activité" aria-describedby="helpId" required>
+                                <label for="">Genre</label>
+                                <input type="text" name="libellegenre" id="" class="form-control" placeholder="Saisisez le genre" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>

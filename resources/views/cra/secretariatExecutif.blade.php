@@ -16,8 +16,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/seexport_csv">CVS</a>
-                            <a class="dropdown-item" href="/seexport_excel">Excel</a>
+                            <a class="dropdown-item" href="seexport_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="seexport_csv" style="color: blue; font-weight:bold;">CSV <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 
                             <td>
                                 <button data-toggle="modal" data-target="{{'#modifier'.$secr->id}}" class="btn btn-outline-success"><i style="color: #007bff" class="fa fa-edit"></i></button>
-                                <button data-toggle="modal" data-target="{{'#suprimer'.$secr->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
+                                <button data-toggle="modal" data-target="{{'#supprimer'.$secr->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
 
                                 <div class="modal fade" id="{{'modifier'.$secr->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
@@ -58,9 +58,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modifier Secretariat Executif</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                                    
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
@@ -80,7 +78,7 @@
                                                         <div class="col-6">
                                                             <div class="form-group">
                                                                 <label for="">Contact</label>
-                                                                <input type="text" value="{{$secr->Contact}}" name="contact" id="" class="form-control" placeholder="Contact du Secretariat général" aria-describedby="helpId">
+                                                                <input type="text" value="{{$secr->Contact}}" name="Contact" id="" class="form-control" placeholder="Contact du Secretariat général" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -137,14 +135,12 @@
                                 </div>
 
 
-                                <div class="modal fade" id="{{'suprimer'.$secr->id}}">
+                                <div class="modal fade" id="{{'supprimer'.$secr->id}}">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer Secretariat exécutif</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
@@ -193,9 +189,7 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter Secretariat exécutif</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div class="modal-body">
 

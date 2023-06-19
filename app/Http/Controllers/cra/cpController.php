@@ -104,7 +104,7 @@ class cpController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $cp = new commission_permanante();
+        $cp = commission_permanante::find($id);
         $cp->NbreMembreComOrganisation = $request->input('NbreMembreComOrganisation');
         $cp->NbreComOrganisation = $request->input('NbreComOrganisation');
         $cp->NbreMembreComFinantH = $request->input('NbreMembreComFinantH');

@@ -21,8 +21,10 @@
             <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
-                  <th>Libelle domaine </th>
+                  <th>Libelle Projet </th>
                   <th>kits </th>
+                  <th>structure de formation  </th>
+                  <th>apprenant </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -30,6 +32,16 @@
                   @foreach ($domaines as $domaine)
                   <tr>
                     <td>{{$domaine->libelleDomaine}}</td>
+                    <td>
+                      @foreach ($domaine->kits as $item)
+                          <div>Kit:{{$item->libelleKits}} Quantite:{{$item->quantites}}</div>
+                      @endforeach
+                    </td> 
+                    <td>
+                      @foreach ($domaine->kits as $item)
+                          <div>Kit:{{$item->libelleKits}} Quantite:{{$item->quantites}}</div>
+                      @endforeach
+                    </td> 
                     <td>
                       @foreach ($domaine->kits as $item)
                           <div>Kit:{{$item->libelleKits}} Quantite:{{$item->quantites}}</div>
@@ -46,7 +58,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header modal-delete-header">
-              <h4 class="modal-title">Supprimer un domaine d installation</h4>
+              <h4 class="modal-title">Supprimer un projet d installation</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -99,7 +111,7 @@
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter un domaine d installation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un projet d installation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -109,15 +121,38 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="">Libelle domaine d installation</label>
+              <label for="">Libelle projet d'installation</label>
               <input type="text"   name="libelleDomaine" id="" class="form-control" placeholder="le libelle d installation" aria-describedby="helpId">
-              <small id="helpId" class="text-muted" ><span style="color: red">le libelle du domaine est obligatoire</span></small>
+              <small id="helpId" class="text-muted" ><span style="color: red">le libelle du projet est obligatoire</span></small>
             </div>
           </div>
 
           <div class="col-6">
             <div class="form-group">
               <label for="">Kits associés</label>
+              <select multiple='multiple' class="form-control" name="kits[]" id="kits">
+                
+                @foreach ($kits as $kit)
+                <option value="{{$kit->id}}">Kit:{{$kit->libelleKits}} Qte:{{$kit->quantites}}  </option>
+                @endforeach
+                
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">structure de formation </label>
+              <input type="text"   name="libelleDomaine" id="" class="form-control" placeholder="le libelle d installation" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le libelle strucre est obligatoire</span></small>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Apprenant</label>
               <select multiple='multiple' class="form-control" name="kits[]" id="kits">
                 
                 @foreach ($kits as $kit)

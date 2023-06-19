@@ -8,7 +8,7 @@
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier un domaine d'installation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier un projet d'installation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,7 +23,7 @@
                                   <div class="row">
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">Libelle domaine d installation</label>
+                                        <label for="">Libelle projet d installation</label>
                                         <input type="text"  value="{{$domaine->libelleDomaine}}" name="libelleDomaine" id="" class="form-control" placeholder="le libelle d installation" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted" ><span style="color: red">le libelle du domaine est obligatoire</span></small>
                                       </div>

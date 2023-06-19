@@ -8,7 +8,7 @@
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter un centre de formation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ajouter une structure de formation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -200,6 +200,14 @@
                 @endforeach
 
               </select>
+            </div>
+          </div>
+         <!-- TYPE STRUCTURE IS A NEW FIELD ADDED-->
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Type Structure</label>
+              <input type="text"   name="capacite" id="" class="form-control" placeholder="la capacité d'accueil" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le statut ne doit pas être vide</span></small>
             </div>
           </div>
 

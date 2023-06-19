@@ -19,14 +19,14 @@
             </div>
         </div>
         @if($errors->first('libelleRegion')=='validation.required')
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        *obligatoire
-                    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    le libelle de la region ne doit pas être vide
                 </div>
             </div>
+        </div>
         @endif
         <div class="row" style="margin-top: 5%">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -47,7 +47,7 @@
 
                                 <div class="modal fade" id="{{'modifier'.$region->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                        <form action="{{url('/update-regionc')}}" method="POST">
+                                        <form action="{{url('/update-region')}}" method="POST">
                                             @csrf
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
@@ -66,7 +66,7 @@
                                                         <div class="col-lg-12">
                                                             <div class="form-group">
                                                                 <label for="">Region</label>
-                                                                <input type="text" value="{{$region->libelleRegion}}" name="libelleRegion" class="form-control" placeholder="Region" aria-describedby="helpId" required />
+                                                                <input type="text" value="{{$region->libelleRegion}}" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required />
                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
@@ -75,7 +75,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></button>
-                                                    <button type="submit" class="btn btn-primary">Sauvegarder<i class="fa fa-save" aria-hidden="true"></i></button>
+                                                    <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>
                                                 </div>
                                             </div>
                                         </form>
@@ -104,7 +104,7 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-sm-12  col-md-12">
                                                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                                                                    <a href="{{url('/delete-regionc/'.$region->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                                                                    <a href="{{url('/delete-region/'.$region->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -135,7 +135,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <form action="{{url('/save-regionc')}}" method="POST">
+        <form action="{{url('/save-region')}}" method="POST">
             @csrf
             <div class="modal-content">
                 <div class="modal-header coopvert">
@@ -145,19 +145,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-<!--
-                    <div class="row">
-                        <div class="col-6">
-                            <input hidden name="id" type="text">
-                        </div>
-                    </div>
--->
 
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="">Region</label>
-                                <input type="text" value="" name="libelleRegion" id="" class="form-control" placeholder="Region" aria-describedby="helpId" required>
+                                <input type="text" name="libelleRegion" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>

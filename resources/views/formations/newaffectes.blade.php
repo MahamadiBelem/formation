@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="formations">Formation</label>
+              <label for="formations">Cycle de formation Formation</label>
               <select id="formations" class="form-control" name="formation_id">
                @foreach ($formations as $formation)
                <option value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
@@ -65,6 +65,14 @@
                <option value="{{$centre->id}}">{{$centre->denomination}}</option>
                @endforeach
               </select>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">structure de formation </label>
+              <input type="select"   name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
             </div>
           </div>
          

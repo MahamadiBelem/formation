@@ -24,7 +24,7 @@
                     <thead style="background-color: #007bff;color:white;">
                         <tr>
                             <th>Regions </th>
-                            <th>Province </th>
+                            <th>Provinces </th>
                             <th>Communes </th>
                             <th>Actions</th>
                         </tr>
@@ -32,20 +32,20 @@
                     <tbody>
                         @foreach ($communes as $commune)
                         <tr>
-                            <td>{{$commune}}</td>
-                            <td>{{$commune}}</td>
-                            <td>{{$commune}}</td>
+                            <td>{{$commune->province->region->libelleRegion}}</td>
+                            <td>{{$commune->province->libelleProvince}}</td>
+                            <td>{{$commune->libelleCommune}}</td>
                             <td>
                                 <button data-toggle="modal" data-target="{{'#modifier'.$commune->id}}" class="btn btn-outline-success"><i style="color: #007bff" class="fa fa-edit"></i></button>
                                 <button data-toggle="modal" data-target="{{'#suprimer'.$commune->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
 
                                 <div class="modal fade" id="{{'modifier'.$commune->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                        <form action="{{url('/update-Communesc/'.$commune->id)}}" method="POST">
+                                        <form action="{{url('/update-communes/'.$commune->id)}}" method="POST">
                                             @csrf
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier une commune</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier une Commune</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -57,19 +57,23 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label for="">Province</label>
-                                                            <input type="text" value="{{$commune->libelleCommune}}" name="libelleCommune" class="form-control" placeholder="Province" aria-describedby="helpId" required />
-                                                            <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="">Commune</label>
+                                                                <input type="text" value="{{$commune->libelleCommune}}" name="libelleCommune" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
+                                                                <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
+                                                            </div>
                                                         </div>
-                                                    </div>                                                    
+
                                                         <div class="col-6">
                                                             <div class="form-group">
-                                                                <label for="Provinces">Province</label>
-                                                                <select id="Provinces" class="form-control" name="libelleProvince" required>
-                                                                    
+                                                                <label for="Province">Province</label>
+                                                                <select id="Province" class="form-control" name="libelleProvince" required>
+                                                                    @foreach ($provinces as $province)
+                                                                    <option @if ($commune->province->id==$province->id)
+                                                                        selected
+                                                                        @endif value="{{$province->id}}">{{$province->libelleProvince}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -107,7 +111,7 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-sm-12  col-md-12">
                                                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                                                                    <a href="{{url('/delete-Communesc/'.$commune->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                                                                    <a href="{{url('/delete-communes/'.$commune->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -128,8 +132,7 @@
 
 
                 </table>
-
-               
+                {{ $communes->onEachSide(5)->links() }}
             </div>
         </div>
 
@@ -139,11 +142,11 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <form action="{{url('/save-Communesc')}}" method="POST">
+        <form action="{{url('/save-communes')}}" method="POST">
             @csrf
             <div class="modal-content">
                 <div class="modal-header coopvert">
-                    <h5 class=" modal-title" id="exampleModalLabel">Ajouter une Commune</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter une commune</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -154,15 +157,18 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">Commune</label>
-                                <input type="text" name="libelleCommune" id="" class="form-control" placeholder="Commune" aria-describedby="helpId" required>
+                                <input type="text" name="libelleCommune" id="" class="form-control" placeholder="libelleCommune" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>
-
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="Provinces">Province</label>
-                                
+                                <label for="">Province</label>
+                                <select id="province" class="form-control" name="province" required>
+                                    @foreach ($provinces as $province)
+                                    <option value="{{$province->id}}">{{$province->libelleProvince}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>

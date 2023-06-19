@@ -9,9 +9,7 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter une cooperative</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+
                 </div>
                 <div class="modal-body">
 
@@ -64,7 +62,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">Boite postal</label>
-                                <input type="text" name="boitepostal" id="" class="form-control" placeholder="boitepostal" aria-describedby="helpId">
+                                <input type="text" name="boitepostal" id="" class="form-control" placeholder="la boite postal" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>

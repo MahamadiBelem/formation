@@ -16,8 +16,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/export_csvse">CVS</a>
-                            <a class="dropdown-item" href="/export_excelse">Excel</a>
+                              <a class="dropdown-item" href="/export_excelse"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="/export_csvse" style="color: blue; font-weight:bold;">Csv <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                                                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                <small id="helpId" class="text-muted"><span style="color: red">la cooperative est obligatoire</span></small>
+                                                                <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,7 +257,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">nombre Salarie Homme</label>
-                                <input type="text" name="Nombre Salarié Homme" id="" class="form-control" placeholder="Saisisez nombre Salarié Homme" aria-describedby="helpId" required>
+                                <input type="text" name="nombreSalarieHomme" id="" class="form-control" placeholder="Saisisez nombre Salarié Homme" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
@@ -265,7 +265,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">nombreSalarieFemme</label>
-                                <input type="text" name="nombre Salarié Femme" id="" class="form-control" placeholder="le nombre Salarié Femme" aria-describedby="helpId">
+                                <input type="text" name="nombreSalarieFemme" id="" class="form-control" placeholder="le nombre Salarié Femme" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -281,6 +281,7 @@
                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                     @endforeach
                                 </select>
+                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>
                     </div>

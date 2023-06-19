@@ -4,6 +4,7 @@ namespace App\Http\Controllers\cra;
 
 use App\Exports\craExport;
 use App\Http\Controllers\Controller;
+use App\Models\Communes;
 use App\Models\chambre_regionale;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -36,7 +37,8 @@ class craController extends Controller
      */
     public function create(){
         //
-        return view('cra.newcr');
+        $communes=Communes::all();
+        return view('cra.newcr', compact(['communes']));
     }
 
     /**
@@ -45,17 +47,19 @@ class craController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $cr = new chambre_regionale();
 
-        $cr->libelleCRA = $request->input('LibelleCRA');
+        $cr->libelleCRA = $request->input('libelleCRA');
         $cr->telephone = $request->input('telephone');
         $cr->email = $request->input('email');
         $cr->boitepostal = $request->input('boitepostal');
         $cr->gpslongitude = $request->input('gpslongitude');
         $cr->gpslatitude = $request->input('gpslatitude');
         $cr->siteWeb = $request->input('siteWeb');
+        $cr->commune()->associate(Communes::find($request->input('commune_id')));
 
         $cr->save();
 
@@ -68,10 +72,11 @@ class craController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
+    public function show($id)
+    {
 
         $cr = chambre_regionale::find($id);
-        return view('cra.detailcr');
+        return view('cra.detailcr', compact('cr'));
     }
 
     /**
@@ -80,10 +85,12 @@ class craController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
+    public function edit($id)
+    {
 
+        $communes=Communes::all();
         $cr = chambre_regionale::find($id);
-        return view('cra.updatecr');
+        return view('cra.updatecr', compact(['cr', 'communes']));
     }
 
     /**
@@ -93,17 +100,18 @@ class craController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request){
+    public function update(Request $request, $id){
 
-        $cr = new chambre_regionale();
+        $cr = chambre_regionale::find($id);
 
         $cr->libelleCRA = $request->input('libelleCRA');
         $cr->telephone = $request->input('telephone');
         $cr->email = $request->input('email');
         $cr->boitepostal = $request->input('boitepostal');
-        $cr->coordonnegpslong = $request->input('gpslongitude');
-        $cr->coordonnegpslat = $request->input('gpslatitude');
+        $cr->gpslongitude = $request->input('gpslongitude');
+        $cr->gpslatitude = $request->input('gpslatitude');
         $cr->siteWeb = $request->input('siteWeb');
+        $cr->commune()->associate(Communes::find($request->input('commune_id')));
         
         $cr->save();
 

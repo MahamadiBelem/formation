@@ -22,7 +22,7 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Centre de formation </th>
-                  <th>Formation </th>
+                  <th>Cycle de formation </th>
                   <th>Date début </th>
                   <th>Date de cloture</th>
                 
@@ -210,7 +210,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Formations</label>
+                <label for="">Cycle de formations</label>
                 <select name="formation_id" class="form-control" id="">
                     @foreach ($formations as $formation)
                         <option  value="{{$formation->id}}">{{$formation->libelleFormations}}</option>

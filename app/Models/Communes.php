@@ -42,6 +42,11 @@ class Communes extends Model
         return $this->hasMany(Cooperative::class);
     }
 
+    public function association()
+    {
+        return $this->hasMany(Association::class);
+    }
+
     public function chambre_regionale()
     {
         return $this->hasOne(chambre_regionale::class);

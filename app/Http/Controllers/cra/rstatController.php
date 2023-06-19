@@ -100,7 +100,7 @@ class rstatController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $rstat = new rencontre_statuaire();
+        $rstat = rencontre_statuaire::find($id);
         $rstat->NbreAsConsulairePrevAn = $request->input('NbreAsConsulairePrevAn');
         $rstat->NbreRencBurExecutif = $request->input('NbreRencBurExecutif');
         $rstat->NbreRencComOrganisation = $request->input('NbreRencComOrganisation');

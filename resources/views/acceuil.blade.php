@@ -1,5 +1,5 @@
 @extends('layout.template')
-
+<!-- CELUI CI EST LA PREMIERE PAGE D'ACCUEIL APRES LE LOGIN -->
 @section('content')
 <div style="margin-top: 10%;margin-left:-40%; ">
     <div class="row">
@@ -12,7 +12,7 @@
                     </span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text formation_panel">Gestion de la formation</span>
+                    <strong>  <span class="info-box-text formation_panel"> Gestion de la formation</span> </strong>
                         <span class="info-box-number">
 
                         </span>
@@ -33,7 +33,7 @@
                     </span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text foncier_panel" style="color:#28a745">Gestion du foncier rural</span>
+                        <strong><span class="info-box-text foncier_panel" style="color:#28a745">Gestion du foncier rural</span></strong>
                         <span class="info-box-number">
 
                         </span>
@@ -46,7 +46,7 @@
         @endhasanyrole
         <!-- /.col -->
         @hasanyrole('role-user-manage-op|role-user-manage-op|role-admin-op|role-admin-principal|role-admin-formation')
-        <div class="col-md-3 col-sm-6 col-12">
+        <div class="col-md-6 col-sm-12 col-12">
             <a href="{{url('/cooperatives')}}">
                 <div class="info-box">
                     <span class="info-box-icon bg-success">
@@ -54,7 +54,7 @@
                     </span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text foncier_panel">Gestion des OPA</span>
+                        <strong><span class="info-box-text foncier_panel">Gestion des OPA</span></strong>
                         <span class="info-box-number">
 
                         </span>

@@ -87,7 +87,7 @@
   <!-- /.col -->
 </div>
      <p class="mb-1">
-        <a href="forgot-password.html">mot de passe oublier ?</a>
+        <a href="{{url('/forgot-password')}}">mot de passe oublier ?</a>
      </p>
 </form>
 

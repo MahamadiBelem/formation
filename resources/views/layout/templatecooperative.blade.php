@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- CE TEMPLATE PREND EN COMPTE LES MENU DE LA PARTIE COEPERATIVE -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class=" navbar navbar-expand navbar-white navbar-light" style="background-color: #00B14E">
+        <nav class=" navbar navbar-expand navbar-white navbar-light" style="background-color: #28a745;">
 
             <a class="navbar-brand" href="{{url('/')}}">
                 <img src="{{asset('/img/armoirie.jpg')}}" class="img-circle" alt="">
@@ -56,13 +56,13 @@
                     @hasanyrole('role-admin-formation|role-admin-formation|role-admin-principal')
                     <li class="nav-item dropdown">
                         <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-cog fa-2x icon_color"></i>Paramétrages
+                            <i class="fa fa-cog fa-2x"></i>Paramétrages
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{url('/formejuridique')}}">Formes Juridiques</a>
-                            <a class="dropdown-item" href="{{url('#')}}">Organes Activités</a>
-                            <a class="dropdown-item" href="{{url('#')}}">Filières</a>
-                            <a class="dropdown-item" href="{{url('#')}}">Maillons</a>
+                            <a class="dropdown-item" href="{{url('/activiteorgane')}}">Activités des organes</a>
+                            <a class="dropdown-item" href="{{url('/filiere')}}">Filières</a>
+                            <a class="dropdown-item" href="{{url('/maillon')}}">Maillons</a>
                             <a class="dropdown-item" href="{{url('/genre')}}">Secteurs d'activité</a>
                             <a class="dropdown-item" href="{{url('/typeorganisation')}}">Types Organisations</a>
                             <a class="dropdown-item" href="{{url('/regionsc')}}">Regions</a>
@@ -76,7 +76,7 @@
 
                     <li class="nav-item dropdown">
                         <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-graduation-cap fa-2x icon_color"></i> Identification OPA
+                            <i class="fa fa-graduation-cap fa-2x"></i> Identification OPA
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('/association')}}">Associations</a>
@@ -91,16 +91,17 @@
 
                     <li class="nav-item dropdown">
                         <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-home fa-2x icon_color"></i> Gestions
+                            <i class="fa fa-home fa-2x"></i> Gestions
                         </a>
                         <ul class="dropdown-menu multi" aria-labelledby="navbarDropdown">
                             <li class="dropdown-submenu">
                                     <a style="color: black" class="nav-link dropdown-toggle" href="#">Gestion des associations</a>
                                         <ul>
-                                            <li class="dropdown-item"><a href="{{url('#')}}">Organes associations</a></li>
-                                            <li class="dropdown-item"><a href="{{url('#')}}">Organes Gestions </a></li>
-                                            <li class="dropdown-item"><a href="{{url('#')}}">Organes Controles</a></li>
-                                            <li class="dropdown-item"><a href="{{url('secretariatexecutifassociation')}}">Secrétariat Exécutif</a></li>
+                                            <li class="dropdown-item"><a href="{{url('/activite')}}">Activités</a></li>
+                                            <li class="dropdown-item"><a href="{{url('/bureauexecutifassociation')}}">Bureau Executif</a></li>
+                                            <li class="dropdown-item"><a href="{{url('/commissariataucompteassociation')}}">Commissariat au Compte</a></li>
+                                            <li class="dropdown-item"><a href="{{url('/fonctionnementassociation')}}">Fonctionnement</a></li>
+                                            <li class="dropdown-item"><a href="{{url('/secretariatexecutifassociation')}}">Secrétariat Exécutif</a></li>
                                         </ul>
                                 </li>
                                 <div class="dropdown-divider"></div>
@@ -129,7 +130,7 @@
 
                     <li class="nav-item dropdown">
                         <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-book fa-2x icon_color"></i>Statistiques
+                            <i class="fa fa-book fa-2x"></i>Statistiques
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{url('/laravel_google_chart')}}">Genres</a>
@@ -174,7 +175,7 @@
         <div class="row" style="margin-top: 20%;">
             <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <!-- Main Footer -->
-                <footer style="background-color: #00B14E; color: white;height: 100px;" align='center'>
+                <footer style="background-color: #28a745;; color: white;height: 100px;" align='center'>
                     <strong>Copyright &copy; 2021-2022 <a style="background-color: white href= " http://adminlte.io">DGFOMR</a>.</strong>
                     All rights reserved.
 

@@ -24,6 +24,7 @@
                   <th>Nom & prenom </th>
                   <th>Emploi </th>
                   <th>Contact </th>
+                  <th>Modules </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -33,6 +34,7 @@
                     <td>{{$formateur->nomComplet}}</td>
                     <td>{{$formateur->emploi}}</td>
                     <td>{{$formateur->contact}}</td> 
+                    <td></td>
                     
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$formateur->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
@@ -184,6 +186,16 @@
               <small id="helpId" class="text-muted" ><span style="color: red">le contact du formateur est obligatoire</span></small>
             </div>
           </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Module</label>
+              <select type="text"   name="contact" id="" class="form-control" placeholder="contact" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le contact du formateur est obligatoire</span></small>
+              </select>
+            </div>
+          
+
+          
         </div> 
         
       </div>

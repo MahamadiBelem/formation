@@ -16,8 +16,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/beexport_csv">CVS</a>
-                            <a class="dropdown-item" href="/beexport_excel">Excel</a>
+                            <a class="dropdown-item" href="beexport_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="beexport_csv" style="color: blue; font-weight:bold;">CSV <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -60,9 +60,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modifier Bureau Exécutif</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
@@ -74,7 +72,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">Dénomination du Président</label>
-                                                                <input type="text" value="{{$be->NomPrenomPresident}}" name="NomPrenomPresident" id="" class="form-control" placeholder="NomPrenomPresident" aria-describedby="helpId" required>
+                                                                <input type="text" value="{{$be->NomPrenomPresident}}" name="NomPrenomPresident" id="" class="form-control" placeholder="Dénomination du Président" aria-describedby="helpId" required>
                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
@@ -91,16 +89,16 @@
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
-                                                                <label for="">Nombre membre AC (Hommes)</label>
-                                                                <input type="text" value="{{$be->NbreMembreAssembleConsulaireH}}" name="NbreMembreAssembleConsulaireH" id="" class="form-control" placeholder="NbreMembreAssembleConsulaireH" aria-describedby="helpId">
+                                                                <label for="">Assemblée Consulaire (Hommes)</label>
+                                                                <input type="text" value="{{$be->NbreMembreAssembleConsulaireH}}" name="NbreMembreAssembleConsulaireH" id="" class="form-control" placeholder="Nombre de membres masculins" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
-                                                                <label for="">Nombre membre AC (Femmes)</label>
-                                                                <input type="text" value="{{$be->NbreMembreAssembleConsulaireF}}" name="NbreMembreAssembleConsulaireF" id="" class="form-control" placeholder="NbreMembreAssembleConsulaireF" aria-describedby="helpId">
+                                                                <label for="">Assemblée Consulaire (Femmes)</label>
+                                                                <input type="text" value="{{$be->NbreMembreAssembleConsulaireF}}" name="NbreMembreAssembleConsulaireF" id="" class="form-control" placeholder="Nombre de membres féminins" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -118,7 +116,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">Date du début du mandat</label>
-                                                                <input type="date" value="{{$be->DateDebutMandat}}" name="DateDebutMandat" id="" class="form-control" placeholder="DateDebutMandat" aria-describedby="helpId">
+                                                                <input type="date" value="{{$be->DateDebutMandat}}" name="DateDebutMandat" id="" class="form-control" placeholder="Date du début du mandat" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -152,9 +150,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer Bureau Exécutif</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
@@ -203,9 +199,7 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter Bureau Exécutif</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div class="modal-body">
 
@@ -213,7 +207,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">Dénomination du Président</label>
-                                <input type="text" name="NomPrenomPresident" id="" class="form-control" placeholder="NomPrenomPresident" aria-describedby="helpId" required>
+                                <input type="text" name="NomPrenomPresident" id="" class="form-control" placeholder="Dénomination du Président" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span>*obligatoire</small>
                             </div>
                         </div>
@@ -230,16 +224,16 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="">Nombre membre AC (Hommes)</label>
-                                <input type="text" name="NbreMembreAssembleConsulaireH" id="" class="form-control" placeholder="NbreMembreAssembleConsulaireH" aria-describedby="helpId" required>
+                                <label for="">Assemblée Consulaire (Hommes)</label>
+                                <input type="text" name="NbreMembreAssembleConsulaireH" id="" class="form-control" placeholder="Nombre de membres masculins" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="">Nombre membre AC (Femmes)</label>
-                                <input type="text" name="NbreMembreAssembleConsulaireF" id="" class="form-control" placeholder="NbreMembreAssembleConsulaireF" aria-describedby="helpId">
+                                <label for="">Assemblée Consulaire (Femmes)</label>
+                                <input type="text" name="NbreMembreAssembleConsulaireF" id="" class="form-control" placeholder="Nombre de membres féminins" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -248,14 +242,14 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">Durée du mandat</label>
-                                <input type="text" name="DureeMandat" id="" class="form-control" placeholder="DureeMandat" aria-describedby="helpId">
+                                <input type="text" name="DureeMandat" id="" class="form-control" placeholder="Durée du mandat" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">Date du début du mandat</label>
-                                <input type="date" name="DateDebutMandat" id="" class="form-control" placeholder="DateDebutMandat" aria-describedby="helpId">
+                                <input type="date" name="DateDebutMandat" id="" class="form-control" placeholder="Date du début du mandat" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>

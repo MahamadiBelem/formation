@@ -22,6 +22,7 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Type de formation </th>
+                  <th>Module de formation </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -29,6 +30,7 @@
                   @foreach ($types as $type)
                   <tr>
                     <td>{{$type->libelleTypeFormation}}</td>
+                    <td></td>
                       <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$type->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$type->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -142,6 +144,14 @@
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom du type  de formation est obligatoire</span></small>
               </div>
             </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="">module de formation</label>
+                <input type="text" name="libellemodule de formation" id="" class="form-control" placeholder="Saisiez module de formation" aria-describedby="helpId" required>
+                <small id="helpId" class="text-muted" ><span style="color: red">le nom du type  de formation est obligatoire</span></small>
+              </div>
+            </div>
+
           </div>
 
       </div>

@@ -27,6 +27,7 @@
                   <th>Sexe </th>
                   <th>Contact </th>
                   <th>Localités </th>
+                  <th>PersonneCas de besoin </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -38,7 +39,8 @@
                     <td>{{$apprenant->prenom}}</td> 
                     <td>{{$apprenant->sexe}}</td>
                     <td>{{$apprenant->contact}}</td>
-                    <td>{{$apprenant->localites}}</td>   
+                    <td>{{$apprenant->localites}}</td>  
+                    <td></td> 
                     <td>
                           <a  href="{{url('/update-apprenant-view-form/'.$apprenant->id)}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></a>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$apprenant->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>

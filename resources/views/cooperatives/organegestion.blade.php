@@ -17,8 +17,9 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/export_csvog">CVS</a>
-                            <a class="dropdown-item" href="/export_excelog">Excel</a>
+
+                              <a class="dropdown-item" href="/export_excelog"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="/export_csvog" style="color: blue; font-weight:bold;">Csv <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -32,11 +33,11 @@
                             <th>Cooperatives</th>
                             <th>Membre Hommes</th>
                             <th>Membre Femmes</th>
-                            <th>DebutMandats</th>
-                            <th>FinMandats</th>
+                            <th>Debut Mandats</th>
+                            <th>Fin Mandats</th>
                             <th>Mandat Consecutifs</th>
                             <th>Presidents</th>
-                            <th>ContactPresidents</th>
+                            <th>Contact Presidents</th>
                             <th>Sexes</th>
 
                             <th>Actions</th>
@@ -163,6 +164,7 @@
                                                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                                                     @endforeach
                                                                 </select>
+                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -325,6 +327,7 @@
                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                     @endforeach
                                 </select>
+                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>
                     </div>

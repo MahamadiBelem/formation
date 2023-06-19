@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="">Inscription</label>
+              <label for="">Aprrenant</label>
               <select  class="form-control" name="inscription" id="installation_affecte">
                 
                 @foreach ($affectes as $affecte)
@@ -39,7 +39,7 @@
 
         <div class="row">
 
-          <div class="col-lg-6">
+          <!--div class="col-lg-6">
             <div class="form-group">
               <label for="">Domaine d'installation</label>
               <select name="domaine_installation" id="domaine_installation" class="form-control">
@@ -47,6 +47,12 @@
                 <option value="{{$domaine->id}}">{{$domaine->libelleDomaine}}</option>
                 @endforeach
               </select>
+            </div>
+          </div-->
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Structure de formation </label>
+              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
             </div>
           </div>
           
@@ -66,7 +72,7 @@
          
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="">Années</label>
+              <label for="">Année de sortie</label>
               <input type="text"   name="annees" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">l'années d'installation est obligatoire</span></small>
             </div>
@@ -75,7 +81,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Lieux d'installation</label>
-              <input type="date"   name="lieuInstallation" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="text"   name="lieuInstallation" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">selectionner le lieux d'installation  est obligatoire</span></small>
             </div>
           </div>
@@ -88,9 +94,29 @@
               <input type="checkbox"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId">
             </div>
           </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Regions</label>
+              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Provinces</label>
+              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Communes</label>
+              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+            </div>
         </div>
-         
-      </div>
+        </div>
+
+
       <div class="modal-footer">
         <a href="{{url('/installation')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
         <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>

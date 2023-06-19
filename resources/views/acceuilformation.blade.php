@@ -1,12 +1,12 @@
 @extends('layout.templateformation')
-
+<!-- CET TEMPLATE INDIQUE LES DIAGRAMME EN BATON ET EN SECTEUR -->
 @section('content')
 <div style="margin-top: 10%;margin-left:-45%; ">
 	<div class="row">
    <div class="col-6">
         <!-- BAR CHART -->
         <div class="card">
-          <div class="card-header" style="background-color: #926d27;color:white">
+          <div class="card-header" style="background-color: #3e61fa;color:white">
             <h3 class="card-title">Le nombre de formateur par domaine de formation(Diagramme en bâton)</h3>
 
             <div class="card-tools">
@@ -30,7 +30,7 @@
   <div class="col-6">
     <!-- BAR CHART -->
     <div class="card">
-      <div class="card-header" style="background-color: #926d27;color:white">
+      <div class="card-header" style="background-color: #3e61fa;color:white">
         <h3 class="card-title">Le nombre de formateur par domaine de formation(Diagramme en circulaire)</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse">

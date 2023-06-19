@@ -17,8 +17,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/export_csvoc">CVS</a>
-                            <a class="dropdown-item" href="/export_exceloc">Excel</a>
+                              <a class="dropdown-item" href="/export_exceloc"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="/export_csvoc" style="color: blue; font-weight:bold;">Csv <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -29,13 +29,13 @@
                 <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                     <thead style="background-color: #007bff;color:white;">
                         <tr>
-                            <th>Cooperatives </th>
+                            <th>Cooperatives</th>
                             <th>Membre Hommes</th>
                             <th>Membre Femmes</th>
-                            <th>DebutMandats</th>
-                            <th>FinMandats </th>
+                            <th>Debut Mandats</th>
+                            <th>Fin Mandats </th>
                             <th>Mandat Consecutifs</th>
-                            <th>1er Responsables</th>
+                            <th>Premier Responsables</th>
                             <th>Contacts</th>
                             <th>Sexes</th>
 
@@ -57,7 +57,6 @@
                             <td>
                                 <button data-toggle="modal" data-target="{{'#modifier'.$organecontrole->id}}" class="btn btn-outline-success"><i style="color: #007bff" class="fa fa-edit"></i></button>
                                 <button data-toggle="modal" data-target="{{'#suprimer'.$organecontrole->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
-
                                 <div class="modal fade" id="{{'modifier'.$organecontrole->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <form action="{{url('/update-organecontrole/'.$organecontrole->id)}}" method="POST">
@@ -163,7 +162,7 @@
                                                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                <small id="helpId" class="text-muted"><span style="color: red"></span></small>
+                                                                <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -326,6 +325,7 @@
                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                     @endforeach
                                 </select>
+                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>
                     </div>

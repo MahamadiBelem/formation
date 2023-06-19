@@ -102,7 +102,7 @@ class beController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $be = new bureau_executif();
+        $be = bureau_executif::find($id);
 
         $be->NomPrenomPresident = $request->input('NomPrenomPresident');
         $be->Contact = $request->input('Contact');

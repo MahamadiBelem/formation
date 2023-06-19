@@ -22,11 +22,12 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Apprenant </th>
-                  <th>Domaine d'installation </th>
+                  <!--th>Domaine d'installation </th-->
                   <th>Source de financement </th>
-                  <th>Années </th>
+                  <th>Année de sortie </th>
                   <th>Date d'installation</th>
                   <th>lieu d'installation </th>
+                  <th>Structure de formation </th>
                   <th>kits ? </th>
                   <th>Actions</th>
                 </tr>
@@ -39,9 +40,9 @@
                       Nom : {{$installation->affecterapprenants->apprenant->nom}}
                       Prenom: {{$installation->affecterapprenants->apprenant->prenom}}
                     </td>
-                    <td>
+                    <!--td>
                        {{$installation->domainesinstallation->libelleDomaine}}
-                    </td>
+                    </td-->
                     <td>
                       {{$installation->sourcefinancements->libelleSourceFinancement}}
                     </td>
@@ -55,6 +56,7 @@
                       {{$installation->lieuInstallation}}
                     </td>
                     <td>
+                    <td></td>
                      @if ($installation->confirmedKits)
                          <span style="background-color: green">sortie </span>
                      @else

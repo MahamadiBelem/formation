@@ -18,8 +18,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="export_csv">CVS</a>
-                            <a class="dropdown-item" href="export_excel">Excel</a>
+                              <a class="dropdown-item" href="export_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="export_csv" style="color: blue; font-weight:bold;">Csv <i class="fa fa-file-csv"></i></button></a>
                         </div>
 
                     </div>
@@ -60,11 +60,9 @@
                                 <div class="modal fade" id="{{'suprimer'.$cooperative->id}}">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
-                                            <div class="modal-header modal-delete-header">
+                                            <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer une cooperative</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">

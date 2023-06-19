@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Communes;
 use App\Models\Provinces;
-use App\Models\Regions;
 use Illuminate\Http\Request;
 
 class CommunescController extends Controller
@@ -17,10 +16,9 @@ class CommunescController extends Controller
     public function index()
     {
         //
-        //$provinces = Provinces::all();
-        
-        $communes = Communes::paginate(10);
-        return view('cooperatives.communes', compact(['communes']));
+        $provinces = Provinces::all();
+        $communes = Communes::paginate(30);
+        return view('cooperatives.communes', compact(['provinces', 'communes']));
     }
 
     /**
@@ -95,7 +93,6 @@ class CommunescController extends Controller
         $commune->province()->associate($province);
 
         $commune->save();
-
         return redirect('/communesc');
     }
 

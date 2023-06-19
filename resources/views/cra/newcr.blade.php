@@ -9,9 +9,6 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter une chambre régionale</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
 
@@ -72,6 +69,16 @@
                                 <label for="">Site web </label>
                                 <input type="text" name="siteWeb" id="" class="form-control" placeholder="Site Web de la chambre régionale" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="communes">Commune</label>
+                                <select id="communes" class="form-control" name="commune_id">
+                                    @foreach ($communes as $commune)
+                                    <option value="{{$commune->id}}">{{$commune->libelleCommune}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>

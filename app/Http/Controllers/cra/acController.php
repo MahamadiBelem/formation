@@ -15,11 +15,13 @@ class acController extends Controller
     public function acexportcsv(){
         return Excel::download(new acExport, 'AssembleeConsulaire.csv');
     }
-    public function acexportexcel(){
+    public function acexportexcel()
+    {
         return Excel::download(new acExport, 'AssembleeConsulaire.xlsx');
     }
 
-    public function index(){
+    public function index()
+    {
         //
         //$acs = assemblee_consulaire::all();
         $acs = assemblee_consulaire::paginate(10);
@@ -43,14 +45,17 @@ class acController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $ac = new assemblee_consulaire();
+
         $ac->NbreMembreColJeune = $request->input('NbreMembreColJeune');
         $ac->NbreMembreColFemme = $request->input('NbreMembreColFemme');
         $ac->NbreMembreH = $request->input('NbreMembreH');
         $ac->NbreMembreEntreASPHF = $request->input('NbreMembreEntreASPHF');
         $ac->NbreMembreColPr = $request->input('NbreMembreColPr');
         $ac->NbreMembreColExplASPHF = $request->input('NbreMembreColExplASPHF');
+
         $ac->chambre_regionale()->associate(chambre_regionale::find($request->input('chambre_regionale_id')));
 
         $ac->save();
@@ -63,9 +68,9 @@ class acController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-        $cr= chambre_regionale::find($id);
-        return view('acs.detailac');
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -74,9 +79,9 @@ class acController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
-        $cr= chambre_regionale::find($id);
-        return view('acs.updateac');
+    public function edit($id)
+    {
+        //
     }
 
     /**
@@ -86,14 +91,17 @@ class acController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
-        $ac = new assemblee_consulaire();
+    public function update(Request $request, $id)
+    {
+        $ac = assemblee_consulaire::find($id);
+
         $ac->NbreMembreColJeune = $request->input('NbreMembreColJeune');
         $ac->NbreMembreColFemme = $request->input('NbreMembreColFemme');
         $ac->NbreMembreH = $request->input('NbreMembreH');
         $ac->NbreMembreEntreASPHF = $request->input('NbreMembreEntreASPHF');
         $ac->NbreMembreColPr = $request->input('NbreMembreColPr');
         $ac->NbreMembreColExplASPHF = $request->input('NbreMembreColExplASPHF');
+
         $ac->chambre_regionale()->associate(chambre_regionale::find($request->input('chambre_regionale_id')));
 
         $ac->save();

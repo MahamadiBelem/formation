@@ -61,6 +61,13 @@
               <input type="checkbox"   name="confirmedSortie" id="" class="form-control" placeholder="" aria-describedby="helpId">
             </div>
           </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Date Inscription</label>
+              <input type="date"   name="dateFinFormation" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">selectionner la date inscription est obligatoire</span></small>
+            </div>
+          </div>
         </div>
          
       </div>

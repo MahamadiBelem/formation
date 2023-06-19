@@ -22,12 +22,13 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Apprenant </th>
+                  <th>Date d'inscription </th>
                   <th>Formation </th>
                   <th>Centre formation </th>
                   <th>Date de fin de formatio </th>
                   <th>Années de fin de formation </th>
                   <th>Motif </th>
-                  <th>Soritie </th>
+                  <th>Sortie </th>
                   <th>Actions</th>
                 </tr>
                 </thead>

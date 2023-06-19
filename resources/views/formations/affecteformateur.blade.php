@@ -21,10 +21,11 @@
             <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
-                  <th>Centre de formation </th>
+                  <th>Structure de formation </th>
                   <th>Formateur </th>
                   <th>Date d affectation </th>
-                  <th>Regime du formateur</th>
+                  <th>Status du formateur</th>
+                  <th>Cycle de formation</th>
                 
                   <th>Actions</th>
                 </tr>
@@ -36,6 +37,7 @@
                     <td>Nom:{{$affecte->formateur->nomComplet}} Contact{{$affecte->formateur->contact}}</td>
                     <td>{{$affecte->dateAffectation}}</td>
                     <td>{{$affecte->regimeFormateur}}</td>
+                    <td></td>
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$affecte->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$affecte->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -226,6 +228,18 @@
                     @endforeach
                 </select>
                 <small id="helpId" class="text-muted" ><span style="color: red">le centre de formation est obligatoire</span></small>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Cycle de formation</label>
+                <select name="centre_id" class="form-control" id="">
+                    @foreach ($centres as $centre)
+                        <option  value="{{$centre->id}}">{{$centre->denomination}}</option>
+                    @endforeach
+                </select>
+                <small id="helpId" class="text-muted" ><span style="color: red">le cycle de formation est obligatoire</span></small>
               </div>
             </div>
           </div>

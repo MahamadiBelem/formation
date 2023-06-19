@@ -23,9 +23,10 @@
                 <tr>
                   <th>Denomination </th>
                   <th>Localisation </th>
-                  <th>Status </th>
+                  <th>StatusStructure </th>
                   <th>Capacité </th>
-                  <th>Commune </th>
+                  <!--th>Commune </th-->
+                  <th>TypeStructure</th>
                   <th>Regime </th>
                   <th>Actions</th>
                 </tr>
@@ -37,7 +38,7 @@
                     <td>{{$centre->localisation}}</td>
                     <td>{{$centre->statut}}</td> 
                     <td>{{$centre->capacite}}</td>
-                    <td>{{$centre->commune->libelleCommune}}</td>
+                    <td>{{$centre->capacite}}</td>
                     <td>{{$centre->regime->libelleRegime}}</td>   
                     <td>
                           <a  href="{{url('/update-centre-formation/'.$centre->id)}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></a>

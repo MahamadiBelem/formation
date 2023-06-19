@@ -22,6 +22,7 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Spécialités </th>
+                  <th>Domaine de formations</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -29,6 +30,7 @@
                   @foreach ($specialites as $specialite)
                   <tr>
                     <td>{{$specialite->libelleSpecialite}}</td>
+                    <td></td>
                       <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$specialite->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$specialite->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -140,6 +142,15 @@
                 <label for="">Spécialité</label>
                 <input type="text" name="libelleSpecialite" id="" class="form-control" placeholder="la specialité" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le libelle spécialité est obligatoire</span></small>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="">Domaine de formation</label>
+                <select type="text" name="libelleDomaine de formation" id="" class="form-control" placeholder="la specialité" aria-describedby="helpId" required>
+                <small id="helpId" class="text-muted" ><span style="color: red">le libelle domaine de formation est obligatoire</span></small>
+                </select>
               </div>
             </div>
           </div>

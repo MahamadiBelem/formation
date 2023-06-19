@@ -64,7 +64,6 @@ class seController extends Controller
         $secr->chambre_regionale()->associate(chambre_regionale::find($request->input('chambre_regionale_id')));
 
         $secr->save();
-
         return redirect('/secretariatExecutif');
     }
 
@@ -110,7 +109,6 @@ class seController extends Controller
         $secr->chambre_regionale()->associate(chambre_regionale::find($request->input('chambre_regionale_id')));
 
         $secr->save();
-
         return redirect('/secretariatExecutif');
     }
 

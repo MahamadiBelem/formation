@@ -17,8 +17,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/export_csvfoc">CVS</a>
-                            <a class="dropdown-item" href="/export_excelfoc">Excel</a>
+                            <a class="dropdown-item" href="/export_excelfoc"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="/export_csvfoc" style="color: blue; font-weight:bold;">Csv <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -29,14 +29,12 @@
                 <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                     <thead style="background-color: #007bff;color:white;">
                         <tr>
-                            <th>Cooperatives </th>
+                            <th>Cooperatives</th>
                             <th>Nombre Ag Ordinaires</th>
                             <th>Nombre Rencontre Organes Gestions</th>
-                            <th>Nombre Rencontre Organes Surveillances </th>
-                            <th>Semestres </th>
-                            <th>Année </th>
-
-
+                            <th>Nombre Rencontre Organes Surveillances</th>
+                            <th>Semestres</th>
+                            <th>Année</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -82,7 +80,7 @@
 
                                                         <div class="col-6">
                                                             <div class="form-group">
-                                                                <label for="">Nbr Rencontre Organe Gestion</label>
+                                                                <label for="">Nbr Renc Organe Gestion</label>
                                                                 <input type="text" value="{{$foncorgcoop->nombreRencontreOrganeGestion}}" name="nombreRencontreOrganeGestion" id="" class="form-control" placeholder="saissiser le nombre de Rencontre Organe Gestion" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
@@ -92,7 +90,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
-                                                                <label for="">Nbr Renc Organe Surveillance</label>
+                                                                <label for="">Renc Organe Surveillance</label>
                                                                 <input type="text" value="{{$foncorgcoop->nombreRencontreSurveillance}}" name="nombreRencontreSurveillance" id="" class="form-control" placeholder="saissiser le nombre Rencontre Surveillance" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
@@ -125,7 +123,7 @@
                                                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                <small id="helpId" class="text-muted"><span style="color: red">la cooperative est obligatoire</span></small>
+                                                                <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -224,7 +222,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="">Nbr Renc org Surveill</label>
+                                <label for="">Renc Organe Surveillance</label>
                                 <input type="text" name="nombreRencontreSurveillance" id="" class="form-control" placeholder="nombre Rencontre Surveillance" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
@@ -257,6 +255,7 @@
                                     <option value="{{$cooperative->id}}">{{$cooperative->denomination}}</option>
                                     @endforeach
                                 </select>
+                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                             </div>
                         </div>
                     </div>

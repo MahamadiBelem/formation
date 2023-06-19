@@ -31,15 +31,15 @@
                     <tbody>
                         @foreach ($provinces as $province)
                         <tr>
-                            <td>{{$province->region->libelleRegion}}</td>
                             <td>{{$province->libelleProvince}}</td>
+                            <td>{{$province->region->libelleRegion}}</td>
                             <td>
                                 <button data-toggle="modal" data-target="{{'#modifier'.$province->id}}" class="btn btn-outline-success"><i style="color: #007bff" class="fa fa-edit"></i></button>
                                 <button data-toggle="modal" data-target="{{'#suprimer'.$province->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
 
                                 <div class="modal fade" id="{{'modifier'.$province->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                        <form action="{{url('/update-provincesc/'.$province->id)}}" method="POST">
+                                        <form action="{{url('/update-provinces/'.$province->id)}}" method="POST">
                                             @csrf
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
@@ -55,14 +55,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label for="">Province</label>
-                                                            <input type="text" value="{{$province->libelleProvince}}" name="libelleProvince" class="form-control" placeholder="Province" aria-describedby="helpId" required />
-                                                            <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="">Province</label>
+                                                                <input type="text" value="{{$province->libelleProvince}}" name="libelleProvince" id="" class="form-control" placeholder="Provinve" aria-describedby="helpId" required>
+                                                                <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
+                                                            </div>
                                                         </div>
-                                                    </div>                                                    
+
                                                         <div class="col-6">
                                                             <div class="form-group">
                                                                 <label for="regions">Region</label>
@@ -92,7 +92,7 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
-                                                <h4 class="modal-title">Supprimer une province</h4>
+                                                <h4 class="modal-title">Supprimer une region</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -109,7 +109,7 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-sm-12  col-md-12">
                                                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                                                                    <a href="{{url('/delete-provincesc/'.$province->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                                                                    <a href="{{url('/delete-provinces/'.$province->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -141,7 +141,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <form action="{{url('/save-provincesc')}}" method="POST">
+        <form action="{{url('/save-provinces')}}" method="POST">
             @csrf
             <div class="modal-content">
                 <div class="modal-header coopvert">

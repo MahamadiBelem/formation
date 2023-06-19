@@ -1,22 +1,22 @@
 <table>
     <thead>
         <tr>
-            <th>Denomination</th>
+            <th>Dénomination</th>
             <th>Immatriculation</th>
-            <th>Date Creation</th>
-            <th>Telephone</th>
+            <th>Date de Création</th>
+            <th>Télephone</th>
             <th>Email</th>
-            <th>Boitepostal</th>
+            <th>Boite postal</th>
             <th>Latitude(GPS)</th>
             <th>Longitude(GPS)</th>
             <th>Site Web</th>
-            <th>Nom Faitiere Affliation</th>
-            <th>MontantC apital</th>
-            <th>Nonbre Membre Homme</th>
-            <th>Nombre Menbre Femme</th>
-            <th>Limitation Nombre Mandat</th>
-            <th>Duree Mandat Organe Gestion</th>
-            <th>Duree Mandat Organec ontrol</th>
+            <th>Faitiére</th>
+            <th>capital</th>
+            <th>Nombre Homme</th>
+            <th>Nombre Femme</th>
+            <th>limite Mandat</th>
+            <th>Mandat Organe Gestion</th>
+            <th>Mandat Organe Controle</th>
             <th>Commune</th>
             <th>juridique</th>
             <th>Type organisation</th>

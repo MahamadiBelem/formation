@@ -16,8 +16,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/acexport_csv">CVS</a>
-                            <a class="dropdown-item" href="/acexport_excel">Excel</a>
+                            <a class="dropdown-item" href="acexport_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="acexport_csv" style="color: blue; font-weight:bold;">CSV <i class="fa fa-file-csv"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -60,9 +60,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header coopvert">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modifier Assemblée Consulaire</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                                    
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
@@ -74,7 +72,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreColJeune</label>
-                                                                <input type="text" value="{{$ac->NbreMembreColJeune}}" name="NbreMembreColJeune" id="" class="form-control" placeholder="NbreMembreColJeune" aria-describedby="helpId" required>
+                                                                <input type="text" value="{{$ac->NbreMembreColJeune}}" name="NbreMembreColJeune" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                                                 <small id="helpId" class="text-muted"><span style="color: red">*obligatoire</span></small>
                                                             </div>
                                                         </div>
@@ -82,7 +80,7 @@
                                                         <div class="col-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreColFemme</label>
-                                                                <input type="text" value="{{$ac->NbreMembreColFemme}}" name="NbreMembreColFemme" id="" class="form-control" placeholder="NbreMembreColFemme" aria-describedby="helpId">
+                                                                <input type="text" value="{{$ac->NbreMembreColFemme}}" name="NbreMembreColFemme" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -92,7 +90,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreH</label>
-                                                                <input type="text" value="{{$ac->NbreMembreH}}" name="NbreMembreH" id="" class="form-control" placeholder="NbreMembreH" aria-describedby="helpId">
+                                                                <input type="text" value="{{$ac->NbreMembreH}}" name="NbreMembreH" id="" class="form-control" placeholder="Nombre de membres masculins" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -100,7 +98,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreEntreASPHF</label>
-                                                                <input type="text" value="{{$ac->NbreMembreEntreASPHF}}" name="NbreMembreEntreASPHF" id="" class="form-control" placeholder="NbreMembreEntreASPHF" aria-describedby="helpId">
+                                                                <input type="text" value="{{$ac->NbreMembreEntreASPHF}}" name="NbreMembreEntreASPHF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -111,14 +109,14 @@
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreColPr</label>
-                                                                <input type="text" value="{{$ac->NbreMembreColPr}}" name="NbreMembreColPr" id="" class="form-control" placeholder="NbreMembreColPr" aria-describedby="helpId">
+                                                                <input type="text" value="{{$ac->NbreMembreColPr}}" name="NbreMembreColPr" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label for="">NbreMembreColExplASPHF</label>
-                                                                <input type="text" value="{{$ac->NbreMembreColExplASPHF}}" name="NbreMembreColExplASPHF" id="" class="form-control" placeholder="NbreMembreColExplASPHF" aria-describedby="helpId">
+                                                                <input type="text" value="{{$ac->NbreMembreColExplASPHF}}" name="NbreMembreColExplASPHF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                                                             </div>
                                                         </div>
@@ -152,9 +150,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer Assemblée Consulaire</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
@@ -203,9 +199,7 @@
             <div class="modal-content">
                 <div class="modal-header coopvert">
                     <h5 class="modal-title" id="exampleModalLabel">Ajouter Assemblée Consulaire</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div class="modal-body">
 
@@ -213,7 +207,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">NbreMembreColJeune</label>
-                                <input type="text" name="NbreMembreColJeune" id="" class="form-control" placeholder="NbreMembreColJeune" aria-describedby="helpId" required>
+                                <input type="text" name="NbreMembreColJeune" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span>*obligatoire</small>
                             </div>
                         </div>
@@ -221,7 +215,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreColFemme</label>
-                                <input type="text" name="NbreMembreColFemme" id="" class="form-control" placeholder="NbreMembreColFemme" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreColFemme" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -231,7 +225,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">NbreMembreH</label>
-                                <input type="text" name="NbreMembreH" id="" class="form-control" placeholder="NbreMembreH" aria-describedby="helpId" required>
+                                <input type="text" name="NbreMembreH" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId" required>
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
@@ -239,7 +233,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreEntreASPHF</label>
-                                <input type="text" name="NbreMembreEntreASPHF" id="" class="form-control" placeholder="NbreMembreEntreASPHF" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreEntreASPHF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"> </span></small>
                             </div>
                         </div>
@@ -248,14 +242,14 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreColPr</label>
-                                <input type="text" name="NbreMembreColPr" id="" class="form-control" placeholder="NbreMembreColPr" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreColPr" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="">NbreMembreColExplASPHF</label>
-                                <input type="text" name="NbreMembreColExplASPHF" id="" class="form-control" placeholder="NbreMembreColExplASPHF" aria-describedby="helpId">
+                                <input type="text" name="NbreMembreColExplASPHF" id="" class="form-control" placeholder="Nombre de membres" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"><span style="color: red"></span></small>
                             </div>
                         </div>

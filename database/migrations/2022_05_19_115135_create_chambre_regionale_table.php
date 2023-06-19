@@ -14,20 +14,20 @@ class CreateChambreRegionaleTable extends Migration
     public function up()
     {
         Schema::create('chambre_regionale', function (Blueprint $table) {
+
             $table->bigIncrements('id');
-            
-//          $table->bigInteger('commune_id')->unsigned();
+            $table->bigInteger('commune_id')->default(25);
 
 
             $table->string('libelleCRA', 100)->unique()->default('text');
-            $table->integer('telephone')->nullable()->default(15);
+            $table->integer('telephone')->nullable()->default(20);
             $table->string('email', 100)->nullable()->default('text');
             $table->string('boitepostal', 100)->nullable()->default('text');
             $table->string('gpslongitude', 100)->nullable()->default('text');
             $table->string('gpslatitude', 100)->nullable()->default('text');
             $table->string('siteWeb', 100)->nullable()->default('text');
-
-//          $table->foreign('commune_id')->references('id')->on('communes');
+            
+            $table->foreign('commune_id')->references('id')->on('communes')->onDelete('cascade');
 
             $table->timestamps();
         });

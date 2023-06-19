@@ -18,8 +18,8 @@
                         <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-weight:bold;"> Exporter <i class="fa fa-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="crexport_csv">CVS</a>
-                            <a class="dropdown-item" href="crexport_excel">Excel</a>
+                            <a class="dropdown-item" href="crexport_excel"  style="color: green; font-weight:bold;">Excel <i class="fa fa-file-excel"></i></button></a>
+                            <a class="dropdown-item" href="crexport_csv" style="color: blue; font-weight:bold;">CSV <i class="fa fa-file-csv"></i></button></a>
                         </div>
 
                     </div>
@@ -31,6 +31,7 @@
                 <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                     <thead style="background-color: #007bff;color:white;">
                         <tr>
+                            <th>Communes</th>
                             <th>Libelle de la CRA </th>
                             <th>Telephone</th>
                             <th>E-mail</th>
@@ -44,6 +45,10 @@
                     <tbody>
                         @foreach ($cra as $cr)
                         <tr>
+                            <td>@if(isset($cr->commune->libelleCommune))
+                                {{$cr->commune->libelleCommune}}
+                                @endif
+                            </td>
                             <td>{{$cr->libelleCRA}}</td>
                             <td>{{$cr->telephone}}</td>
                             <td>{{$cr->email}}</td>
@@ -62,11 +67,9 @@
                                 <div class="modal fade" id="{{'suprimer'.$cr->id}}">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
-                                            <div class="modal-header modal-delete-header">
+                                            <div class="modal-header coopvert">
                                                 <h4 class="modal-title">Supprimer une chambre regionale</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">

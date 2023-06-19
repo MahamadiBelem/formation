@@ -2,11 +2,11 @@
     <thead>
         <tr>
             <th>Cooperative</th>
-            <th>Nombre Ag Ordinaire</th>
+            <th>Nombre AG Ordinaire</th>
             <th>Nombre Rencontre Organe Gestion</th>
             <th>Nombre Rencontre Surveillance</th>
             <th>Semestre</th>
-            <th>Annee</th>
+            <th>Année</th>
         </tr>
     </thead>
     <tbody>

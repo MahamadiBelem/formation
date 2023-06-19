@@ -30,7 +30,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class=" navbar navbar-expand navbar-white navbar-light" style="background-color: #926d27">
+        <nav class=" navbar navbar-expand navbar-white navbar-light" style="background-color:#28a745;">
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
@@ -49,7 +49,7 @@
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user-circle fa-2x" style="color:#28a745"></i>
+                        <i class="fa fa-user-circle fa-2x" style="color:white"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         @hasanyrole('role-admin-formation|role-admin-op|role-user-admin-foncier|role-admin-formation|role-admin-principal')
@@ -99,8 +99,8 @@
         <div class="row" style="margin-top: 20%;">
             <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <!-- Main Footer -->
-                <footer style="background-color: #926d27; color: white;height: 100px;" align='center'>
-                    <strong>Copyright &copy; 2019-2020 <a href="http://adminlte.io">DGFOMR</a>.</strong>
+                <footer style="background-color: #28a745;; color: white;height: 100px;" align='center'>
+                    <strong style="color: white;">Copyright &copy; 2019-2020 <a href="http://adminlte.io">DGFOMR</a>.</strong>
                     All rights reserved.
 
                 </footer>

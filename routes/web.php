@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/formation','FormationHomeController@index');
 
+    Route::get('/amenagements','AmenagementsController@index');
+
     Route::get('/regions','RegionsController@index');
 
     Route::post('/save-region','RegionsController@store');
@@ -277,7 +279,7 @@ Route::post('/update-provincesc/{id}', 'ProvincecController@update');
 Route::get('/delete-provincesc/{id}', 'ProvincecController@delete');
 
 Route::get('/communesc', 'CommunescController@index');
-Route::post('save-communesc', 'CommunescController@store');
+Route::post('/save-communesc', 'CommunescController@store');
 Route::post('/update-communesc/{id}', 'CommunescController@update');
 Route::get('/delete-communesc/{id}', 'CommunescController@destroy');
 
@@ -290,61 +292,85 @@ Route::get('/chartcarte', 'Chartcarte@index');
 
 
 
-// Associations
-Route::get('/association', 'AssociationController@index');
-Route::get('/display-association-form', 'AssociationController@create');
-Route::post('/save-association', 'AssociationController@store');
-Route::get('/update-association/{id}', 'AssociationController@edit');
-Route::post('/save-update-association/{id}', 'AssociationController@update');
-Route::get('/association-view-detail/{id}', 'AssociationController@show');
-Route::get('/delete-association/{id}', 'AssociationController@destroy');
+  // Associations
 
-Route::get('/typeorganisation', 'TypeOrganisationController@index');
-Route::post('/save-typeorganisation', 'TypeOrganisationController@store');
-Route::post('/update-typeorganisation', 'TypeOrganisationController@update');
-Route::get('/delete-typeorganisation/{id}', 'TypeOrganisationController@destroy');
 
-Route::get('/activiteorgane', 'ActiviteorganeController@index');
-Route::post('/save-activiteorgane', 'ActiviteorganeController@store');
-Route::post('/update-activiteorgane', 'ActiviteorganeController@update');
-Route::post('/save-update-activiteorgane/{id}', 'ActiviteorganeController@update');
-Route::get('/delete-activiteorgane/{id}', 'ActiviteorganeController@destroy');
+    Route::get('/association', 'AssociationController@index');
+    Route::get('/display-association-form', 'AssociationController@create');
+    Route::post('/save-association', 'AssociationController@store');
+    Route::get('/update-association/{id}', 'AssociationController@edit');
+    Route::post('/save-update-association/{id}', 'AssociationController@update');
+    Route::get('/association-view-detail/{id}', 'AssociationController@show');
+    Route::get('/delete-association/{id}', 'AssociationController@destroy');
+    Route::get('/asexport_csv', 'AssociationController@asexportcsv');
+    Route::get('/asexport_excel', 'AssociationController@asexportexcel');
 
-Route::get('/secretariatexecutifassociation', 'SecretariatexecutifassociationController@index');
-Route::post('/save-secretariatexecutifassociation', 'SecretariatexecutifassociationController@store');
-Route::post('/update-secretariatexecutifassociation/{id}', 'SecretariatexecutifassociationController@update');
-Route::get('/delete-secretariatexecutifassociation/{id}', 'SecretariatexecutifassociationController@destroy');
-Route::get('/export_csvse', 'SecretariatexecutifassociationController@exportcsv');
-Route::get('/export_excelse', 'SecretariatexecutifassociationController@exportexcel');
+    Route::get('/typeorganisation', 'TypeOrganisationController@index');
+    Route::post('/save-typeorganisation', 'TypeOrganisationController@store');
+    Route::post('/update-typeorganisation', 'TypeOrganisationController@update');
+    Route::get('/delete-typeorganisation/{id}', 'TypeOrganisationController@destroy');
 
-Route::get('/activite', 'ActiviteController@index');
-Route::post('/save-activite', 'ActiviteController@store');
-Route::post('/update-activite', 'ActiviteController@update');
-Route::get('/delete-activite/{id}', 'ActiviteController@destroy');
+    Route::get('/activiteorgane', 'ActiviteorganeController@index');
+    Route::post('/save-activiteorgane', 'ActiviteorganeController@store');
+    Route::post('/update-activiteorgane/{id}', 'ActiviteorganeController@update');
+    Route::get('/delete-activiteorgane/{id}', 'ActiviteorganeController@destroy');
+    //Route::get('/aoexport_csv', 'ActiviteorganeController@aoexportcsv');
+    //Route::get('/aoexport_excel', 'ActiviteorganeController@aoexportexcel');
 
-Route::get('/maillon', 'MaillonController@index');
-Route::get('/display-maillon-form', 'MaillonController@create');
-Route::post('/save-maillon', 'MaillonController@store');
-Route::post('/update-maillon', 'MaillonController@update');
-Route::get('/delete-maillon/{id}', 'MaillonController@destroy');
+    Route::get('/secretariatexecutifassociation', 'SecretariatexecutifassociationController@index');
+    Route::post('/save-secretariatexecutifassociation', 'SecretariatexecutifassociationController@store');
+    Route::post('/update-secretariatexecutifassociation/{id}', 'SecretariatexecutifassociationController@update');
+    Route::get('/delete-secretariatexecutifassociation/{id}', 'SecretariatexecutifassociationController@destroy');
+    Route::get('/seaexport_csv', 'SecretariatexecutifassociationController@seaexportcsv');
+    Route::get('/seaexport_excel', 'SecretariatexecutifassociationController@seaexportexcel');
 
-Route::get('/filiere', 'FiliereController@index');
-Route::post('/save-filiere', 'FiliereController@store');
-Route::post('/update-filiere', 'FiliereController@update');
-Route::post('/save-update-filiere/{id}', 'FiliereController@update');
-Route::get('/delete-filiere/{id}', 'FiliereController@destroy');
+    Route::get('/activite', 'ActiviteController@index');
+    Route::post('/save-activite', 'ActiviteController@store');
+    Route::post('/update-activite/{id}', 'ActiviteController@update');
+    Route::get('/delete-activite/{id}', 'ActiviteController@destroy');
+    Route::get('/actexport_csv', 'ActiviteController@actexportcsv');
+    Route::get('/actexport_excel', 'ActiviteController@actexportexcel');
 
-Route::get('/bureauexecutifassociation', 'BureauexecutifassociationController@index');
-Route::post('/save-bureauexecutifassociation', 'BureauexecutifassociationController@store');
-Route::post('/update-bureauexecutifassociation', 'BureauexecutifassociationController@update');
-Route::post('/save-update-bureauexecutifassociation/{id}', 'BureauexecutifassociationController@update');
-Route::get('/delete-bureauexecutifassociation/{id}', 'BureauexecutifassociationController@destroy');
+    Route::get('/maillon', 'MaillonController@index');
+    Route::post('/save-maillon', 'MaillonController@store');
+    Route::post('/update-maillon/{id}', 'MaillonController@update');
+    Route::get('/delete-maillon/{id}', 'MaillonController@destroy');
+    //Route::get('/maexport_csv', 'MaillonController@maexportcsv');
+    //Route::get('/maexport_excel', 'MaillonController@maexportexcel');
 
-Route::get('/commissariataucompteassociation', 'CommissariataucompteassociationController@index');
-Route::post('/save-commissariataucompteassociation', 'CommissariataucompteassociationController@store');
-Route::post('/update-commissariataucompteassociation', 'CommissariataucompteassociationController@update');
-Route::post('/save-update-commissariataucompteassociation/{id}', 'CommissariataucompteassociationController@update');
-Route::get('/delete-commissariataucompteassociation/{id}', 'CommissariataucompteassociationController@destroy');
+    Route::get('/filiere', 'FiliereController@index');
+    Route::post('/save-filiere', 'FiliereController@store');
+    Route::post('/update-filiere/{id}', 'FiliereController@update');
+    //Route::post('/save-update-filiere/{id}', 'FiliereController@update');
+    Route::get('/delete-filiere/{id}', 'FiliereController@destroy');
+    //Route::get('/fexport_csv', 'FiliereController@fexportcsv');
+    //Route::get('/fexport_excel', 'FiliereController@fexportexcel');
+
+
+    Route::get('/bureauexecutifassociation', 'BureauexecutifassociationController@index');
+    Route::post('/save-bureauexecutifassociation', 'BureauexecutifassociationController@store');
+    Route::post('/update-bureauexecutifassociation/{id}', 'BureauexecutifassociationController@update');
+    Route::post('/save-update-bureauexecutifassociation/{id}', 'BureauexecutifassociationController@update');
+    Route::get('/delete-bureauexecutifassociation/{id}', 'BureauexecutifassociationController@destroy');
+    Route::get('/beaexport_csv', 'BureauexecutifassociationController@beaexportcsv');
+    Route::get('/beaexport_excel', 'BureauexecutifassociationController@beaexportexcel');
+
+    Route::get('/commissariataucompteassociation', 'CommissariataucompteassociationController@index');
+    Route::post('/save-commissariataucompteassociation', 'CommissariataucompteassociationController@store');
+    Route::post('/update-commissariataucompteassociation/{id}', 'CommissariataucompteassociationController@update');
+    Route::post('/save-update-commissariataucompteassociation/{id}', 'CommissariataucompteassociationController@update');
+    Route::get('/delete-commissariataucompteassociation/{id}', 'CommissariataucompteassociationController@destroy');
+    Route::get('/cacexport_csv', 'CommissariataucompteassociationController@cacexportcsv');
+    Route::get('/cacexport_excel', 'CommissariataucompteassociationController@cacexportexcel');
+
+    Route::get('/fonctionnementassociation', 'FonctionnementassociationController@index');
+    Route::post('/save-fonctionnementassociation', 'FonctionnementassociationController@store');
+    Route::post('/update-fonctionnementassociation/{id}', 'FonctionnementassociationController@update');
+    Route::post('/save-update-fonctionnementassociation/{id}', 'FonctionnementassociationController@update');
+    Route::get('/delete-fonctionnementassociation/{id}', 'FonctionnementassociationController@destroy');
+    Route::get('/faexport_csv', 'FonctionnementassociationController@faexportcsv');
+    Route::get('/faexport_excel', 'FonctionnementassociationController@faexportexcel');
+
 
 //CHAMBRES REGIONALES AGRICOLES
 
@@ -362,35 +388,35 @@ Route::get('/crexport_excel', 'cra\craController@crexportexcel');
 
 Route::get('/assembleeConsulaire', 'cra\acController@index');
 Route::post('/save-ac', 'cra\acController@store');
-Route::get('/update-ac/{id}', 'cra\acController@edit');
+Route::post('/update-ac/{id}', 'cra\acController@update');
 Route::get('/delete-ac/{id}', 'cra\acController@destroy');
 Route::get('/acexport_csv', 'cra\acController@acexportcsv');
 Route::get('/acexport_excel', 'cra\acController@acexportexcel');
 
 Route::get('/bureauExecutif', 'cra\beController@index');
 Route::post('/save-be', 'cra\beController@store');
-Route::get('/update-be/{id}', 'cra\beController@edit');
+Route::post('/update-be/{id}', 'cra\beController@update');
 Route::get('/delete-be/{id}', 'cra\beController@destroy');
 Route::get('/beexport_csv', 'cra\beController@beexportcsv');
 Route::get('/beexport_excel', 'cra\beController@beexportexcel');
 
 Route::get('/secretariatExecutif', 'cra\seController@index');
 Route::post('/save-secr', 'cra\seController@store');
-Route::get('/update-secr/{id}', 'cra\seController@edit');
+Route::post('/update-secr/{id}', 'cra\seController@update');
 Route::get('/delete-secr/{id}', 'cra\seController@destroy');
 Route::get('/seexport_csv', 'cra\seController@seexportcsv');
 Route::get('/seexport_excel', 'cra\seController@seexportexcel');
 
 Route::get('/commissionPermanante', 'cra\cpController@index');
 Route::post('/save-cp', 'cra\cpController@store');
-Route::get('/update-cp/{id}', 'cra\cpController@edit');
+Route::post('/update-cp/{id}', 'cra\cpController@update');
 Route::get('/delete-cp/{id}', 'cra\cpController@destroy');
 Route::get('/cpexport_csv', 'cra\cpController@cpexportcsv');
 Route::get('/cpexport_excel', 'cra\cpController@cpexportexcel');
 
 Route::get('/rencontreStatutaire', 'cra\rstatController@index');
 Route::post('/save-rstat', 'cra\rstatController@store');
-Route::get('/update-rstat/{id}', 'cra\rstatController@edit');
+Route::post('/update-rstat/{id}', 'cra\rstatController@update');
 Route::get('/delete-rstat/{id}', 'cra\rstatController@destroy');
 Route::get('/rstatexport_csv', 'cra\rstatController@rstatexportcsv');
 Route::get('/rstatexport_excel', 'cra\rstatController@rstatexportexcel');
