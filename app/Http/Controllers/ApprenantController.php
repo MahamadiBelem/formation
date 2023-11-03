@@ -60,6 +60,9 @@ class ApprenantController extends Controller
         $apprenant->sexe=$request->input('sexe');
         $apprenant->contact=$request->input('contact');
         $apprenant->situationMatrimoniale=$request->input('situationMatrimoniale');
+
+        // update of my function
+        $apprenant->numeroCasBesoin=$request->input('numeroCasBesoin');
         $apprenant->nombreEnfant=$request->input('nombreEnfant');
         $apprenant->localites=$request->input('localites');
 
@@ -123,7 +126,10 @@ class ApprenantController extends Controller
         $apprenant->dateNaissance=$request->input('dateNaissance');
         $apprenant->sexe=$request->input('sexe');
         $apprenant->contact=$request->input('contact');
-        $apprenant->situationMatrimoniale=$request->input('situationMatrimoniale');
+        $apprenant->situationMatrimoniale=$request->input('situationMatrimoniale'); 
+
+        // update of my api for updating
+        $apprenant->numeroCasBesoin=$request->input('numeroCasBesoin'); 
         $apprenant->nombreEnfant=$request->input('nombreEnfant');
         $apprenant->localites=$request->input('localites');
 

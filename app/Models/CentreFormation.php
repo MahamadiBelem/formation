@@ -16,15 +16,6 @@ class CentreFormation extends Model
         return $this->belongsTo(Communes::class);
     }
 
-    public function gestionnaire()
-    {
-        return $this->belongsTo(Gestionnaire::class);
-    }
-
-    public function promoteur()
-    {
-        return $this->belongsTo(Promoteur::class);
-    }
     public function approchepedagogique()
     {
         return $this->belongsToMany(ApprochePedagogique::class,'approche_pedagogique_centre_formations');
@@ -57,7 +48,7 @@ class CentreFormation extends Model
 
     public function regime()
     {
-       return $this->belongsTo(Regime::class);
+       return $this->belongsToMany(Regime::class,'regime_centre_formation','centre_formation_id','regime_id');
     }
 
     public function affecterapprenants()

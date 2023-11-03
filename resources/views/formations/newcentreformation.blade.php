@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="">le status</label>
+              <label for="">Status de la structure</label>
               <input type="text"   name="statut" id="" class="form-control" placeholder="le statut" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">le statut ne doit pas être vide</span></small>
             </div>
@@ -81,30 +81,6 @@
               <select id="communes" class="form-control" name="commune_id">
                 @foreach ($communes as $commune)
                 <option value="{{$commune->id}}">{{$commune->libelleCommune}}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-6">
-            <div class="form-group">
-              <label for="promoteurs">Promoteur</label>
-              <select id="promoteur" class="form-control" name="promoteur_id">
-                @foreach ($promoteurs as $promoteur)
-                <option value="{{$promoteur->id}}">Promoteur: {{$promoteur->promoteur}} Contact:{{$promoteur->contact}}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-group">
-              <label for="gestionnaires">Gestionnaire</label>
-              <select id="gestionnaires" class="form-control" name="gestionnaire_id">
-                @foreach ($gestionnaires as $gestionnaire)
-                <option value="{{$gestionnaire->id}}">Nom:{{$gestionnaire->nomComplet}} Contact:{{$gestionnaire->contact}}</option>
                 @endforeach
               </select>
             </div>
@@ -193,7 +169,7 @@
           <div class="col-6">
             <div class="form-group">
               <label>Regime</label>
-              <select id="regime" name="regime"  data-placeholder="selectionner un regime" style="width: 100%;">
+              <select id="regime" multiple='multiple' class="form-control" name="regimes[]"  data-placeholder="selectionner un regime" style="width: 100%;">
 
                 @foreach ($regimes as $regime)
                 <option value="{{$regime->id}}">{{$regime->libelleRegime}}</option>
@@ -206,8 +182,28 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Type Structure</label>
-              <input type="text"   name="capacite" id="" class="form-control" placeholder="la capacité d'accueil" aria-describedby="helpId">
+              <input type="text"   name="typeStructure" id="" class="form-control" placeholder="le Type de structure" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">le statut ne doit pas être vide</span></small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Promoteur</label>
+              <input type="text"   name="promoteur" id="" class="form-control" placeholder="le Type de structure" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le Promoteur ne doit pas être vide</span></small>
+            </div>
+          </div>
+
+         <!-- TYPE STRUCTURE IS A NEW FIELD ADDED-->
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Gestionnaire</label>
+              <input type="text"   name="gestionnaire" id="" class="form-control" placeholder="le Type de structure" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le Gestionnair ne doit pas être vide</span></small>
             </div>
           </div>
 

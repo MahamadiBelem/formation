@@ -25,4 +25,30 @@ class Installations extends Model
     {
         return $this->belongsTo(SourceFinancements::class,'source_financement_id');
     }
+
+    //La mise a jour avec l'ajout de nouvel champs
+    public function region()
+    {
+       return $this->belongsTo(Regions::class);
+    }
+
+    public function provinces()
+    {
+        return $this->belongsTo(Provinces::class);
+    }
+
+    public function communes()
+    {
+        return $this->belongsTo(Communes::class);
+    }
+
+    public function villages()
+    {
+        return $this->belongsTo(Villages::class);
+    }
+
+    public function centreformation()
+    {
+        return $this->belongsTo(CentreFormation::class);
+    }
 }

@@ -18,6 +18,8 @@ class CreateAffecterFormateursTable extends Migration
            $table->bigIncrements('id');
            
            $table->bigInteger('formateur_id')->nullable()->default(12);
+
+           $table->bigInteger('type_formation_id')->nullable()->default(12);
            
            $table->bigInteger('centre_formation_id')->nullable()->default(12);
            
@@ -27,6 +29,8 @@ class CreateAffecterFormateursTable extends Migration
             $table->foreign('formateur_id')->references('id')->on('formateurs')->onDelete('cascade');
             
             $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
+
+            $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');
             
            $table->timestamps();
         });

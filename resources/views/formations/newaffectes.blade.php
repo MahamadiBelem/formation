@@ -26,7 +26,7 @@
 
           <div class="col-6">
             <div class="form-group">
-              <label for="">Date d incription </label>
+              <label for="">Date d'incription </label>
               <input type="date"   name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
             </div>
@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="formations">Cycle de formation Formation</label>
+              <label for="formations"> Domaine Formation</label>
               <select id="formations" class="form-control" name="formation_id">
                @foreach ($formations as $formation)
                <option value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
@@ -59,7 +59,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="centre_formation">Centre de formation</label>
+              <label for="centre_formation">Structure de formation</label>
               <select id="centre_formation" class="form-control" name="centre_id">
                @foreach ($centres as $centre)
                <option value="{{$centre->id}}">{{$centre->denomination}}</option>
@@ -70,8 +70,9 @@
 
           <div class="col-6">
             <div class="form-group">
-              <label for="">structure de formation </label>
-              <input type="select"   name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
+              <label for="">Cycle de formation </label>
+              <select type="select"   name="typeformation" id="" class="form-control" placeholder="cycle de formation" aria-describedby="helpId">
+              </select>
               <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
             </div>
           </div>

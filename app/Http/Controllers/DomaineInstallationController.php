@@ -18,7 +18,6 @@ class DomaineInstallationController extends Controller
         //
 
         $domaines=DomainesInstallation::paginate(10);
-
         $kits=Kits::all();
 
         return view('formations.domaineinstallation',compact(['domaines','kits']));

@@ -89,34 +89,6 @@
           </div>
         </div>
 
-
-        <div class="row">
-          <div class="col-6">
-            <div class="form-group">
-              <label for="promoteurs">Promoteur</label>
-              <select id="promoteur" class="form-control" name="promoteur_id">
-                @foreach ($promoteurs as $promoteur)
-                <option @if ($centre->promoteur->id==$promoteur->id)
-                  selected
-              @endif value="{{$promoteur->id}}">Promoteur: {{$promoteur->promoteur}} Contact:{{$promoteur->contact}}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-group">
-              <label for="gestionnaires">Gestionnaire</label>
-              <select id="gestionnaires" class="form-control" name="gestionnaire_id">
-                @foreach ($gestionnaires as $gestionnaire)
-                <option @if ($centre->gestionnaire->id==$gestionnaire->id)
-                    selected
-                @endif value="{{$gestionnaire->id}}">Nom:{{$gestionnaire->nomComplet}} Contact:{{$gestionnaire->contact}}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-        </div>
-
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -231,7 +203,7 @@
           <div class="col-6">
             <div class="form-group">
               <label>Regime</label>
-              <select id="regime" name="regime"  data-placeholder="selectionner un regime" style="width: 100%;">
+              <select id="regime"  data-placeholder="selectionner un regime" multiple='multiple' name="regimes[]" class="form-control">
                
                 @foreach ($regimes as $regime)
                 <option @if ($centre->regime_id==$regime->id)
@@ -242,9 +214,36 @@
               </select>
             </div>
           </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Type Structure</label>
+              <input type="text" value="{{$centre->typeStructure}}"   name="typeStructure" id="" class="form-control" placeholder="la ref. d'ouverture" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le type structure ne doit pas être vide</span></small>
+            </div>
+          </div>
          
         </div>
 
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Promoteur</label>
+              <input type="text"   value="{{$centre->promoteur}}" id="" class="form-control" placeholder="le promoteur" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le Promoteur ne doit pas être vide</span></small>
+            </div>
+          </div>
+
+         <!-- TYPE STRUCTURE IS A NEW FIELD ADDED-->
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Gestionnaire</label>
+              <input type="text"   value="{{$centre->gestionnaire}}" id="" class="form-control" placeholder="le gestionnaire" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le Gestionnair ne doit pas être vide</span></small>
+            </div>
+          </div>
+
+        </div>
 
       </div>
       <div class="modal-footer">

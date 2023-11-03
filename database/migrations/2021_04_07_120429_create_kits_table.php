@@ -18,7 +18,7 @@ class CreateKitsTable extends Migration
            $table->bigIncrements('id');
            $table->string('libelleKits', 255)->nullable()->default('text');
            $table->integer('quantites')->unsigned()->nullable()->default(12);
-            $table->timestamps();
+           $table->timestamps();
         });
     }
 

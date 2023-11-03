@@ -52,7 +52,11 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Structure de formation </label>
-              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+              <select name="centre_formation_id" id="centre_formation_id" class="form-control">
+                @foreach ($centres as $centre)
+                <option value="{{$centre->id}}">{{$centre->denomination}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
           
@@ -98,23 +102,51 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Regions</label>
-              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+              <select name="region_id" id="region_id" class="form-control">
+                @foreach ($regions as $region)
+                <option value="{{$region->id}}">{{$region->libelleRegion}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Provinces</label>
-              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+              <select name="province_id" id="province_id" class="form-control">
+                @foreach ($provinces as $province)
+                <option value="{{$province->id}}">{{$province->libelleProvince}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Communes</label>
-              <select type="select"   name="confirmedKits" id="" class="form-control" placeholder="" aria-describedby="helpId"></select>
+              <select name="commune_id" id="commune_id" class="form-control">
+                @foreach ($communes as $commune)
+                <option value="{{$commune->id}}">{{$commune->libelleCommune}}</option>
+                @endforeach
+              </select>
             </div>
         </div>
         </div>
+
+        <div class="row">
+
+         
+         <div class="col-6">
+           <div class="form-group">
+             <label for="">Villages</label>
+             <select name="village_id" id="village_id" class="form-control">
+                @foreach ($villages as $village)
+                <option value="{{$village->id}}">{{$village->libelleVillages}}</option>
+                @endforeach
+              </select>
+             <small id="helpId" class="text-muted" ><span style="color: red">selectionner le lieux d'installation  est obligatoire</span></small>
+           </div>
+         </div>
+       </div>
 
 
       <div class="modal-footer">

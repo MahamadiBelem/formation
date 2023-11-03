@@ -7,6 +7,11 @@ use App\Models\Installations;
 use App\Models\AffecterApprenants;
 use App\Models\DomainesInstallation;
 use App\Models\SourceFinancements;
+use App\Models\Regions;
+use App\Models\Provinces;
+use App\Models\Communes;
+use App\Models\Villages;
+use App\Models\CentreFormation;
 class IntallationController extends Controller
 {
     /**
@@ -22,9 +27,15 @@ class IntallationController extends Controller
         $affectes=AffecterApprenants::all();
         $sources=SourceFinancements::all();
         $domaines=DomainesInstallation::all();
+        //la mise a jour
+        $centres=CentreFormation::all();
+        $regions=Regions::all();
+        $provinces=Provinces::all();
+        $communes=Communes::all();
+        $villages=Villages::all();
 
 
-        return view('formations.installations',compact('installations','affectes','sources'));
+        return view('formations.installations',compact('installations','affectes','sources','domaines', 'regions','provinces','communes','villages','centres'));
 
 
     }
@@ -42,7 +53,13 @@ class IntallationController extends Controller
         $affectes=AffecterApprenants::all();
         $sources=SourceFinancements::all(); 
         $domaines=DomainesInstallation::all();
-        return view('formations.newinstallation',compact('installations','affectes','sources','domaines'));
+         //la mise a jour
+         $regions=Regions::all();
+         $provinces=Provinces::all();
+         $communes=Communes::all();
+         $villages=Villages::all();
+         $centres=CentreFormation::all();
+        return view('formations.newinstallation',compact('installations','affectes','sources','domaines','regions','provinces','communes','villages','centres'));
 
     }
 
@@ -52,7 +69,7 @@ class IntallationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  
     {
         //
 
@@ -66,7 +83,13 @@ class IntallationController extends Controller
         $installation->affecterapprenants()->associate($request->input('inscription'));
         $installation->domainesinstallation()->associate($request->input('domaine_installation'));
         $installation->sourcefinancements()->associate($request->input('source_financement_id'));
-        $installation->save();
+
+        $installation->region()->associate($request->input('libelleRegion'));
+        $installation->provinces()->associate($request->input('libelleProvince'));
+        $installation->communes()->associate($request->input('libelleCommune'));
+        $installation->villages()->associate($request->input('libelleVillages'));
+        $installation->centreformation()->associate($request->input('denomination'));
+        
         return redirect('/installation');
 
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Specialites;
+use App\Models\Formations;
+
 class SpecialiteController extends Controller
 {
     /**
@@ -17,7 +19,9 @@ class SpecialiteController extends Controller
 
         $specialites=Specialites::paginate(10);
 
-        return view('formations.specialite',compact('specialites'));
+        $formations=Formations::all();
+
+        return view('formations.specialite',compact('specialites','formations'));
 
     }
 
@@ -43,6 +47,9 @@ class SpecialiteController extends Controller
 
         $specialite= new Specialites();
         $specialite->libelleSpecialite=$request->input('libelleSpecialite');
+        $specialite->libelleDomaineFormation=$request->input('libelleDomaineFormation');
+        $specialite->formation()->associate($request->input('formation_id'));
+        
         $specialite->save();
         return redirect('/specialites');
 
@@ -84,6 +91,9 @@ class SpecialiteController extends Controller
 
         $specialite=Specialites::find($request->input('id'));
         $specialite->libelleSpecialite=$request->input('libelleSpecialite');
+        $specialite->libelleDomaineFormation=$request->input('libelleDomaineFormation');
+
+        $specialite->formation()->associate($request->input('formation_id'));
 
         $specialite->save();
 

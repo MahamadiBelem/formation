@@ -55,7 +55,7 @@
             <a class="dropdown-item" href="{{url('/approche-pedagogique')}}">Approches pedagogiques</a>
             
             <a class="dropdown-item" href="{{'/type-formation'}}">Cycle de formations</a>
-            <a class="dropdown-item" href="{{'/type-formation'}}">Module de formations</a>
+            <a class="dropdown-item" href="{{'/module'}}">Module de formations</a>
             <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
             <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
             <!--a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
@@ -76,18 +76,19 @@
            <i class="fa fa-graduation-cap fa-2x"></i> Formations 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/formateurs')}}">Formations initiale</a>  
-            <a class="dropdown-item" href="{{url('/formateurs')}}">Formations continue</a>
-            <a class="dropdown-item" href="{{url('/formateurs')}}">Formations carte</a>
+            <a class="dropdown-item" href="{{url('/formationinitiale')}}">Formations initiale</a>  
+            <a class="dropdown-item" href="{{url('/formationcontinue')}}">Formations continue</a>
+            <a class="dropdown-item" href="{{url('/formationcarte')}}">Formations carte</a>
             <a class="dropdown-item" href="{{url('/formateurs')}}">Formateurs</a> 
             <a class="dropdown-item" href="{{url('/apprenants')}}">Apprenant(es)</a>
-            <a class="dropdown-item" href="{{ url('formations') }}">Formations</a>
-            <a class="dropdown-item" href="{{url('/centre-formation')}}">Centre de formations</a>
+            <!--a class="dropdown-item" href="{{ url('formations') }}">Formations</a-->
+            <a class="dropdown-item" href="{{url('/centre-formation')}}">Structure de formations</a>
             <a class="dropdown-item" href="{{url('/inscription')}}">Affecter un apprenant</a>
             <a class="dropdown-item" href="{{url('/affectation-formateur')}}">Affecter un formateur</a>
-            <a class="dropdown-item" href="{{url('/affectation-formateur')}}">Affecter un module à formateur</a>
-            <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter formation initiale</a>
-            <a class="dropdown-item" href="{{url('/affectation-formation')}}">Affecter formation continue</a>
+            <a class="dropdown-item" href="{{url('/affectation-module')}}">Affecter un module</a>
+            <a class="dropdown-item" href="{{url('/affectation-formationinitiale')}}">Affecter formation initiale</a>
+            <a class="dropdown-item" href="{{url('/affectation-formationcontinue')}}">Affecter formation continue</a>
+            <a class="dropdown-item" href="{{url('/affectation-formationcarte')}}">Affecter formation carte</a>
             <a class="dropdown-item" href="{{url('/fin-formation')}}">Fin de formation</a>
           </div>
         </li>
@@ -140,8 +141,11 @@
            <i class="fa fa-users fa-2x"></i> Installations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Projet d'installation</a>
-            <a class="dropdown-item" href="{{url('/kits')}}">Kits</a>
+            <a class="dropdown-item" href="{{url('/projet-installations')}}">Projet d'installation</a>
+            <a class="dropdown-item" href="{{url('/kits')}}">Gerer un kits</a>
+            <a class="dropdown-item" href="{{url('/affectation-kit')}}">Affecter un kits</a> 
+ 
+            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Kits</a>
             <!--div class="dropdown-divider"></div-->
            
             <a class="dropdown-item" href="{{url('/installation')}}">Installation</a>

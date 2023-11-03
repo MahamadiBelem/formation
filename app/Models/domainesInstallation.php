@@ -21,4 +21,5 @@ class DomainesInstallation extends Model
         return $this->hasMany(Installations::class);
     }
 
+
 }

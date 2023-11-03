@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateDomainesInstallationKitsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. Celui ci constitue le projet d'installations
      *
      * @return void
      */
@@ -18,11 +18,9 @@ class CreateDomainesInstallationKitsTable extends Migration
             $table->bigIncrements('id');
             
             $table->bigInteger('domaines_installation_id')->nullable()->default(12);
-            
-            $table->bigInteger('kit_id')->nullable()->default(12);
-            
             $table->foreign('domaines_installation_id')->references('id')->on('domaines_installations')->onDelete('cascade');
             
+            $table->bigInteger('kit_id')->nullable()->default(12);
             $table->foreign('kit_id')->references('id')->on('kits')->onDelete('cascade');
             
             $table->timestamps();

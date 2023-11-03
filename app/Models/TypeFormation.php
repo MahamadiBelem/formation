@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TypeFormation extends Model
 {
     use HasFactory;
+    protected $table='type_formations';
+
+    public function module()
+    {
+        return $this->belongsTo(Module::class,'module_id');
+
+    }
 }

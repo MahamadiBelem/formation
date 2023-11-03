@@ -20,6 +20,9 @@ class CreateFinFormationsTable extends Migration
             $table->bigInteger('affecter_apprenant_id')->nullable()->default(12);
             
             $table->date('dateFinFormation')->nullable();
+            // Mise a jour with add of a new colum 
+            $table->date('dateInscription')->nullable(); 
+
             $table->string('anneesFinFormation', 100)->nullable()->default('text');
             $table->string('motif', 100)->nullable()->default('text');
             $table->boolean('confirmedSortie')->nullable()->default(false);

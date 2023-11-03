@@ -25,7 +25,7 @@
                   <th>Date affectation </th>
                   <th>Formation </th>
                   <th>Apprenant </th>
-                  <th>Centre de formation </th>
+                  <th>Structure de formation </th>
                   <th>Actions</th>
                 </tr>
                 </thead>

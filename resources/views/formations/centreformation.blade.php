@@ -27,7 +27,7 @@
                   <th>Capacité </th>
                   <!--th>Commune </th-->
                   <th>TypeStructure</th>
-                  <th>Regime </th>
+                  <!--th>Regime </th-->
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -38,8 +38,8 @@
                     <td>{{$centre->localisation}}</td>
                     <td>{{$centre->statut}}</td> 
                     <td>{{$centre->capacite}}</td>
-                    <td>{{$centre->capacite}}</td>
-                    <td>{{$centre->regime->libelleRegime}}</td>   
+                    <td>{{$centre->typeStructure}}</td> 
+                    <!--td>centre->regimes->libelleRegime</td-->  
                     <td>
                           <a  href="{{url('/update-centre-formation/'.$centre->id)}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></a>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$centre->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>

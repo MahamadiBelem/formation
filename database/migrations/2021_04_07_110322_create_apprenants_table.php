@@ -28,6 +28,9 @@ class CreateApprenantsTable extends Migration
             $table->string('sexe', 100)->nullable()->default('text');
             $table->string('contact', 100)->nullable()->default('text');
             $table->string('situationMatrimoniale', 100)->nullable()->default('text');
+
+            // update of my table 
+            $table->string('numeroCasBesoin', 100)->nullable()->default('text');
             $table->string('nombreEnfant', 100)->nullable()->default('text');
             $table->string('localites', 255)->nullable()->default('text');
             

@@ -21,9 +21,9 @@
             <table id="typeenvoyeurTable" class="table table-bordered table-striped">
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
-                  <th>Libelle kits </th>
-                  <th>Quantite </th>
-                  <th>Type Kits </th>
+                  <th>libelleKits</th>
+                  <!--th>Type de Kits</th-->
+                  <th>quantites </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -32,7 +32,6 @@
                   <tr>
                     <td>{{$kit->libelleKits}}</td>
                     <td>{{$kit->quantites}}</td> 
-                    <td></td>
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$kit->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$kit->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -150,27 +149,20 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="">Libelle kit</label>
+              <label for="">libelleKits</label>
               <input type="text"   name="libelleKits" id="" class="form-control" placeholder="le libelle du kit" aria-describedby="helpId">
-              <small id="helpId" class="text-muted" ><span style="color: red">le libelle du kit est obligatoire</span></small>
+              <!--small id="helpId" class="text-muted" ><span style="color: red">le libelle du kit est obligatoire</span></small-->
             </div>
           </div>
 
           <div class="col-6">
             <div class="form-group">
-              <label for="">Quantite</label>
+              <label for="">quantites</label>
               <input type="text"  name="quantites" id="" class="form-control" placeholder="la quantite du kit" aria-describedby="helpId">
               <small id="helpId" class="text-muted" ><span style="color: red">la quantite du kit est obligatoire</span></small>
             </div>
           </div>
         </div>
-        <div class="row">
-            <!--  THIS TAG IS NOW A ROW IN ONE LINE -->
-              <label for="">Type Kits</label>
-              <select type="text"  name="quantites" id="" class="form-control" placeholder="la quantite du kit" aria-describedby="helpId"></select>
-              <small id="helpId" class="text-muted" ><span style="color: red">la quantite du kit est obligatoire</span></small>
-            
-          </div>
         
       </div>
       <div class="modal-footer">

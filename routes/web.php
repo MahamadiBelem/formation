@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cooperatives\AcceuilCooperativeController;
+use App\Http\Controllers\AffectationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/formation','FormationHomeController@index');
 
-    Route::get('/amenagements','AmenagementsController@index');
+    Route::get('/amenagements','RegionsController@index');
 
     Route::get('/regions','RegionsController@index');
 
@@ -131,6 +132,27 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-formations/{id}','FormationController@update');
     Route::get('/delete-formations/{id}','FormationController@destroy');
 
+    //
+
+    Route::get('/formationcontinue','FormationContinueController@index');
+    Route::post('/save-formationcontinue','FormationContinueController@store');
+    Route::post('/update-formationcontinue/{id}','FormationContinueController@update');
+    Route::get('/delete-formationcontinue/{id}','FormationContinueController@destroy');
+
+
+    Route::get('/formationcarte','FormationCarteController@index');
+    Route::post('/save-formationcarte','FormationCarteController@store');
+    Route::post('/update-formationcarte/{id}','FormationCarteController@update');
+    Route::get('/delete-formationcarte/{id}','FormationCarteController@destroy');
+
+
+    Route::get('/formationinitiale','FormationInitialeController@index');
+    Route::post('/save-formationinitiale','FormationInitialeController@store');
+    Route::post('/update-formationinitiale/{id}','FormationInitialeController@update');
+    Route::get('/delete-formationinitiale/{id}','FormationInitialeController@destroy');
+    
+
+
     Route::get('/apprenants','ApprenantController@index');
     Route::get('/display-apprenant-form','ApprenantController@create');
     Route::post('/save-apprenant','ApprenantController@store');
@@ -138,6 +160,23 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-apprenant/{id}','ApprenantController@update');
     Route::get('/delete-apprenant/{id}','ApprenantController@destroy');
     Route::get('/apprenant-view-detail/{id}','ApprenantController@show');
+
+    Route::get('/affectation-kit','AffectationController@index');
+    Route::post('/save-affectation-kit','AffectationController@store');
+    Route::post('/update-affectation-kit/{id}','AffectationController@update');
+    Route::get('/delete-affectation-kit/{id}','AffectationController@destroy');
+
+    Route::get('/module','ModuleController@index');
+    Route::post('/save-module','ModuleController@store');
+    Route::post('/update-module/{id}','ModuleController@update');
+    Route::get('/delete-module/{id}','ModuleController@destroy');
+
+
+    Route::get('/projet-installations','ProjetInstallationsController@index');
+    Route::post('/save-projet-installations','ProjetInstallationsController@store');
+    Route::post('/update-projet-installations/{id}','ProjetInstallationsController@update');
+    Route::get('/delete-projet-installations/{id}','ProjetInstallationsController@destroy');
+
 
     Route::get('/inscription','AffecterApprenantController@index');
     Route::get('/display-inscription-form','AffecterApprenantController@create');
@@ -151,10 +190,33 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-affectation-formateur/{id}','AffecteFormateurController@update');
     Route::get('/delete-affectation-formateur/{id}','AffecteFormateurController@destroy');
 
+
+    Route::get('/affectation-module','AffecterModuleController@index');
+    Route::post('/save-affectation-module','AffecterModuleController@store');
+    Route::post('/update-affectation-module/{id}','AffecterModuleController@update');
+    Route::get('/delete-affectation-module/{id}','AffecterModuleController@destroy');
+
     Route::get('/affectation-formation','AffecteFormationController@index');
     Route::post('/save-affectation-formation','AffecteFormationController@store');
     Route::post('/update-affectation-formation/{id}','AffecteFormationController@update');
     Route::get('/delete-affectation-formation/{id}','AffecteFormationController@destroy');
+
+    // MAJ
+
+    Route::get('/affectation-formationinitiale','AffecterFormationInitialeController@index');
+    Route::post('/save-affectation-formationinitiale','AffecterFormationInitialeController@store');
+    Route::post('/update-affectation-formationinitiale/{id}','AffecterFormationInitialeController@update');
+    Route::get('/delete-affectation-formationinitiale/{id}','AffecterFormationInitialeController@destroy');
+
+    Route::get('/affectation-formationcontinue','AffecterFormationContinueController@index');
+    Route::post('/save-affectation-formationcontinue','AffecterFormationContinueController@store');
+    Route::post('/update-affectation-formationcontinue/{id}','AffecterFormationContinueController@update');
+    Route::get('/delete-affectation-formationcontinue/{id}','AffecterFormationContinueController@destroy');
+
+    Route::get('/affectation-formationcarte','AffecterFormationCarteController@index');
+    Route::post('/save-affectation-formationcarte','AffecterFormationCarteController@store');
+    Route::post('/update-affectation-formationcarte/{id}','AffecterFormationCarteController@update');
+    Route::get('/delete-affectation-formationcarte/{id}','AffecterFormationCarteController@destroy');
 
     Route::get('/kits','KitsController@index');
     Route::post('/save-kits','KitsController@store');
@@ -272,6 +334,12 @@ Route::get('/regionsc', 'RegionscController@index');
 Route::post('/save-regionc', 'RegionscController@store');
 Route::post('/update-regionc', 'RegionscController@update');
 Route::get('/delete-regionc/{id}', 'RegionscController@destroy');
+
+
+Route::get('/cycle', 'CycleFormationController@index');
+Route::post('/save-cycle', 'CycleFormationController@store');
+Route::post('/update-cycle', 'CycleFormationController@update');
+Route::get('/delete-cycle/{id}', 'CycleFormationController@destroy');
 
 Route::get("/provincesc", 'ProvincecController@index');
 Route::post('/save-provincesc', 'ProvincecController@store');

@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CentreFormation;
 use App\Models\Communes;
-use App\Models\Promoteur;
-use App\Models\Gestionnaire;
+
 use App\Models\ApprochePedagogique;
 use App\Models\PublicCible;
 use App\Models\Specialites;
@@ -25,8 +24,9 @@ class CentreFormationController extends Controller
     {
         //
         $centres=CentreFormation::paginate(10);
+        $regimes=Regime::all();
 
-        return view('formations.centreformation',compact('centres'));
+        return view('formations.centreformation',compact('centres','regimes'));
     }
 
     /**
@@ -39,8 +39,8 @@ class CentreFormationController extends Controller
         //
 
         $communes=Communes::all();
-        $promoteurs=Promoteur::all();
-        $gestionnaires=Gestionnaire::all();
+  
+
         $approches=ApprochePedagogique::all();
         $publics=PublicCible::all();
         $specialites=Specialites::all();
@@ -48,7 +48,7 @@ class CentreFormationController extends Controller
         $niveaus=NiveauRecrutement::all();
         $contributions=Contributions::all();
         $regimes=Regime::all();
-        return view('formations.newcentreformation',compact(['communes','promoteurs','gestionnaires','approches','publics','specialites','domaines','niveaus','contributions','regimes']));
+        return view('formations.newcentreformation',compact(['communes','approches','publics','specialites','domaines','niveaus','contributions','regimes']));
     }
 
     /**
@@ -62,17 +62,21 @@ class CentreFormationController extends Controller
         //
 
         $centre=new CentreFormation();
+
         $centre->denomination=$request->input('denomination');
         $centre->localisation=$request->input('localisation');
+        //mise a jour
+        $centre->typeStructure=$request->input('typeStructure');
+        $centre->promoteur=$request->input('promoteur');
+        $centre->gestionnaire=$request->input('gestionnaire');
+
         $centre->statut=$request->input('statut');
         $centre->capacite=$request->input('capacite');
         $centre->adresse=$request->input('adresse');
         $centre->referenceOuverture=$request->input('referenceOuverture');
         $centre->dateOuverture=$request->input('dateOuverture');
         $centre->commune()->associate(Communes::find($request->input('commune_id')));
-        $centre->promoteur()->associate(Promoteur::find($request->input('promoteur_id')));
-        $centre->gestionnaire()->associate(Gestionnaire::find($request->input('gestionnaire_id')));
-        $centre->regime()->associate(Regime::find($request->input('regime')));
+
         $centre->save();
         $centre->publiccible()->attach($request->input('publiccible'));
         $centre->approchepedagogique()->attach($request->input('approches'));
@@ -80,6 +84,7 @@ class CentreFormationController extends Controller
         $centre->domainesformation()->attach($request->input('domaines'));
         $centre->contribution()->attach($request->input('contributions'));
         $centre->niveaurecrutement()->attach($request->input('niveaus'));
+        $centre->regime()->attach($request->input('regimes'));
 
        return redirect('/centre-formation');
     }
@@ -112,8 +117,7 @@ class CentreFormationController extends Controller
 
         $centre=CentreFormation::find($id);
         $communes=Communes::all();
-        $promoteurs=Promoteur::all();
-        $gestionnaires=Gestionnaire::all();
+
         $approches=ApprochePedagogique::all();
         $publics=PublicCible::all();
         $specialites=Specialites::all();
@@ -121,7 +125,7 @@ class CentreFormationController extends Controller
         $niveaus=NiveauRecrutement::all();
         $contributions=Contributions::all();
         $regimes=Regime::all();
-        return view('formations.updatecentreformation',compact(['centre','communes','promoteurs','gestionnaires','approches','publics','specialites','domaines','niveaus','contributions','regimes']));
+        return view('formations.updatecentreformation',compact(['centre','communes','approches','publics','specialites','domaines','niveaus','contributions','regimes']));
     }
 
     /**
@@ -138,15 +142,20 @@ class CentreFormationController extends Controller
         $centre= CentreFormation::find($id);
         $centre->denomination=$request->input('denomination');
         $centre->localisation=$request->input('localisation');
+
+        $centre->typeStructure=$request->input('typeStructure');
+        $centre->promoteur=$request->input('promoteur');
+        $centre->gestionnaire=$request->input('gestionnaire');
+
+    
         $centre->statut=$request->input('statut');
         $centre->capacite=$request->input('capacite');
         $centre->adresse=$request->input('adresse');
         $centre->referenceOuverture=$request->input('referenceOuverture');
         $centre->dateOuverture=$request->input('dateOuverture');
         $centre->commune()->associate(Communes::find($request->input('commune_id')));
-        $centre->promoteur()->associate(Promoteur::find($request->input('promoteur_id')));
-        $centre->gestionnaire()->associate(Gestionnaire::find($request->input('gestionnaire_id')));
-        $centre->regime()->associate(Regime::find($request->input('regime')));
+
+        
         $centre->save();
         $centre->publiccible()->sync($request->input('publiccible'));
         $centre->approchepedagogique()->sync($request->input('approches'));
@@ -154,6 +163,7 @@ class CentreFormationController extends Controller
         $centre->domainesformation()->sync($request->input('domaines'));
         $centre->contribution()->sync($request->input('contributions'));
         $centre->niveaurecrutement()->sync($request->input('niveaus'));
+        $centre->regime()->sync($request->input('regimes'));
 
        return redirect('/centre-formation');
     }

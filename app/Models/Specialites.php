@@ -15,4 +15,9 @@ class Specialites extends Model
     {
         return $this->belongsToMany(Centreformation::class);
     }
+
+    public function formation()
+    {
+        return $this->belongsTo(Formations::class);
+    }
 }

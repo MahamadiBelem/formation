@@ -47,6 +47,7 @@ class FinInstallationController extends Controller
 
         $fin=new FinFormations();
         $fin->dateFinFormation=$request->input('dateFinFormation');
+        $fin->dateInscription=$request->input('dateInscription');
         $fin->anneesFinFormation=$request->input('anneesFinFormation');
         $fin->motif=$request->input('motif');
         if($request->input('confirmedSortie')==null)

@@ -122,6 +122,14 @@
               <small id="helpId" class="text-muted" ><span style="color: red">la localite ne doit pas être vide</span></small>
             </div>
           </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Personne a prevenir en cas de besoin</label>
+              <input type="text" value="{{$apprenant->numeroCasBesoin}}"   name="numeroCasBesoin" id="" class="form-control" placeholder="numeroCasBesoin" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">numero Cas Besoin ne doit pas être vide</span></small>
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

@@ -168,7 +168,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Village</label>
-                <input type="text" name="libelleVillage" id="" class="form-control" placeholder="la province" aria-describedby="helpId" required>
+                <input type="text" name="libelleVillage" id="" class="form-control" placeholder="le village" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom de la region est obligatoire</span></small>
               </div>
             </div>

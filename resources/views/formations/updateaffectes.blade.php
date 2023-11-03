@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <label for="centre_formation">Centre de formation</label>
+              <label for="centre_formation">Strucuture de formation</label>
               <select id="centre_formation" class="form-control" name="centre_id">
                @foreach ($centres as $centre)
                <option @if ($affecte->centreformation->id==$centre->id)
@@ -74,7 +74,15 @@
               </select>
             </div>
           </div>
-         
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Cycle de formation </label>
+              <select type="select"   name="typeformation" id="" class="form-control" placeholder="cycle de formation" aria-describedby="helpId">
+              </select>
+              <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
+          </div>
+         </div> 
         </div>
       <div class="modal-footer">
         <a href="{{url('/inscription')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>

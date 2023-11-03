@@ -22,10 +22,10 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Apprenant </th>
-                  <th>Date d'inscription </th>
                   <th>Formation </th>
                   <th>Centre formation </th>
-                  <th>Date de fin de formatio </th>
+                  <th>Date de fin de formation  </th>
+                  <th>Date d'inscription</th>
                   <th>Années de fin de formation </th>
                   <th>Motif </th>
                   <th>Sortie </th>
@@ -48,6 +48,10 @@
                     </td>
                     <td>
                       {{$fin->dateFinFormation}}
+                    </td>
+                    
+                    <td>
+                      {{$fin->dateInscription}}
                     </td>
                     <td>
                       {{$fin->anneesFinFormation}}

@@ -10,7 +10,7 @@ class CreateCentreFormationsTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */   
     public function up()
     {
         Schema::create('centre_formation', function (Blueprint $table) {
@@ -18,13 +18,14 @@ class CreateCentreFormationsTable extends Migration
             
             $table->bigInteger('commune_id')->default(12);
             
-            $table->bigInteger('promoteur_id')->default(12);
-            
-            $table->bigInteger('gestionnaire_id')->default(12);
-            
             $table->bigInteger('regime_id')->default(12);
             
             $table->string('denomination', 255)->default('text');
+            //mise a jour 
+            $table->string('typeStructure', 255)->default('text');
+            $table->string('promoteur', 255)->default('text');
+            $table->string('gestionnaire', 255)->default('text');
+
             $table->string('localisation', 255)->default('text');
             $table->string('adresse', 255)->default('text');
             $table->string('statut', 255)->default('text');

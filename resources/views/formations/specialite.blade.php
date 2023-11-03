@@ -30,7 +30,7 @@
                   @foreach ($specialites as $specialite)
                   <tr>
                     <td>{{$specialite->libelleSpecialite}}</td>
-                    <td></td>
+                    <td>{{$specialite->libelleDomaineFormation}}</td>
                       <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$specialite->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$specialite->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -55,12 +55,36 @@
                                   <div class="row">
                                     <div class="col-lg-12">
                                       <div class="form-group">
-                                        <label for="">Region</label>
-                                        <input type="text" value="{{$specialite->libelleSpecialite}}" name="libelleSpecialite" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
+                                        <label for="">specialité</label>
+                                        <input type="text" value="{{$specialite->libelleSpecialite}}" name="libelleSpecialite" id="" class="form-control" placeholder="la specialité" aria-describedby="helpId" required>
+                                        <small id="helpId" class="text-muted" ><span style="color: red">le libelle de spécialités  est obligatoire</span></small>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                      <div class="form-group">
+                                        <label for="">Domaine Formation</label>
+                                        <input type="text" value="{{$specialite->libelleDomaineFormation}}" name="libelleDomaineFormation" id="" class="form-control" placeholder="le domaine de formation" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le libelle de spécialités  est obligatoire</span></small>
                                       </div>
                                     </div>
                                   </div>
+
+                                  {{--<!--div class="row">
+                                  <div class="col-lg-6">
+                                      <div class="form-group">
+                                        <label for="">Formations</label>
+                                        <select name="formation_id" class="form-control" id="">
+                                            @foreach ($formations as $formation)
+                                                <option @if ($specialite->formation->id==$formation->id)
+                                                    selected
+                                                @endif value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
+                                            @endforeach
+                                        </select>
+                                        <small id="helpId" class="text-muted" ><span style="color: red">la formation  est obligatoire</span></small>
+                                      </div>
+                                    </div>
+                                  </div-->--}}
                                 
                               </div>
                               <div class="modal-footer">
@@ -137,7 +161,7 @@
       <div class="modal-body">
         
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Spécialité</label>
                 <input type="text" name="libelleSpecialite" id="" class="form-control" placeholder="la specialité" aria-describedby="helpId" required>
@@ -145,15 +169,28 @@
               </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Domaine de formation</label>
-                <select type="text" name="libelleDomaine de formation" id="" class="form-control" placeholder="la specialité" aria-describedby="helpId" required>
+                <input type="text" name="libelleDomaineFormation" id="" class="form-control" placeholder="domaine de formation" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le libelle domaine de formation est obligatoire</span></small>
-                </select>
               </div>
             </div>
           </div>
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Domaine de formations</label>
+                <select name="formation_id" class="form-control" id="">
+                    @foreach ($formations as $formation)
+                        <option  value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
+                    @endforeach
+                </select>
+                <small id="helpId" class="text-muted" ><span style="color: red">la formation  est obligatoire</span></small>
+              </div>
+            </div>
+        </div>
         
       </div>
       <div class="modal-footer">

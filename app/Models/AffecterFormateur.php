@@ -22,4 +22,10 @@ class AffecterFormateur extends Model
         return $this->belongsTo(Formateurs::class,'formateur_id');
 
     }
+
+    public function typeformation()
+    {
+        return $this->belongsToMany(TypeFormation::class,'affecter_formateurs_type_formation','affecter_formateurs_id','type_formation_id');
+    }
+    
 }

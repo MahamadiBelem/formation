@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateTypeFormationsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.  
      *
      * @return void
      */
@@ -17,6 +17,9 @@ class CreateTypeFormationsTable extends Migration
             
             $table->bigIncrements('id');
             $table->string('libelleTypeFormation', 255)->nullable()->default('text');
+            //MAJ
+            $table->bigInteger('module_id')->default(12);
+            $table->foreign('module_id')->references('id')->on('module')->onDelete('cascade');
             $table->timestamps();
         });
     }

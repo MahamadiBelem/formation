@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AffecterFormateur;
 use App\Models\CentreFormation;
+use App\Models\TypeFormation;
 use App\Models\Formateurs;
 
 class AffecteFormateurController extends Controller
@@ -18,8 +19,10 @@ class AffecteFormateurController extends Controller
         $affectes=AffecterFormateur::paginate(10);
         $centres=CentreFormation::all();
         $formateurs=Formateurs::all();
+        $types=TypeFormation::all();
+        
 
-        return view('formations.affecteformateur',compact(['affectes','centres','formateurs']));
+        return view('formations.affecteformateur',compact(['affectes','centres','formateurs','types']));
 
     }
 
@@ -32,6 +35,7 @@ public function create()
 {
     //
 
+    $types=TypeFormation::all();
    
 
 
@@ -55,6 +59,7 @@ public function store(Request $request)
     $affecte->centreformation()->associate($request->input('centre_id'));
    
     $affecte->save();
+    $affecte->typeformation()->attach($request->input('types'));
 
     return redirect('/affectation-formateur');
 
@@ -99,8 +104,9 @@ public function update(Request $request, $id)
     $affecte->regimeFormateur=$request->input('regimeFormateur');
     $affecte->formateur()->associate($request->input('formateur_id'));
     $affecte->centreformation()->associate($request->input('centre_id'));
-   
+
     $affecte->save();
+    $affecte->typeformation()->sync($request->input('types'));
 
     return redirect('/affectation-formateur');
 }

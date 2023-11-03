@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kits;
+
+//** KITS is my affecté kits for now  **/ 
+
 class KitsController extends Controller
 {
     /**
@@ -44,6 +47,7 @@ class KitsController extends Controller
 
         $kit->libelleKits=$request->input('libelleKits');
         $kit->quantites=$request->input('quantites');
+        
 
         $kit->save();
 

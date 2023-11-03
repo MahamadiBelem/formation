@@ -8,7 +8,7 @@
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter un  projet d'installation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un  kits projet </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -18,9 +18,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="">Libelle projet d installation</label>
-              <input type="text"   name="libelleDomaine" id="" class="form-control" placeholder="le libelle d installation" aria-describedby="helpId">
-              <small id="helpId" class="text-muted" ><span style="color: red">le libelle du domaine est obligatoire</span></small>
+              <label for="">Kits projet </label>
+              <input type="text"   name="libelleDomaine" id="" class="form-control" placeholder="le kit projet" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">le libelle du kit est obligatoire</span></small>
             </div>
           </div>
 
@@ -38,7 +38,7 @@
           </div>
         </div>
          
-        <div class="row">
+        <!--div class="row">
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">structure de formation </label>
@@ -60,10 +60,10 @@
               </select>
             </div>
           </div>
-        </div>
+        </div-->
       </div>
       <div class="modal-footer">
-        <a href="{{url('/inscription')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
+        <a href="{{url('/domaine-installation')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
         <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>
       </div>
     </div>
