@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Schema;
 class CreateKitsTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
+     * Run the migrations. This migrations is equivalent to TypeKit
+     * 
      * @return void
      */
     public function up()

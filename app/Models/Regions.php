@@ -9,8 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Regions extends Model
 {
     use HasFactory;
+
     protected $table='regions';
 
+
+    /**
+     * une region a plusieurs a plusieurs provinces
+     */
     public function provinces()
     {
         return $this->hasMany(Provinces::class);

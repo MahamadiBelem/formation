@@ -27,7 +27,7 @@ class CreateAffecterApprenantsTable extends Migration
             $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             
             
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            //$table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
             
 
             $table->foreign('apprenant_id')->references('id')->on('apprenants')->onDelete('cascade');

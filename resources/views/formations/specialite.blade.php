@@ -179,7 +179,7 @@
           </div>
 
           <div class="row">
-          <div class="col-lg-6">
+          <!--div class="col-lg-6">
               <div class="form-group">
                 <label for="">Domaine de formations</label>
                 <select name="formation_id" class="form-control" id="">
@@ -189,7 +189,7 @@
                 </select>
                 <small id="helpId" class="text-muted" ><span style="color: red">la formation  est obligatoire</span></small>
               </div>
-            </div>
+            </div-->
         </div>
         
       </div>

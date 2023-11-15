@@ -83,7 +83,7 @@
                     <label for="password-confirm" class="col-md-12 col-form-label text-md-left">Droits</label>
 
                     <div class="col-md-12">
-                        <select name="roles" id="roles" class="form-control" required>
+                        <select name="roles"  class="form-control" required>
                             @foreach ($roles as $role)
                                 <option value="{{$role->name}}">{{$role->name}}</option>
                             @endforeach

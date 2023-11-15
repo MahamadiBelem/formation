@@ -12,14 +12,29 @@ class RegionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function counting(){
+       // return $total = Regions::count();
+        $regions = Regions::all();
+
+        return $total = $regions->count();
+
+    }
+    
     public function index()
     {
         //
 
       $regions=Regions::paginate(10);
+
+       $regionsCount = Regions::all();
+        $total = $regionsCount->count();
+        //$confirmed = Regions::where('status', 'confirmed')->count();
+        //$unconfirmed = Regions::where('status', 'unconfirmed')->count();
+       // $cancelled = Regions::where('status', 'cancelled')->count();
+       // $bounced = Regions::where('status', 'bounced')->count();
       
 
-        return view('formations.regions',compact('regions'));
+        return view('formations.regions',compact('regions','total'));
 
 
     }
@@ -45,8 +60,10 @@ class RegionsController extends Controller
         //
 
         $validationdata=$request->validate([
-            'libelleRegion'=>'required|unique:libelleRegion'
-        ]);
+            'libelleRegion'=>'required|unique:regions'
+        ]); 
+
+        
 
         $region = new Regions();
 

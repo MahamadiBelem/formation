@@ -30,7 +30,7 @@ class CreateAffecterFormateursTable extends Migration
             
             $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
 
-            $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');
+           // $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');
             
            $table->timestamps();
         });

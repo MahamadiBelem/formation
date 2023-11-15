@@ -9,6 +9,9 @@ class DomaineFormation extends Model
 {
     use HasFactory;
     protected $table='domaine_formation';
+    /**
+     * un domaine installation concerne plusieurs centre
+     */
 
     public function centreformation()
     {

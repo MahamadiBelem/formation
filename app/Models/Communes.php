@@ -17,15 +17,24 @@ class Communes extends Model
 
     protected $table='communes';
 
+    /**
+     * une commune appartient a une province
+     */
     public function province()
     {
         return $this->belongsTo(Provinces::class);
     }
+    /**
+     * une commune a plusieurs villages
+     */
     public function villages()
     {
         return $this->hasMany(Villages::class);
     }
 
+    /**
+     * une commune a plusieurs centre de format
+     */
     public function centreformation()
     {
         return $this->hasMany(CentreFormation::class);

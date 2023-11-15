@@ -33,6 +33,12 @@ class CreateCentreFormationsTable extends Migration
             $table->string('referenceOuverture', 255)->nullable()->default('text');
             $table->date('dateOuverture')->nullable();
 
+            //mise a jour stat
+            $table->integer('nbre_centre_formations')->nullable();
+            $table->integer('nbre_ecoles')->nullable();
+            $table->integer('nbre_lycees')->nullable();
+            $table->bigInteger('reads')->default(0)->index();
+
             
             $table->timestamps();
         });

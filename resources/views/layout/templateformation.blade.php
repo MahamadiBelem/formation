@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('styles/accueil_style.css')}}">
+   @livewireStyles
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -47,7 +48,8 @@
            <i class="fa fa-cog fa-2x"></i> Parametrages
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/domaine-formation')}}">domaine de formations</a>       
+            <a class="dropdown-item" href="{{url('/domaine-formation')}}">domaine de formations</a>  
+            <a class="dropdown-item" href="{{url('/type-kits')}}">Type kits</a>     
             <a class="dropdown-item" href="{{url('/specialites')}}">Spécialités</a>
             <a class="dropdown-item" href="{{url('/contributions')}}">Contributions/Scolarité</a>
             <a class="dropdown-item" href="{{url('/public-cible')}}">Publique cible</a>
@@ -59,12 +61,12 @@
             <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
             <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
             <!--a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
-            <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a>
-            <a class="dropdown-item" href="{{url('/source-financement')}}">Source financement</a-->
+            <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a-->
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
             <a class="dropdown-item" href="{{url('/villages')}}">Villages</a>
+            <a class="dropdown-item" href="{{url('/register-user-form')}}">Register</a>
 
           </div>
         </li>
@@ -142,10 +144,10 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/projet-installations')}}">Projet d'installation</a>
-            <a class="dropdown-item" href="{{url('/kits')}}">Gerer un kits</a>
-            <a class="dropdown-item" href="{{url('/affectation-kit')}}">Affecter un kits</a> 
+            <!--a class="dropdown-item" href="{{url('/kits')}}">Gerer un kits</a-->
+            <a class="dropdown-item" href="{{url('/affectation-kit')}}">Affecter un kit</a> 
  
-            <a class="dropdown-item" href="{{url('/domaine-installation')}}">Kits</a>
+            <!--a class="dropdown-item" href="{{url('/domaine-installation')}}">test multiselect</a-->
             <!--div class="dropdown-divider"></div-->
            
             <a class="dropdown-item" href="{{url('/installation')}}">Installation</a>
@@ -164,7 +166,7 @@
 
 
 
-        <li class="nav-item dropdown">
+        <!--li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-home fa-2x " ></i> Infrastructures
           </a>
@@ -175,19 +177,19 @@
             <a class="dropdown-item" href="{{url('/installation')}}">Infrastructures</a>
             <a class="dropdown-item" href="{{url('/installation')}}">Aménagements</a>
           </div>
-        </li>
+        </li-->
 
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <i class="fa fa-book fa-2x"></i> Statisques
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/installation')}}">Les ressources humaine de la SFPA</a>
-            <a class="dropdown-item" href="{{url('/installation')}}">Les infrastructures</a>
-            <a class="dropdown-item" href="{{url('/installation')}}">Situation des aménagements hydro-agricoles</a>
-            <a class="dropdown-item" href="{{url('/installation')}}">Situation des formations </a>
-            <a class="dropdown-item" href="{{url('/installation')}}">Renforcement des capacités des formateurs </a>
-            <a class="dropdown-item" href="{{url('/installation')}}">Accompagnement post-formation</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">structures de formations</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">Formateurs/enseignants</a>
+            <a class="dropdown-item" href="{{url('/statistiquesa')}}">Etat des Apprenants</a>
+            <a class="dropdown-item" href="{{url('/statistiquesa')}}">Etat des Kits</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">Projet d'installation</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">Sources de financement</a>
           </div>
         </li>
 

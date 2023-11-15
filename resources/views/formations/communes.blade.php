@@ -136,7 +136,8 @@
   
 </div>
 </div>
-
+<div>Total: {{ $total }}</div>
+<div>Total: {{ $nbre }}</div>
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

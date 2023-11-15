@@ -16,11 +16,13 @@ class CreateAffecterFormationsTable extends Migration
         Schema::create('affecter_formations', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->bigInteger('formation_id')->nullable()->default(12);
+            $table->bigInteger('domaine_formation_id')->nullable()->default(12);
             $table->bigInteger('centre_formation_id')->nullable()->default(12);
             $table->date('dateDebut')->nullable();
             $table->date('dateCloture')->nullable();
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            $table->foreign('domaine_formation_id')->references('id')->on('domaine_formation')->onDelete('cascade');
+            
+            //$table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->timestamps();
         });

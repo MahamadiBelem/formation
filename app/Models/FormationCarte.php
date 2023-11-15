@@ -21,6 +21,9 @@ class FormationCarte extends Model
         return $this->belongsTo(TypeFormation::class,'type_formation_id');
     }
 
+    /**
+     * une formation_carte concerne plusieurs affecterformation
+     */
     public function affecterformation()
     {
         return $this->hasMany(AffecterFormation::class);

@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cooperatives\AcceuilCooperativeController;
 use App\Http\Controllers\AffectationController;
+use App\Http\Livewire\ApprenantsDashboard;
+use App\Models\Provinces;
+use App\Models\Communes;
+use App\Models\Villages;
+use App\Models\Regions;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -218,10 +224,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-affectation-formationcarte/{id}','AffecterFormationCarteController@update');
     Route::get('/delete-affectation-formationcarte/{id}','AffecterFormationCarteController@destroy');
 
-    Route::get('/kits','KitsController@index');
+  /*  Route::get('/kits','KitsController@index');
     Route::post('/save-kits','KitsController@store');
     Route::post('/update-kits/{id}','KitsController@update');
-    Route::get('/delete-kits/{id}','KitsController@destroy');
+    Route::get('/delete-kits/{id}','KitsController@destroy');*/
+
+    // this for type kit add newly
+    Route::get('/type-kits','KitsController@index');
+    Route::post('/save-type-kits','KitsController@store');
+    Route::post('/update-type-kits/{id}','KitsController@update');
+    Route::get('/delete-type-kits/{id}','KitsController@destroy');
 
 
     Route::get('/domaine-installation','DomaineInstallationController@index');
@@ -242,6 +254,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/save-fin-formation','FinInstallationController@store');
     Route::get('/delete-fin-formation/{id}','FinInstallationController@destroy');
     Route::get('/users','UsermanagerController@index');
+    
     Route::get('/register-user-form','UsermanagerController@create');
     Route::post('/register-user','UsermanagerController@store');
     Route::get('/reset-password-by-admin/{id}','UsermanagerController@displaypasswordupdate');
@@ -250,6 +263,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-role-process/{id}','RolesController@processroleupdate');
     Route::get('/user-password-update-view','UsermanagerController@updateuserpassword');
     Route::post('/user-password-update-process/{id}','UsermanagerController@userupdateprocesspassword');
+
+    Route::get('forget-password', [ForgotPasswordController::class, 'ForgetPassword'])->name('ForgetPasswordGet');
+    Route::post('forget-password', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
 
 
     // route cooperatives
@@ -335,6 +351,25 @@ Route::post('/save-regionc', 'RegionscController@store');
 Route::post('/update-regionc', 'RegionscController@update');
 Route::get('/delete-regionc/{id}', 'RegionscController@destroy');
 
+Route::get('/statistiques', 'StatistiqueController@index');
+Route::post('/search-statisques', 'StatistiqueController@store');
+
+Route::get('/statistiquesa', 'StatistitiqueaController@index');
+
+
+// TEST DES ROUTES
+Route::get('/regions_test', function(){
+  return Regions::all();
+});
+Route::get('/provinces_test', function(){
+  return Provinces::all();
+});
+Route::get('/communes_test', function(){
+  return Communes::all();
+});
+Route::get('/villages_test', function(){
+  return Villages::all();
+});
 
 Route::get('/cycle', 'CycleFormationController@index');
 Route::post('/save-cycle', 'CycleFormationController@store');

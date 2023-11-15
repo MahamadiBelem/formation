@@ -15,7 +15,7 @@ class CreateCycleFormationTable extends Migration
     {
         Schema::create('cycle_formation', function (Blueprint $table) {
             $table->id();
-            $table->string('LibelleCycleFormation', 100)->nullable()->default('text');
+            $table->string('libelleCycleFormation', 100)->nullable()->default('text');
             $table->timestamps();
         });
     }

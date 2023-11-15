@@ -15,6 +15,8 @@ class ProvinceController extends Controller
         $regions=Regions::all();
        return view('formations.provinces',compact(['provinces','regions']));
     }
+
+    
     public function store(Request $request)
     {
         $id=$request->input('libelleRegion');

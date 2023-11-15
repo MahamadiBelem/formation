@@ -161,4 +161,5 @@ console.log(rgb)
   
 
 </script>
+
 @endsection

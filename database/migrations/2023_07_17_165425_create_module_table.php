@@ -15,7 +15,7 @@ class CreateModuleTable extends Migration
     {
         Schema::create('module', function (Blueprint $table) {
             $table->id();
-            $table->string('LibelleModule', 100)->nullable()->default('text');
+            $table->string('libelleModule', 100)->nullable()->default('text');
             
             $table->bigInteger('type_formation_id')->nullable()->default(12);
             $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');

@@ -15,14 +15,15 @@ class CreateAffecterFormationCarteTable extends Migration
     {
         Schema::create('affecter_formation_carte', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('formation_id')->nullable()->default(12);
+            $table->bigInteger('domaine_formation_id')->nullable()->default(12);
             $table->bigInteger('centre_formation_id')->nullable()->default(12);
             $table->date('dateDebut')->nullable();
             $table->date('dateCloture')->nullable();
 
             $table->integer('duree')->nullable();
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
-           $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
+            $table->foreign('domaine_formation_id')->references('id')->on('domaine_formation')->onDelete('cascade');
+            //$table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -38,7 +38,7 @@
                       
                         <div class="modal fade" id="{{'modifier'.$kit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
-                            <form action="{{url('/update-kits/'.$kit->id)}}" method="POST">
+                            <form action="{{url('/update-type-kits/'.$kit->id)}}" method="POST">
                               @csrf
                             <div class="modal-content">
                               <div class="modal-header modal-header-designed">
@@ -103,7 +103,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-sm-12  col-md-12">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
-                          <a href="{{url('/delete-kits/'.$kit->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
+                          <a href="{{url('/delete-type-kits/'.$kit->id)}}" class="btn btn-danger">supprimer <i class="fa fa-trash" style="color: white"></i></a>
                         </div>
                       </div>
                    </div>
@@ -135,7 +135,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <form action="{{url('/save-kits')}}" method="POST">
+    <form action="{{url('/save-type-kits')}}" method="POST">
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">

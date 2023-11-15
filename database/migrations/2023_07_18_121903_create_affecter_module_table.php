@@ -15,6 +15,7 @@ class CreateAffecterModuleTable extends Migration
     {
         Schema::create('affecter_module', function (Blueprint $table) {
             $table->id();
+            $table->string('discipline')->default(12);
 
             $table->bigInteger('type_formation_id')->default(12);
             $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');

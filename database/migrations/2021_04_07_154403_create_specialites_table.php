@@ -19,8 +19,8 @@ class CreateSpecialitesTable extends Migration
             $table->string('libelleSpecialite', 255)->default('text');
             $table->string('libelleDomaineFormation', 255)->default('text');
             // MAJ
-            $table->bigInteger('formation_id')->default(12);
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            $table->bigInteger('domaine_formation_id')->default(12);
+            $table->foreign('domaine_formation_id')->references('id')->on('domaine_formation')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -9,13 +9,11 @@ class VillageController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * Afficher la liste des ressources
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-
         $villages=Villages::paginate(10);
         $communes=Communes::all();
 
@@ -66,17 +64,6 @@ class VillageController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -104,8 +91,6 @@ class VillageController extends Controller
      */
     public function destroy($id)
     {
-        //
-
         $village=Villages::find($id);
 
         $village->delete();

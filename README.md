@@ -14,6 +14,17 @@
 
 ## About Laravel
 
+configurer avec une page de donnée postgresql
+
+d'autant aller sur xampp demarer apache et alller a php.init et chercher la base postgres et metre a on pour persitence
+
+DB_CONNECTION=pgsql
+DB_HOST=localhost
+DB_PORT=5432
+DB_DATABASE=testing_testing
+DB_USERNAME=postgres
+DB_PASSWORD=bhm
+
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).

@@ -9,15 +9,15 @@ class SourceFinancements extends Model
 {
     use HasFactory;
 
-    public function formation()
+   /* public function formation()
     {
         return $this->hasMany(Formations::class);
-    }
+    }*/
 
-    public function installations()
+    /*public function installations()
     {
         return $this->hasMany(Installations::class);
-    }
+    }*/
 
 
 }

@@ -11,6 +11,11 @@ class AffecterFormation extends Model
 
     protected $table='affecter_formations';
 
+    /** 
+     * affecter formation n'est plus prise en compte.
+     * Neamoins affectionFormation concerne un centre et une formation 
+     */
+
     public function centreformation()
     {
         return $this->belongsTo(CentreFormation::class,'centre_formation_id');

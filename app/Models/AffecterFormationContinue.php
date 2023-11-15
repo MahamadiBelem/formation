@@ -10,16 +10,22 @@ class AffecterFormationContinue extends Model
     use HasFactory;
     protected $table='affecter_formation_continue';
 
+    /**
+     * une affecter_formation_continue concerne un centre de formation
+     */
+
     public function centreformation()
     {
         return $this->belongsTo(CentreFormation::class,'centre_formation_id');
 
     }
 
+    /*
+
     public function formation()
     {
         return $this->belongsTo(Formations::class,'formation_id');
     }
     
-    
+    */
 }

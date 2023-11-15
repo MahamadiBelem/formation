@@ -129,7 +129,7 @@
   
 </div>
 </div>
-
+<div>Total: {{ $total }}</div>
 <!-- Modal -->
 <div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -163,5 +163,7 @@
   </form>
   </div>
 </div>
+
+
 
 @endsection

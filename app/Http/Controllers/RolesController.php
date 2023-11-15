@@ -23,7 +23,7 @@ class RolesController extends Controller
        $roles=Role::all();
        $user=User::findOrFail($id);
 
-       return view('/usermanager.rolesupdate',compact(['roles','user']));
+       return view('/auth.register',compact(['roles','user']));
     }
 
     public function processroleupdate(Request $request,$id )

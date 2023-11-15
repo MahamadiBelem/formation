@@ -18,6 +18,6 @@ class Specialites extends Model
 
     public function formation()
     {
-        return $this->belongsTo(Formations::class);
+        return $this->belongsTo(DomaineFormation::class);
     }
 }

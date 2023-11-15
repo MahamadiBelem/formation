@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Communes;
-use App\Models\Provinces;
-use Illuminate\Http\Request;
 
-class CommunesController extends Controller
+use Illuminate\Http\Request;
+use App\Models\TypeKit;
+
+//** KITS is my affecté kits for now  **/ 
+
+class TypeKitsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +18,9 @@ class CommunesController extends Controller
     {
         //
 
-        $provinces=Provinces::all();
-        $communes=Communes::paginate(10);
+        $types=TypeKits::paginate(10);
 
-        $communesCount = Communes::all();
-        $total = $communesCount->count();
-        $nbre = $communesCount->where('province_id', '3')->count();
-       /* $unconfirmed = $subscribers->where('status', 'unconfirmed')->count();
-        $cancelled = $subscribers->where('status', 'cancelled')->count();
-        $bounced = $subscribers->where('status', 'bounced')->count();*/
-        return view('formations.communes',compact(['provinces','communes','total','nbre']));
+        return view('formations.kits',compact('kits'));
     }
 
     /**
@@ -48,16 +43,15 @@ class CommunesController extends Controller
     {
         //
 
-        $id=$request->input('libelleRegion');
+        $type=new TypeKits();
 
-        $province=Provinces::find($id);
-        $commune=new Communes();
-        $commune->libelleCommune=$request->input('libelleCommune');
-        $commune->province()->associate($province);
+        $type->libelleKits=$request->input('libelleKits');
+        $type->quantites=$request->input('quantites');
+        
 
-        $commune->save();
+        $type->save();
 
-        return redirect('/communes');
+        return redirect('/type-kits');
     }
 
     /**
@@ -93,18 +87,14 @@ class CommunesController extends Controller
     {
         //
 
-        $idprovince=$request->input('libelleProvince');
+        $type= TypeKits::find($id);
 
-        $province=Provinces::find($idprovince);
-        $commune=Communes::find($id);
+        $type->libelleKits=$request->input('libelleKits');
+        $type->quantites=$request->input('quantites');
 
-        $commune->libelleCommune=$request->input('libelleCommune');
-        $commune->province()->associate($province);
+        $type->save();
 
-        $commune->save();
-
-        return redirect('/communes');
-        
+        return redirect('/type-kits');
     }
 
     /**
@@ -117,10 +107,10 @@ class CommunesController extends Controller
     {
         //
 
-        $commune=Communes::find($id);
+        $type= TypeKits::find($id);
 
-        $commune->delete();
+        $kit->delete();
 
-        return redirect('/communes');
+        return redirect('/type-kits');
     }
 }

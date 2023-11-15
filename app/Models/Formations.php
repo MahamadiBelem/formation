@@ -11,6 +11,10 @@ class Formations extends Model
 
     protected $table='formations';
 
+    /**
+     * n'est plus pris compte et a été sciendé
+     */
+
     public function sourcefinancement()
     {
         return $this->belongsTo(SourceFinancements::class,'source_financement_id');

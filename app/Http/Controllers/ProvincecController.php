@@ -21,6 +21,20 @@ class ProvincecController extends Controller
         return view('cooperatives.provinces', compact(['provinces', 'regions']));
     }
 
+    public function getCorrespondantCommune(Request $request){
+        
+        $provinces = Provinces::find($id);
+        $selected = $provinces->communes()->select('libelleCommunes')->get();
+
+        return selected;
+    }
+
+    public function count(){
+        $counter = $counter++;
+        return $counter;
+    }
+
+    
     /**
      * Show the form for creating a new resource.
      *
