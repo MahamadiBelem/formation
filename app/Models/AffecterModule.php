@@ -35,7 +35,7 @@ class AffecterModule extends Model
 
     public function module()
     {
-        return $this->belongsToMany(Module::class,'affecter_module_modules','affecter_module_id','module_id');
+        return $this->belongsToMany(Module::class,'affecter_module_module','affecter_module_id','module_id');
     }
    
 }

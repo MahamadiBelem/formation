@@ -32,7 +32,7 @@
                   <tr>
                     <td>{{$affecte->centreformation->denomination}}</td>
                     <td>{{$affecte->apprenant->matricule}}</td>
-                    <td>{{$affecte->domainesinstallation->libelleDomaine}}</td>
+                    <td>{{$affecte->libelleProjetInstallation}}</td>
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$affecte->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$affecte->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -87,15 +87,9 @@
                                     <div class="row">
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">libelle Projet</label>
-                                        <select name="domaines_installation_id" class="form-control" id="">
-                                            @foreach ($domainesinstallations as $domainesinstallation)
-                                                <option @if ($affecte->domainesinstallation->id==$domainesinstallation->id)
-                                                    selected
-                                                @endif value="{{$domainesinstallation->id}}">{{$domainesinstallation->libelleDomaine}}</option>
-                                            @endforeach
-                                        </select>
-                                        <small id="helpId" class="text-muted" ><span style="color: red"> est obligatoire</span></small>
+                                        <label for="">Libelle Projet Installation</label>
+                                        <input type="text"  value="{{$affecte->libelleProjetInstallation}}" name="libelleProjetInstallation" id="" class="form-control" placeholder="Saisiez le promoteur" aria-describedby="helpId" required>
+                                        <small id="helpId" class="text-muted" ><span style="color: red">le libelleProjetInstallation ne doit pas être vide</span></small>
                                       </div>
                                     </div>
                                     </div>
@@ -202,13 +196,9 @@
             
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Projet</label>
-                <select name="domaines_installation_id" class="form-control" id="">
-                    @foreach ($domainesinstallations as $domainesinstallation)
-                        <option  value="{{$domainesinstallation->id}}">{{$domainesinstallation->libelleDomaine}}</option>
-                    @endforeach
-                </select>
-                <small id="helpId" class="text-muted" ><span style="color: red"> est obligatoire</span></small>
+              <label for="">Libelle Projet Installation</label>
+              <input type="text"  name="libelleProjetInstallation" id="" class="form-control" placeholder="Saisiez le libelleProjetInstallation" aria-describedby="helpId" required>
+              <small id="helpId" class="text-muted" ><span style="color: red">le libelleProjetInstallation ne doit pas être vide</span></small>
               </div>
             </div>
           </div>

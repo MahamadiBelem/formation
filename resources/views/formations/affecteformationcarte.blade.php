@@ -34,7 +34,7 @@
                   @foreach ($affectes as $affecte)
                   <tr>
                     <td>{{$affecte->centreformation->denomination}}</td>
-                    <td>{{$affecte->formation->libelleFormations}}</td>
+                    <td>{{$affecte->theme}}</td>
                     <td>{{$affecte->dateDebut}}</td>
                     <td>{{$affecte->dateCloture}}</td>
                     <td>{{$affecte->duree}}Jours</td>
@@ -77,17 +77,11 @@
                                   </div>
                                 
                                   <div class="row">
-                                    <div class="col-lg-6">
+                                  <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">Cycle Formations</label>
-                                        <select name="formation_id" class="form-control" id="">
-                                            @foreach ($formations as $formation)
-                                                <option @if ($affecte->formation->id==$formation->id)
-                                                    selected
-                                                @endif value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
-                                            @endforeach
-                                        </select>
-                                        <small id="helpId" class="text-muted" ><span style="color: red">la formation  est obligatoire</span></small>
+                                        <label for="">Theme</label>
+                                        <input type="string"  name="theme" id=""  value="{{$affecte->theme}}" class="form-control" placeholder="theme" aria-describedby="helpId">
+                                        <small id="helpId" class="text-muted" ><span style="color: red">le theme est obligatoire</span></small>
                                       </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -110,7 +104,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Duree</label>
-                                        <input type="integer" name="duree" id="" class="form-control" placeholder="la duree" aria-describedby="helpId">
+                                        <input type="integer" name="duree" id="" value="{{$affecte->duree}}" class="form-control" placeholder="la duree" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted" ><span style="color: red">la duree de la formation est obligatoire</span></small>
                                       </div>
                                     </div>
@@ -218,13 +212,9 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Themes formations</label>
-                <select name="formation_id" class="form-control" id="">
-                    @foreach ($formations as $formation)
-                        <option  value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
-                    @endforeach
-                </select>
-                <small id="helpId" class="text-muted" ><span style="color: red">la formation  est obligatoire</span></small>
+                <label for="">Thème formations</label>
+                   <input type="string"  name="theme" id=""  class="form-control" placeholder="theme" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted" ><span style="color: red">le theme est obligatoire</span></small>
               </div>
             </div>
             <div class="col-lg-6">

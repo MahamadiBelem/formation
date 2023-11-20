@@ -30,7 +30,7 @@
                   @foreach ($modules as $module)
                   <tr>
                     <td>{{$module->typeformation->libelleTypeFormation}}</td>
-                    <td>{{$module->LibelleModule}}</td>
+                    <td>{{$module->libelleModule}}</td>
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$module->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$module->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -56,14 +56,14 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Module</label>
-                                        <input type="text"  value="{{$module->LibelleModule}}" name="LibelleModule" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
+                                        <input type="text"  value="{{$module->libelleModule}}" name="LibelleModule" id="" class="form-control" placeholder="la region" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le libelle  est obligatoire</span></small>
                                       </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                        <label for="">type formation</label>
+                                        <label for="">Cycle formation</label>
                                         <select name="type_formation_id" class="form-control" id="">
                                             @foreach ($typeformations as $typeformation)
                                                 <option value="{{$typeformation->id}}">{{$typeformation->libelleTypeFormation}}</option>
@@ -163,7 +163,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Module</label>
-                <input type="text" name="LibelleModule" id="" class="form-control" placeholder="module" aria-describedby="helpId" required>
+                <input type="text" name="libelleModule" id="" class="form-control" placeholder="module" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red"> est obligatoire</span></small>
               </div>
             </div>

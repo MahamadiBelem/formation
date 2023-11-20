@@ -31,11 +31,11 @@ class AffecterApprenants extends Model
     {
         return $this->belongsTo(Apprenants::class);
     }
-    public function formation()
+    
+    public function typeformation()
     {
-        return $this->belongsTo(Formations::class);
+        return $this->belongsTo(TypeFormation::class,'type_formation_id');
     }
-
     public function finformation()
     {
         return $this->hasMany(FinFormations::class);

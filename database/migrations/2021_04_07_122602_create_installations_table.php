@@ -23,16 +23,16 @@ class CreateInstallationsTable extends Migration
             
             $table->bigInteger('source_financement_id')->nullable()->default(12);
 
-            $table->bigInteger('centre_formation_id')->nullable()->default(12);
-            $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
+            $table->bigInteger('centreformation_id')->nullable()->default(12);
+            $table->foreign('centreformation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             $table->bigInteger('region_id')->nullable()->default(12);
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
-            $table->bigInteger('province_id')->nullable()->default(12);
-            $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
-            $table->bigInteger('commune_id')->nullable()->default(12);
-            $table->foreign('commune_id')->references('id')->on('communes')->onDelete('cascade');
-            $table->bigInteger('village_id')->nullable()->default(12);
-            $table->foreign('village_id')->references('id')->on('villages')->onDelete('cascade');
+            $table->bigInteger('provinces_id')->nullable()->default(12);
+            $table->foreign('provinces_id')->references('id')->on('provinces')->onDelete('cascade');
+            $table->bigInteger('communes_id')->nullable()->default(12);
+            $table->foreign('communes_id')->references('id')->on('communes')->onDelete('cascade');
+            $table->bigInteger('villages_id')->nullable()->default(12);
+            $table->foreign('villages_id')->references('id')->on('villages')->onDelete('cascade');
             
             $table->string('annees', 100)->nullable()->default('text');
             $table->date('dateInstallation')->nullable();

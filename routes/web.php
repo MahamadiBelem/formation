@@ -244,10 +244,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete-domaine-installation/{id}','DomaineInstallationController@destroy');
 
 
-    Route::get('/installation','IntallationController@index');
-    Route::get('/display-installation-form','IntallationController@create');
-    Route::post('/save-installation','IntallationController@store');
-    Route::get('/delete-installation/{id}','IntallationController@destroy');
+    Route::get('/installation','InstallationsController@index');
+    Route::get('/display-installation-form','InstallationsController@create');
+    Route::post('/save-installation','InstallationsController@store');
+    Route::get('/delete-installation/{id}','InstallationsController@destroy');
+    Route::post('/update-installation/{id}','InstallationsController@update');
+    
+    /*Route::get('/inscription','AffecterApprenantController@index');
+    Route::get('/display-inscription-form','AffecterApprenantController@create');
+    Route::post('/save-inscription','AffecterApprenantController@store');
+    Route::get('/update-inscription-view-form/{id}','AffecterApprenantController@edit');
+    Route::post('/update-inscription/{id}','AffecterApprenantController@update');
+    Route::get('/delete-inscription/{id}','AffecterApprenantController@destroy');*/
 
     Route::get('/fin-formation','FinInstallationController@index');
     Route::get('/display-fin-formation-form','FinInstallationController@create');

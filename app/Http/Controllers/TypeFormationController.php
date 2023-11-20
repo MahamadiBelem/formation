@@ -19,9 +19,9 @@ class TypeFormationController extends Controller
         //
 
         $types=TypeFormation::paginate(5);
-        $modules=Module::all();
+       // $modules=Module::all();
 
-        return view('formations.typeformation',compact('types','modules'));
+        return view('formations.typeformation',compact('types'));
     }
 
     /**
@@ -47,7 +47,7 @@ class TypeFormationController extends Controller
         $type=new TypeFormation() ;
         $type->libelleTypeFormation=$request->input('libelleTypeFormation');
 
-        $type->module()->associate($request->input('module_id'));
+        //$type->module()->associate($request->input('module_id'));
         $type->save();
 
         return redirect('/type-formation');
@@ -89,7 +89,7 @@ class TypeFormationController extends Controller
         $type=TypeFormation::find($request->input('id'));
         $type->libelleTypeFormation=$request->input('libelleTypeFormation');
 
-        $type->module()->associate($request->input('module_id'));
+        //$type->module()->associate($request->input('module_id'));
         $type->save();
 
         return redirect('/type-formation');

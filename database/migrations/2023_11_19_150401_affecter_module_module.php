@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAffecterModuleModules extends Migration
+class AffecterModuleModule extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateAffecterModuleModules extends Migration
      */
     public function up()
     {
-        Schema::create('affecter_module_modules', function (Blueprint $table) {
-            $table->id();
+        Schema::create('affecter_module_module', function (Blueprint $table) {
+            
+            $table->bigIncrements('id');
+            
             $table->bigInteger('affecter_module_id')->default(12);
             
             $table->bigInteger('module_id')->default(12);
@@ -33,6 +35,6 @@ class CreateAffecterModuleModules extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('affecter_module_modules');
+        //
     }
 }

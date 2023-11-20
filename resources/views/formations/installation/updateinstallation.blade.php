@@ -4,17 +4,18 @@
 
 <div class="row" style="margin-top: 5%;margin-left: -50%">
   <div class="card-body">
-    <form action="{{url('/save-installation')}}" method="POST">
+    <form action="{{url('/update-installation/'.$affecte->id)}}" method="POST">
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter une installation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier une installation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         
+        <div class="row">
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -149,10 +150,8 @@
          </div>
          
        </div>
-
-
       <div class="modal-footer">
-        <a href="{{url('/installation')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
+        <a href="{{url('/inscription')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
         <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>
       </div>
     </div>

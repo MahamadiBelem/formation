@@ -18,7 +18,7 @@ class CreateTypeFormationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('libelleTypeFormation', 255)->nullable()->default('text');
             //MAJ
-            $table->bigInteger('module_id')->default(12);
+            //$table->bigInteger('module_id')->default(12);
            // $table->foreign('module_id')->references('id')->on('module')->onDelete('cascade');
             $table->timestamps();
         });

@@ -22,7 +22,7 @@
               <select  class="form-control" name="inscription" id="fin_formation">
                 
                 @foreach ($affectes as $affecte)
-                <option value="{{$affecte->id}}">Matricule:{{$affecte->apprenant->matricule}} Nom:{{$affecte->apprenant->nom}}  Prenom:{{$affecte->apprenant->prenom}}  Formation:{{$affecte->formation->libelleFormations}} </option>
+                <option value="{{$affecte->id}}">Matricule:{{$affecte->apprenant->matricule}} Nom:{{$affecte->apprenant->nom}}  Prenom:{{$affecte->apprenant->prenom}}  </option>
                 @endforeach
                 
               </select>

@@ -19,7 +19,7 @@ class CreateAffecterApprenantsTable extends Migration
             
             $table->bigInteger('centre_formation_id')->default(12);
             
-            $table->bigInteger('formation_id')->default(12);
+            $table->bigInteger('type_formation_id')->default(12);
             
             $table->bigInteger('apprenant_id')->default(12);
             
@@ -27,7 +27,7 @@ class CreateAffecterApprenantsTable extends Migration
             $table->foreign('centre_formation_id')->references('id')->on('centre_formation')->onDelete('cascade');
             
             
-            //$table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            $table->foreign('type_formation_id')->references('id')->on('type_formations')->onDelete('cascade');
             
 
             $table->foreign('apprenant_id')->references('id')->on('apprenants')->onDelete('cascade');

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Module;
 use Illuminate\Http\Request;
-use App\Models\TypeFormation;
+use App\Models\TypeFormation; 
+use App\Models\TypeFormations;
+
+
 
 class ModuleController extends Controller
 {
@@ -50,7 +53,7 @@ public function store(Request $request)
 
     $module=new Module();
     
-    $module->LibelleModule=$request->input('LibelleModule');
+    $module->libelleModule=$request->input('libelleModule');
     $module->typeformation()->associate(TypeFormation::find($request->input('type_formation_id')));
     $module->save();
 
@@ -92,7 +95,7 @@ public function store(Request $request)
     {
         $module= Module::find($id);
         
-        $module->LibelleModule=$request->input('LibelleModule');
+        $module->libelleModule=$request->input('libelleModule');
         $module->typeformation()->associate(TypeFormation::find($request->input('type_formation_id')));
         $module->save();
         return redirect('/module');

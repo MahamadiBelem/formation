@@ -15,6 +15,24 @@
       </div>
       <div class="modal-body">
         
+        <!--div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="">Annees</label>
+              <input  type="text"   name="annees" id="" class="form-control" placeholder="années d'inscription" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">l annees inscription ne doit pas être vide</span></small>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Date d'incription </label>
+              <input type="date"   name="dateInscription" id="" class="form-control" placeholder="Date d'inscription" aria-describedby="helpId">
+              <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
+            </div>
+          </div>
+        </div-->
+        
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -150,7 +168,8 @@
          
        </div>
 
-
+         
+        </div>
       <div class="modal-footer">
         <a href="{{url('/installation')}}" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></a>
         <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>

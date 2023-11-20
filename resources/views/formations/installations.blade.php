@@ -22,7 +22,7 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Apprenant </th>
-                  <!--th>Domaine d'installation </th-->
+                  <th>Projet </th>
                   <th>Source de financement </th>
                   <th>Année de sortie </th>
                   <th>Date d'installation</th>
@@ -40,9 +40,9 @@
                       Nom : {{$installation->affecterapprenants->apprenant->nom}}
                       Prenom: {{$installation->affecterapprenants->apprenant->prenom}}
                     </td>
-                    <!--td>
+                    <td>
                        {{$installation->domainesinstallation->libelleDomaine}}
-                    </td-->
+                    </td>
                     <td>
                       {{$installation->sourcefinancements->libelleSourceFinancement}}
                     </td>
@@ -55,8 +55,8 @@
                     <td>
                       {{$installation->lieuInstallation}}
                     </td>
+                    <td> </td>
                     <td>
-                    <td></td>
                      @if ($installation->confirmedKits)
                          <span style="background-color: green">sortie </span>
                      @else
@@ -66,6 +66,8 @@
                     <td>
                          
                           <button data-toggle="modal" data-target="{{'#suprimer'.$installation->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
+                          <a  href=""><i style="color: #007bff"  class="fa fa-edit"></i></a>
+                          
                           
                        
                       

@@ -8,7 +8,7 @@
       @csrf
     <div class="modal-content">
       <div class="modal-header modal-header-designed">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter une inscription</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter une affectation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -39,7 +39,7 @@
               <label for="formations"> Domaine Formation</label>
               <select id="formations" class="form-control" name="formation_id">
                @foreach ($formations as $formation)
-               <option value="{{$formation->id}}">{{$formation->libelleFormations}}</option>
+               <option value="{{$formation->id}}">{{$formation->libelleDomaineFormation}}</option>
                @endforeach
               </select>
             </div>
@@ -71,9 +71,12 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Cycle de formation </label>
-              <select type="select"   name="typeformation" id="" class="form-control" placeholder="cycle de formation" aria-describedby="helpId">
+              <select id="" class="form-control" name="type_formation_id">
+               @foreach ($types as $type)
+               <option value="{{$type->id}}">{{$type->libelleTypeFormation}}</option>
+               @endforeach
               </select>
-              <small id="helpId" class="text-muted" ><span style="color: red">la date inscription ne doit pas être vide</span></small>
+              <small id="helpId" class="text-muted" ><span style="color: red">le cycle ne doit pas être vide</span></small>
             </div>
           </div>
          

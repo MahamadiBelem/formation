@@ -22,7 +22,6 @@
                 <thead style="background-color: #007bff;color:white;">
                 <tr>
                   <th>Type de formation </th>
-                  <th>Module de formation </th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -30,7 +29,6 @@
                   @foreach ($types as $type)
                   <tr>
                     <td>{{$type->libelleTypeFormation}}</td>
-                    <td>{{$type->module->LibelleModule}}</td>
                       <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$type->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$type->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -53,26 +51,13 @@
                                   </div>
                                 </div>
                                   <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                       <div class="form-group">
                                         <label for="">type de formation</label>
                                         <input type="text" value="{{$type->libelleTypeFormation}}" name="libelleTypeFormation" id="" class="form-control" placeholder="Saisiez le type de formation" aria-describedby="helpId" required>
                                         <small id="helpId" class="text-muted" ><span style="color: red">le nom du type de formation  est obligatoire</span></small>
                                       </div>
                                     </div>
-                                  
-
-                                  <div class="col-lg-6">
-                                    <div class="form-group">
-                                      <label for="">module de formation</label>
-                                      <select  class="form-control" name="module_id" id="">
-                                        @foreach ($types as $type)
-                                        <option value="{{$type->id}}">Module:{{$type->module->LibelleModule}}  </option>
-                                        @endforeach
-                                      </select>
-                                      <small id="helpId" class="text-muted" ><span style="color: red">le nom du cycle  de formation est obligatoire</span></small>
-                                    </div>
-                                  </div>
                               </div>
                               </div>
                               
@@ -150,25 +135,13 @@
       <div class="modal-body">
 
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="form-group">
                 <label for="">Cycle de formation</label>
                 <input type="text" name="libelleTypeFormation" id="" class="form-control" placeholder="Saisiez le cycle de formation" aria-describedby="helpId" required>
                 <small id="helpId" class="text-muted" ><span style="color: red">le nom du type  de formation est obligatoire</span></small>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">module de formation</label>
-                <select id="" data-placeholder="selectionner le module" class="form-control" name="module_id">
-                @foreach ($types as $type)
-                <option value="{{$type->id}}">{{$type->module->LibelleModule}}</option>
-                @endforeach
-              </select>  
-              <small id="helpId" class="text-muted" ><span style="color: red">le module formation est obligatoire</span></small>
-              </div>
-            </div>
-
           </div>
 
       </div>

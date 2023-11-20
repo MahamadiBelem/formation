@@ -14,9 +14,9 @@ class TypeFormation extends Model
      * equivalent a cycle formation et appartient a un module
      */
 
-    public function module()
+   /*  public function module()
     {
         return $this->belongsTo(Module::class,'module_id');
 
-    }
+    } */
 }

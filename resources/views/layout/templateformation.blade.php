@@ -60,8 +60,8 @@
             <a class="dropdown-item" href="{{'/module'}}">Module de formations</a>
             <a class="dropdown-item" href="{{url('/regimes')}}">Regimes</a>
             <a class="dropdown-item" href="{{url('/niveau-instructions')}}">Niveau d'instructions</a>
-            <!--a class="dropdown-item" href="{{url('/promoteurs')}}">Promoteurs</a>
-            <a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a-->
+            <a class="dropdown-item" href="{{url('/source-financement')}}">Source Financement</a>
+            <!--a class="dropdown-item" href="{{url('/gestionnaires')}}">Gestionnaires</a-->
             <a class="dropdown-item" href="{{url('/regions')}}">Regions</a>
             <a class="dropdown-item" href="{{url('/provinces')}}">Provinces</a>
             <a class="dropdown-item" href="{{url('/communes')}}">Communes</a>
@@ -144,7 +144,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{url('/projet-installations')}}">Projet d'installation</a>
-            <!--a class="dropdown-item" href="{{url('/kits')}}">Gerer un kits</a-->
+            <!--a class="dropdown-item" href="{{url('/domaine-installation')}}">ADD Libelle Projet</a-->
             <a class="dropdown-item" href="{{url('/affectation-kit')}}">Affecter un kit</a> 
  
             <!--a class="dropdown-item" href="{{url('/domaine-installation')}}">test multiselect</a-->

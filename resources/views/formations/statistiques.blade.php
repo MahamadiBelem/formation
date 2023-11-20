@@ -23,35 +23,35 @@
             
           <div class="row" >
             <div class="card border-primary mb-3" style="width: 18rem;">
-            <div class="card-header">Formateurs/enseignants</div>
+            <div class="card-header">Nombre de Region</div>
             <div class="card-body text-primary">
-                <h5 class="card-title">10</h5>
-                <p class="card-text">Formateurs/enseignants</p>
+                <h5 class="card-title">{{$total}}</h5>
+                <p class="card-text">Nombre de Region</p>
             </div>
             </div>
 
             <div class="card border-secondary mb-3" style="width: 18rem;">
-            <div class="card-header">Projet d’installation</div>
+            <div class="card-header">Nombre Formateurs</div>
             <div class="card-body text-secondary">
-                <h5 class="card-title">50</h5>
-                <p class="card-text">Projet d’installation</p>
+                <h5 class="card-title">{{$totalformateurs}}</h5>
+                <p class="card-text">Nombre Formateurs</p>
             </div>
             </div>
             </div>
           <div class="row">
                 <div class="card border-primary mb-3" style="width: 18rem;">
-                <div class="card-header">Structures de formation</div>
+                <div class="card-header">Nombre Apprenants</div>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">22</h5>
-                    <p class="card-text">Structures de formation.</p>
+                    <h5 class="card-title">{{$totalapprenants}}</h5>
+                    <p class="card-text">Nombre Apprenants.</p>
                 </div>
                 </div>
 
                 <div class="card border-secondary mb-3" style="width: 18rem;">
-                <div class="card-header">Apprenants </div>
+                <div class="card-header">Nombre Projet Installation </div>
                 <div class="card-body text-secondary">
-                    <h5 class="card-title">13</h5>
-                    <p class="card-text">Apprenants</p>
+                    <h5 class="card-title">{{$totalprojet}}</h5>
+                    <p class="card-text">Nombre Projet Installation</p>
                 </div>
                 </div>
 
@@ -78,10 +78,10 @@
       <div class="card-body">
       <div class="row" >
         <div class="card border-primary mb-3" style="width: 18rem;">
-        <div class="card-header">Formateurs/enseignants</div>
+        <div class="card-header">Nombre de modules</div>
         <div class="card-body text-primary">
-            <h5 class="card-title">10</h5>
-            <p class="card-text">Formateurs/enseignants</p>
+            <h5 class="card-title">{{$totalmodule}}</h5>
+            <p class="card-text">Nombre de modules</p>
         </div>
         </div>
 

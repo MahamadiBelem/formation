@@ -2,13 +2,13 @@
 <div style="background: #E8EAC8"> 
 @section('content')
 
-<div>
+<!--div>
     <p>{{ $counter }}</p>
     <div class="form-group">
     <input type="number" class="form-control" wire:model="size">
     </div>
     <button wire:click="increment" class="btn btn-info"> + </button>  <button wire:click="decrement" class="btn btn-info"> - </button>
-</div>
+</div-->
 <br>
 <br>
 
@@ -24,7 +24,7 @@
 <div class="card border-secondary mb-3" style="width: 18rem;">
   <div class="card-header" style="background-color: #1C73DB; color:white;">Apprenants </div>
   <div class="card-body text-secondary">
-    <h5 class="card-title">13</h5>
+    <h5 class="card-title">314</h5>
     <p class="card-text">Apprenants</p>
   </div>
 </div>

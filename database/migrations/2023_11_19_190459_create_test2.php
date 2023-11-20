@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjetInstallationsTable extends Migration
+class CreateTest2 extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateProjetInstallationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projet_installations', function (Blueprint $table) {
+        Schema::create('test2', function (Blueprint $table) {
             $table->id();
-
-            //$table->bigInteger('domaines_installation_id')->nullable()->default(12);
-            //$table->foreign('domaines_installation_id')->references('id')->on('domaines_installations')->onDelete('cascade');
-
             $table->bigInteger('apprenant_id')->nullable()->default(12);
             $table->foreign('apprenant_id')->references('id')->on('apprenants')->onDelete('cascade');
 
@@ -37,6 +33,6 @@ class CreateProjetInstallationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projet_installations');
+        Schema::dropIfExists('test2');
     }
 }

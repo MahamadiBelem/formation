@@ -22,9 +22,7 @@ class AffecterFormationCarteController extends Controller
 
         $centres=CentreFormation::all();
 
-        $formations=Formations::all();
-
-        return view('formations.affecteformationcarte',compact(['affectes','centres','formations']));
+        return view('formations.affecteformationcarte',compact(['affectes','centres']));
 
        
         
@@ -55,8 +53,8 @@ class AffecterFormationCarteController extends Controller
         $affecte->dateDebut=$request->input('dateDebut');
         $affecte->dateCloture=$request->input('dateCloture');
         $affecte->duree=$request->input('duree');
+        $affecte->theme=$request->input('theme');
         $affecte->centreformation()->associate($request->input('centre_id'));
-        $affecte->formation()->associate($request->input('formation_id'));
 
         $affecte->save();
 
@@ -101,8 +99,8 @@ class AffecterFormationCarteController extends Controller
         $affecte->dateDebut=$request->input('dateDebut');
         $affecte->dateCloture=$request->input('dateCloture');
         $affecte->duree=$request->input('duree');
-        $affecte->centreformation()->associate($request->input('formation_id'));
-        $affecte->formation()->associate($request->input('formation_id'));
+        $affecte->theme=$request->input('theme');
+        $affecte->centreformation()->associate($request->input('centre_id'));
 
         $affecte->save();
 

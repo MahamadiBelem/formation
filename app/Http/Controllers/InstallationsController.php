@@ -12,7 +12,7 @@ use App\Models\Provinces;
 use App\Models\Communes;
 use App\Models\Villages;
 use App\Models\CentreFormation;
-class IntallationController extends Controller 
+class InstallationsController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class IntallationController extends Controller
         $villages=Villages::all();
 
 
-        return view('formations.installations',compact('installations','affectes','sources','domaines', 'regions','provinces','communes','villages','centres'));
+        return view('formations.installation.installation',compact('installations','affectes','sources','domaines', 'regions','provinces','communes','villages','centres'));
 
 
     }
@@ -59,7 +59,7 @@ class IntallationController extends Controller
          $communes=Communes::all();
          $villages=Villages::all();
          $centres=CentreFormation::all();
-        return view('formations.newinstallation',compact('installations','affectes','sources','domaines','regions','provinces','communes','villages','centres'));
+        return view('formations.installation.addinstallation',compact('installations','affectes','sources','domaines','regions','provinces','communes','villages','centres'));
 
     }
 
@@ -89,6 +89,8 @@ class IntallationController extends Controller
         $installation->communes()->associate($request->input('libelleCommune'));
         $installation->villages()->associate($request->input('libelleVillages'));
         $installation->centreformation()->associate($request->input('denomination'));
+
+        $installation->save();
         
         return redirect('/installation');
 
@@ -125,7 +127,28 @@ class IntallationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $installation= Installations::find($id);
+
+
+        $installation->annees=$request->input('annees');
+        $installation->lieuInstallation=$request->input('lieuInstallation');
+        $installation->dateInstallation=$request->input('dateFinFormation');
+        $installation->confirmedKits=$request->input('confirmedKits');
+        $installation->affecterapprenants()->associate($request->input('inscription'));
+        $installation->domainesinstallation()->associate($request->input('domaine_installation'));
+        $installation->sourcefinancements()->associate($request->input('source_financement_id'));
+
+        $installation->region()->associate($request->input('libelleRegion'));
+        $installation->provinces()->associate($request->input('libelleProvince'));
+        $installation->communes()->associate($request->input('libelleCommune'));
+        $installation->villages()->associate($request->input('libelleVillages'));
+        $installation->centreformation()->associate($request->input('denomination'));
+
+        $installation->save();
+
+        return redirect('/installation.installation');
     }
 
     /**

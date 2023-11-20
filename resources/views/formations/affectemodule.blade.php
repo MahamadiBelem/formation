@@ -32,7 +32,12 @@
                   <tr>
                     <td>{{$affecte->typeformation->libelleTypeFormation}}</td>
                     <td>Nom:{{$affecte->formateur->nomComplet}} Contact{{$affecte->formateur->contact}}</td>
-                    <td>{{$affecte->module->LibelleModule}}</td>
+                    <td>
+                      @foreach ($affecte->module as $item)
+                          <div>Module:{{$item->libelleModule}} </div>
+                      @endforeach
+                    </td> 
+                    <!--td> {{--$affecte->module->libelleModule--}}</td-->
                     <td>
                           <button  data-toggle="modal" data-target="{{'#modifier'.$affecte->id}}"  class="btn btn-outline-success"><i style="color: #007bff"  class="fa fa-edit"></i></button>
                           <button data-toggle="modal" data-target="{{'#suprimer'.$affecte->id}}" class="btn btn-outline-danger"><i style="color: red" class="fa fa-trash"></i></button>
@@ -73,12 +78,12 @@
                                   <div class="col-lg-6">
                                     <div class="form-group">
                                       <label for="">Cycle formation</label>
-                                      <select name="type_id" class="form-control" id="">
+                                      <select name="type_formation_id" class="form-control" id="">
                                           @foreach ($types as $type)
                                               <option value="{{$type->id}}">{{$type->libelleTypeFormation}}</option>
                                           @endforeach
                                       </select>
-                                      <small id="helpId" class="text-muted" ><span style="color: red">le type de la  formation est obligatoire</span></small>
+                                      <small id="helpId" class="text-muted" ><span style="color: red">le cyclede la  formation est obligatoire</span></small>
                                     </div>
                                   </div>
                               </div>
@@ -87,9 +92,9 @@
                                 <div class="col-lg-6">
                                         <div class="form-group">
                                           <label for="">Module</label>
-                                          <select name="module_id" class="form-control" id="">
+                                          <select multiple='multiple' class="form-control" name="module[]" id="updatekits">
                                               @foreach ($modules as $module)
-                                                  <option  value="{{$module->id}}">{{$module->LibelleModule}}</option>
+                                                  <option  value="{{$module->id}}">{{$module->libelleModule}}</option>
                                               @endforeach
                                           </select>
                                           <small id="helpId" class="text-muted" ><span style="color: red">le module est obligatoire</span></small>
@@ -198,12 +203,13 @@
             </div>
       </div>
       <div class="row">
+        
         <div class="col-lg-6">
                 <div class="form-group">
                   <label for="">Module</label>
-                  <select name="module_id" class="form-control" id="">
+                  <select multiple='multiple' class="form-control" name="module[]" id="kits" >
                       @foreach ($modules as $module)
-                          <option  value="{{$module->id}}">{{$module->LibelleModule}}</option>
+                          <option  value="{{$module->id}}">{{$module->libelleModule}}</option>
                       @endforeach
                   </select>
                   <small id="helpId" class="text-muted" ><span style="color: red">le module est obligatoire</span></small>
@@ -211,6 +217,7 @@
               </div>
             </div>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Quitter <i class="fa fa-arrows" aria-hidden="true"></i></button>
         <button type="submit" class="btn btn-primary">Sauvegarder <i class="fa fa-save" aria-hidden="true"></i></button>

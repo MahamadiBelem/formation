@@ -38,7 +38,12 @@
                     <td>{{$affecte->regimeFormateur}}</td>
               
   
-                    <td>{{$affecte->typeformation}}</td>
+                    <td>
+                      @foreach ($affecte->typeformation as $item)
+                          <div>Module:{{$item->libelleTypeFormation}} </div>
+                      @endforeach
+                    </td> 
+                    <!--td>{{--$affecte->typeformation--}}</td-->
                      
           
                     <td>
@@ -116,7 +121,7 @@
                                     <div class="col-lg-6">
                                       <div class="form-group">
                                         <label for="">Cycle formation</label>
-                                        <select multiple="multiple" name="types[]" class="form-control" id="type">
+                                        <select multiple="multiple" name="types[]"  class="form-control" id="uptype">
                                         @foreach ($types as $type)
                                           @foreach ($affecte->typeformation as $item)
                                           <option @if ($item->id==$type->id)
@@ -257,7 +262,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="">Cycle de formation</label>
-              <select name="types[]" id="types" multiple="multiple" data-placeholder="selectionner les cycles" style="width: 100%;">
+              <select name="types[]" id="kits" multiple="multiple" data-placeholder="selectionner les cycles" style="width: 100%;">
                 @foreach ($types as $type)
                     <option value="{{$type->id}}">{{$type->libelleTypeFormation}}</option>
                 @endforeach

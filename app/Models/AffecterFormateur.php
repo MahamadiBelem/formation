@@ -37,7 +37,7 @@ class AffecterFormateur extends Model
      */
     public function typeformation()
     {
-        return $this->belongsToMany(TypeFormation::class,'affecter_formateurs_type_formation','affecter_formateurs_id','type_formation_id');
+        return $this->belongsToMany(TypeFormation::class,'affecter_formateur_type_formation','affecter_formateur_id','type_formation_id');
     }
     
 }

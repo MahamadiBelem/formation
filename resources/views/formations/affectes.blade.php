@@ -23,7 +23,7 @@
                 <tr>
                   <th>Annees </th>
                   <th>Date affectation </th>
-                  <th>Formation </th>
+                  <th>Domaine Formation </th>
                   <th>Apprenant </th>
                   <th>Structure de formation </th>
                   <th>Actions</th>
@@ -34,7 +34,7 @@
                   <tr>
                     <td>{{$affecte->annees}}</td>
                     <td>{{$affecte->dateInscription}}</td>
-                    <td>{{$affecte->formation->libelleFormations}}</td> 
+                    <td>{{$affecte->typeformation->libelleTypeFormation}}</td> 
                     <td>Matricule:{{$affecte->apprenant->matricule}} Nom:{{$affecte->apprenant->nom}} Prenom:{{$affecte->apprenant->prenom}}</td>
                     <td>{{$affecte->centreformation->denomination}}</td>  
                     <td>

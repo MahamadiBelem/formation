@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AffecterApprenants;
-use App\Models\Formations;
 use App\Models\CentreFormation;
 use App\Models\Apprenants;
+use App\Models\DomaineFormation;
+use App\Models\TypeFormation;
+
 class AffecterApprenantController extends Controller
 {
     /**
@@ -36,9 +38,10 @@ class AffecterApprenantController extends Controller
         $apprenants=Apprenants::all();
         $centres=CentreFormation::all();
         $apprenants=Apprenants::all();
-        $formations=Formations::all();
+        $types=TypeFormation::all();
+        $formations=DomaineFormation::all();
 
-        return view('formations.newaffectes',compact(['apprenants','centres','apprenants','formations']));
+        return view('formations.newaffectes',compact(['apprenants','centres','apprenants','formations','types']));
 
 
     }
@@ -58,8 +61,8 @@ class AffecterApprenantController extends Controller
         $affecte->annees=$request->input('annees');
         $affecte->dateInscription=$request->input('dateInscription');
         $affecte->apprenant()->associate($request->input('apprenant_id'));
-        $affecte->formation()->associate($request->input('formation_id'));
         $affecte->centreformation()->associate($request->input('centre_id'));
+        $affecte->typeformation()->associate($request->input('type_formation_id'));
        
         $affecte->save();
 

@@ -36,7 +36,11 @@ class AffecterModuleController extends Controller
 public function create()
 {
     //
+    $modules=Module::all();
+    $formateurs=Formateurs::all();
+    $types=TypeFormation::all();
 
+    return view('formations.affectemodule',compact(['formateurs','types','modules']));
    
 
 
@@ -50,14 +54,16 @@ public function create()
  */
 public function store(Request $request)
 {
-    //
 
     $affecte=new AffecterModule();
 
     $affecte->formateur()->associate($request->input('formateur_id'));
-    $affecte->module()->associate($request->input('module_id'));
     $affecte->typeformation()->associate($request->input('type_formation_id'));
-   
+
+    $affecte->save();
+    $affecte->module()->attach($request->input('module'));
+    //$affecte->module()->associate($request->input('module_id'));
+    
     $affecte->save();
 
     return redirect('/affectation-module');
@@ -95,16 +101,15 @@ public function edit($id)
  */
 public function update(Request $request, $id)
 {
-    //
 
     $affecte= AffecterModule::find($id);
 
     
     $affecte->formateur()->associate($request->input('formateur_id'));
-    $affecte->module()->associate($request->input('module_id'));
     $affecte->typeformation()->associate($request->input('type_formation_id'));
    
     $affecte->save();
+    $affecte->module()->sync($request->input('module'));
 
     return redirect('/affectation-module');
 }

@@ -23,10 +23,10 @@ class ProjetInstallationsController extends Controller
         $affectes=ProjetInstallations::paginate(10);
         $centres=CentreFormation::all();
         $apprenants=Apprenants::all();
-        $domainesinstallations=DomainesInstallations::all();
+       // $domainesinstallations=DomainesInstallations::all();
         // ajout de kit au cas ou necessaire
 
-        return view('formations.projetinstallations',compact(['affectes','centres','apprenants','domainesinstallations']));
+        return view('formations.projetinstallations',compact(['affectes','centres','apprenants']));
 
     }
 
@@ -57,8 +57,8 @@ public function store(Request $request)
     $affecte=new ProjetInstallations();
 
     $affecte->centreformation()->associate($request->input('centre_formation_id'));
+    $affecte->libelleProjetInstallation=$request->input('libelleProjetInstallation');
     $affecte->apprenant()->associate($request->input('apprenant_id'));
-    $affecte->domainesinstallation()->associate($request->input('domaines_installation_id'));
    
     
    
@@ -105,7 +105,8 @@ public function update(Request $request, $id)
 
     $affecte->centreformation()->associate($request->input('centre_formation_id'));
     $affecte->apprenant()->associate($request->input('apprenant_id'));
-    $affecte->domainesinstallation()->associate($request->input('domaines_installation_id'));
+    $affecte->libelleProjetInstallation=$request->input('libelleProjetInstallation');
+   // $affecte->domainesinstallation()->associate($request->input('domaines_installation_id'));
    
     $affecte->save();
 
