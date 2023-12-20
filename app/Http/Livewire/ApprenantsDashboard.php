@@ -3,7 +3,10 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-
+use Carbon\Carbon;
+use App\Models\Regime;
+use App\Models\Specialites;
+use App\Models\Kits;
 class ApprenantsDashboard extends Component
 {
 
@@ -48,6 +51,14 @@ class ApprenantsDashboard extends Component
 
     public function render()
     {
-        return view('livewire.apprenants-dashboard');
+        $date1 = Carbon::parse('23-07-01');
+        $date2 = Carbon::parse('23-07-05');
+        $duree = $date1->diffInDays($date2); 
+
+        $totalregime=Regime::all()->count();
+        $totalspecialite=Specialites::all()->count();
+        $totalkits=Kits::all()->count();
+
+        return view('livewire.apprenants-dashboard',compact('duree','totalregime','totalspecialite','totalkits'));
     }
 }

@@ -181,15 +181,15 @@
 
         <li class="nav-item dropdown">
           <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fa fa-book fa-2x"></i> Statisques
+             <i class="fa fa-book fa-2x"></i> Statistiques
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{url('/statistiques')}}">structures de formations</a>
-            <a class="dropdown-item" href="{{url('/statistiques')}}">Formateurs/enseignants</a>
-            <a class="dropdown-item" href="{{url('/statistiquesa')}}">Etat des Apprenants</a>
-            <a class="dropdown-item" href="{{url('/statistiquesa')}}">Etat des Kits</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">Etat des formations</a>
+            <!--a class="dropdown-item" href="{{url('/statistiques')}}">Formateurs/enseignants</a-->
+            <a class="dropdown-item" href="{{url('/statistiquesa')}}">Recherche par formations</a>
+            <!--a class="dropdown-item" href="{{url('/statistiquesa')}}">Etat des Kits</a>
             <a class="dropdown-item" href="{{url('/statistiques')}}">Projet d'installation</a>
-            <a class="dropdown-item" href="{{url('/statistiques')}}">Sources de financement</a>
+            <a class="dropdown-item" href="{{url('/statistiques')}}">Sources de financement</a-->
           </div>
         </li>
 

@@ -45,10 +45,10 @@ public function create()
 }
 
 /**
- * Store a newly created resource in storage.
+ * Store a newly created resource in storage.j
  *
  * @param  \Illuminate\Http\Request  $request
- * @return \Illuminate\Http\Response
+ * @return \Illuminate\Http\Response  
  */
 public function store(Request $request)
 {
@@ -77,7 +77,11 @@ public function store(Request $request)
 public function show($id)
 {
     //
+    $affecte= ProjetInstallations::find($id);
+
+    return view('formations.detailprojetinstallations',compact('affecte'));
 }
+
 
 /**
  * Show the form for editing the specified resource.

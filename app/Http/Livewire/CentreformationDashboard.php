@@ -7,6 +7,8 @@ use Livewire\Component;
 class CentreformationDashboard extends Component
 {
 
+    
+
     /**
      * calcul la duree entre 2 dates
      */
@@ -32,6 +34,7 @@ class CentreformationDashboard extends Component
      */
     public function render()
     {
+        
         return view('livewire.centreformation-dashboard');
     }
 }

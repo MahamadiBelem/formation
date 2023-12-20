@@ -157,7 +157,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-formationinitiale/{id}','FormationInitialeController@update');
     Route::get('/delete-formationinitiale/{id}','FormationInitialeController@destroy');
     
+    
 
+   
 
     Route::get('/apprenants','ApprenantController@index');
     Route::get('/display-apprenant-form','ApprenantController@create');
@@ -182,6 +184,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/save-projet-installations','ProjetInstallationsController@store');
     Route::post('/update-projet-installations/{id}','ProjetInstallationsController@update');
     Route::get('/delete-projet-installations/{id}','ProjetInstallationsController@destroy');
+    Route::get('/projetinstall-view-detail/{id}','ProjetInstallationsController@show');
 
 
     Route::get('/inscription','AffecterApprenantController@index');
@@ -483,6 +486,11 @@ Route::get('/chartcarte', 'Chartcarte@index');
     Route::get('/faexport_excel', 'FonctionnementassociationController@faexportexcel');
 
 
+
+
+
+Route::get('/piexport_csv', 'pi\piController@piexportcsv');
+Route::get('/piexport_excel', 'pi\piController@piexportexcel');   
 //CHAMBRES REGIONALES AGRICOLES
 
 

@@ -8,6 +8,10 @@ use App\Models\Formateurs;
 use App\Models\Apprenants;
 use App\Models\ProjetInstallations;
 use App\Models\Module;
+use App\Models\TypeFormation;
+use App\Models\CentreFormation;
+use App\Models\SourceFinancements;
+use Carbon\Carbon;
 
 class StatistiqueController extends Controller
 {
@@ -33,6 +37,21 @@ class StatistiqueController extends Controller
 
         $modules=Module::all();
         $totalmodule = $modules->count();
+
+        $cyles=TypeFormation::all();
+        $cyletotal = $cyles->count();
+
+        $cyles=TypeFormation::all()->count();
+
+        $sources=SourceFinancements::all();
+        $sourcetotal = $sources->count();
+
+        $totalcentre=CentreFormation::all()->count();
+        
+        $date1 = Carbon::parse('23-07-01');
+        $date2 = Carbon::parse('23-07-05');
+        $duree = $date1->diffInDays($date2); 
+
         /* autre maniere de proceder
         $total = Subscriber::count();
         $confirmed = Subscriber::where('status', 'confirmed')->count();
@@ -51,7 +70,7 @@ class StatistiqueController extends Controller
         $cancelled = $subscribers->where('status', 'cancelled')->count();
         $bounced = $subscribers->where('status', 'bounced')->count();*/
 
-        return view('formations.statistiques',compact('regions','total','totalformateurs','totalapprenants','totalprojet','totalmodule'));
+        return view('formations.statistiques',compact('regions','total','totalformateurs','totalapprenants','totalprojet','totalmodule','cyletotal','sourcetotal','duree','totalcentre'));
 
     }
 

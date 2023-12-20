@@ -20,8 +20,10 @@ class TypeFormationController extends Controller
 
         $types=TypeFormation::paginate(5);
        // $modules=Module::all();
+       $cyles=TypeFormation::all();
+       $cyletotal = $cyles->count();
 
-        return view('formations.typeformation',compact('types'));
+        return view('formations.typeformation',compact('types','cyletotal'));
     }
 
     /**

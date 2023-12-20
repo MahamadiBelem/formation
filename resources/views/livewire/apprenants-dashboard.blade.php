@@ -1,5 +1,5 @@
 @extends('layout.templateformation')
-<div style="background: #E8EAC8"> 
+<div style="background: #E8EAC8; font-family: Times New Roman"> 
 @section('content')
 
 <!--div>
@@ -12,20 +12,20 @@
 <br>
 <br>
 
-<div class="row">
+<div  style="font-family: Times New Roman;font-weight: bold" class="row">
 <div class="card border-primary mb-3" style="width: 18rem;">
-  <div class="card-header" style="background-color: #A7255E; color:white;">Structures de formation</div>
+  <div class="card-header" style="background-color: #007bff;color:white;">Regimes </div>
   <div class="card-body text-primary">
-    <h5 class="card-title"><p>{{ $counter }}</p></h5>
-    <p class="card-text">Structures de formation.</p>
+    <h5 class="card-title"><p>{{ $totalregime }}</p></h5>
+    <p class="card-text">Regimes</p>
   </div>
 </div>
 
 <div class="card border-secondary mb-3" style="width: 18rem;">
-  <div class="card-header" style="background-color: #1C73DB; color:white;">Apprenants </div>
+  <div class="card-header" style="background-color: #1C73DB; color:white;">Durée </div>
   <div class="card-body text-secondary">
-    <h5 class="card-title">314</h5>
-    <p class="card-text">Apprenants</p>
+    <h5 class="card-title">{{$duree}}</h5>
+    <p class="card-text">Durée</p>
   </div>
 </div>
 
@@ -33,18 +33,18 @@
 
 <div class="row">
 <div class="card border-primary mb-3" style="width: 18rem;">
-  <div class="card-header" style="background-color: #1C73DB; color:white;">Structures de formation</div>
+  <div class="card-header" style="background-color: #1C73DB; color:white;">Nombre de kits</div>
   <div class="card-body text-primary">
-    <h5 class="card-title">22</h5>
-    <p class="card-text">Structures de formation.</p>
+    <h5 class="card-title">{{$totalkits}}</h5>
+    <p class="card-text">Nombre de kits.</p>
   </div>
 </div>
 
 <div class="card border-secondary mb-3" style="width: 18rem;">
-  <div class="card-header" style="background-color: #A7255E; color:white;">Apprenants </div>
+  <div class="card-header" style="background-color: #007bff;color:white;">Specialités </div>
   <div class="card-body text-secondary">
-    <h5 class="card-title">13</h5>
-    <p class="card-text">Apprenants</p>
+    <h5 class="card-title">{{$totalspecialite}}</h5>
+    <p class="card-text">Specialités</p>
   </div>
 </div>
 </div>
