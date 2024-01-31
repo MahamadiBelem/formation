@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: null
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: mahamadibel242/formation
+    container_name: formation-conteneur
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - formation
+  db:
+    image: mysql:8.0
+    container_name: formation-conteneur
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: $formation
+      MYSQL_ROOT_PASSWORD: $formation
+      MYSQL_PASSWORD: $formation
+      MYSQL_USER: $formation
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - formation
+  nginx:
+    image: nginx:alpine
+    container_name: formation-conteneur
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - formation
+networks:
+  formation:
+    driver: bridge

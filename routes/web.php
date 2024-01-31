@@ -361,6 +361,7 @@ Route::get('/regionsc', 'RegionscController@index');
 Route::post('/save-regionc', 'RegionscController@store');
 Route::post('/update-regionc', 'RegionscController@update');
 Route::get('/delete-regionc/{id}', 'RegionscController@destroy');
+Route::get('/get-province-list/{province_id}', 'RegionscController@getProvinceList');
 
 Route::get('/statistiques', 'StatistiqueController@index');
 Route::post('/search-statisques', 'StatistiqueController@store');

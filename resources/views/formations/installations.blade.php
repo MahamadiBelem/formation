@@ -41,7 +41,7 @@
                       Prenom: {{$installation->affecterapprenants->apprenant->prenom}}
                     </td>
                     <td>
-                       {{$installation->domainesinstallation->libelleDomaine}}
+                       {{$installation->projetinstallation->libelleProjetInstallation}}
                     </td>
                     <td>
                       {{$installation->sourcefinancements->libelleSourceFinancement}}

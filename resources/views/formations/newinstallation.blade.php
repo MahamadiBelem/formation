@@ -43,8 +43,8 @@
             <div class="form-group">
               <label for="">Projet d'installation</label>
               <select name="domaine_installation" id="domaine_installation" class="form-control">
-                @foreach ($domaines as $domaine)
-                <option value="{{$domaine->id}}">{{$domaine->libelleDomaine}}</option>
+                @foreach ($projetInstallations as $domaine)
+                <option value="{{$domaine->id}}">{{$domaine->libelleProjetInstallation}}</option>
                 @endforeach
               </select>
             </div>
@@ -162,6 +162,27 @@
 </div>
 </div>
 
-
+<script type="text/javascript">
+            $(document).ready(function() {
+            $('select[name="region"]').on('change', function() {
+                var provinceID = $(this).val();
+                    if(provinceID) {
+                    $.ajax({
+                        url: '/get-province-list/'+encodeURI(provinceID),
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                        $('select[name="province"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="province"]').append('<option value="'+ value +'">'+ value +'</option>');
+                            });
+                        }
+                    });
+                    }else{
+                    $('select[name="province"]').empty();
+                      }
+                   });
+                });
+        </script>
 
 @endsection

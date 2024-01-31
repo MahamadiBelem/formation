@@ -26,7 +26,7 @@ class InstallationsController extends Controller
         $installations =Installations::paginate(10);
         $affectes=AffecterApprenants::all();
         $sources=SourceFinancements::all();
-        $domaines=DomainesInstallation::all();
+        $domaines=DomainesInstallation::all(); 
         //la mise a jour
         $centres=CentreFormation::all();
         $regions=Regions::all();
@@ -167,4 +167,13 @@ class InstallationsController extends Controller
 
         return redirect('/installation');
     }
+
+
+    public function getRegionList($province_id)
+    {
+        $province = Region::region()->where("province_id",$province_id)->get();
+
+        return response()->json($province);
+    }
+
 }
